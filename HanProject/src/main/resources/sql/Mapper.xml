@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="File"><!-- 
+	<insert id="fileInsert" parameterType="spring.mybatis.FileInfo">
+		insert into fileTable values (file_Seq.Nextval, #{studentNumber}, #{fileName}, #{filePath})
+	</insert>	
+	<update id="fileUpdate" parameterType="spring.mybatis.FileInfo">
+		update fileTable set fileName=#{fileName}, filePath=#{filePath} where fileNumber = #{fileNumber}
+	</update>
+	<delete id="fileDelete" parameterType="spring.mybatis.FileInfo">
+		delete from fileTable where fileNumber = #{fileNumber}
+	</delete>
+	<select id="numberSelect" resultType = "spring.mybatis.FileInfo" parameterType="map">
+		select * from fileTable where fileNumber = #{fileNumber}
+	</select>
+	<select id="fileSelect" resultType = "spring.mybatis.FileInfo">
+		select * from fileTable
+	</select>	 -->
+	<select id="select" resultType="int">	    
+	    select count(*) from test
+	</select>
+</mapper>
