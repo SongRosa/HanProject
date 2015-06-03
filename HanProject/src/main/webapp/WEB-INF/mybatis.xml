@@ -27,6 +27,7 @@
  		<bean id = "sqlSession" class = "org.mybatis.spring.SqlSessionTemplate">
 			<constructor-arg ref = "sqlSessionFactory"/>
 		</bean>
+		<bean id="boardDao" class="spring.mybatis.BoardDAO" p:sqlSessionFactory-ref="sqlSessionFactory"/>
 		<!-- 
 		<bean id = "fileDao" class = "spring.mybatis.FileDAO" p:sqlSessionFactory-ref = "sqlSessionFactory"/> -->
 </beans>
