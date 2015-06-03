@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+
+<decorators defaultdir="/main/decorator">
+    
+	<decorator name="main" page="/WEB-INF/main/decorator/decorator.jsp">
+		<pattern>/*.do</pattern>
+	</decorator>
+	
+
+	<!-- <excludes>
+		<pattern>/chap19/hello/exclude.jsp</pattern>
+	</excludes> -->
+
+</decorators>
