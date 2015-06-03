@@ -2,9 +2,22 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <html lang="ko">
 <head>
-	<title>뉴스 메인</title>
 </head>
 <body>
-	<div class="content">뉴스 메인 페이지!</div>
+	<div class="container">
+		<div class="home">
+			<div class="main_picture">
+				<img src="picture/hanrivermap.jpg">
+			</div>
+			
+			<div class="park_icon">
+			2
+			</div>
+			
+			<div class="park_introduce">
+			3
+			</div>
+		</div>
+	</div>
 </body>
 </html>
