@@ -3,10 +3,15 @@
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %> 
 <html lang="ko">
 <style>
-	div{
+	a:link, a:visited, a:active{
+		text-decoration:none;
+		test-color:black;
+	}
+	
+	div#logo, div#header, div#footer{
 		padding-bottom:5px;
 		padding-top:5px;
-		width: 75%;
+		width: 1100px;
 		margin: auto;
 	}
 	hr{
@@ -20,11 +25,11 @@
 </head>
 	<decorator:head />
 	<div id="header" align="right">
-		<a>로그인  </a> 
-		<a>회원가입  </a>
-		<a>공지사항  </a>
-		<a>자유게시판  </a>
-		<a>사이트맵  </a>
+		<a href="">로그인  </a> &nbsp;
+		<a href="">회원가입  </a>&nbsp;
+		<a href="">공지사항  </a>&nbsp;
+		<a href="">자유게시판  </a>&nbsp;
+		<a href="">사이트맵  </a>&nbsp;&nbsp;&nbsp;
 	</div>
 	<hr/>
 

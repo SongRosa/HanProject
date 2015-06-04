@@ -1,0 +1,78 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+div#view_top{
+	width:1000px;
+	margin: auto;
+}
+
+div#view_maps{
+	width: 800px;
+	height: 400px;
+	margin: auto;
+}
+
+div#view_directions{
+	width: 950px;
+	margin: auto;
+	margin-bottom: 50px;
+}
+
+p{
+	padding-left:10px;
+	font-size: 19px;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: bold;
+	color:maroon;
+}
+
+p#direction_txt{	
+	font-family: 'Nanum Brush Script', serif;
+	font-size: 50px;
+	color: black;
+}
+
+ul{
+	list-style:none;
+	 
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+li{
+	font-weight: normal;
+	font-size: 17px;
+}
+
+li#bus_number{
+	list-style: circle;
+}
+
+li#car_maps, li#subway{
+	list-style: circle;
+	font-weight: bold;
+}
+
+li#header{
+	font-weight: bold;
+}
+
+table{
+	border-width:2px;
+	border-color: gray;
+	border-style: solid;	
+	
+	width: 850px;
+	margin: auto;
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+tr{
+	height:50px;
+}
+tr#table_header{
+	background-color: threedhighlight;
+}
+
+td{
+	text-align: center;
+}
