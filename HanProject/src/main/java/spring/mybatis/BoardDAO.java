@@ -26,14 +26,14 @@ public class BoardDAO extends SqlSessionDaoSupport {
 		return list;
 	}
 	
-	public List<BoardCommand> board_search_subject(String str){
-		List<BoardCommand> list = getSqlSession().selectList("board.search_subject", str);
+	public List<BoardListCommand> board_search_subject(String str){
+		List<BoardListCommand> list = getSqlSession().selectList("board.search_subject", str);
 		
 		return list;
 	}
 	
-	public List<BoardCommand> board_search_writer(String str){
-		List<BoardCommand> list = getSqlSession().selectList("board.search_writer", str);
+	public List<BoardListCommand> board_search_writer(String str){
+		List<BoardListCommand> list = getSqlSession().selectList("board.search_writer", str);
 		
 		return list;
 	}
@@ -42,6 +42,21 @@ public class BoardDAO extends SqlSessionDaoSupport {
 		BoardCommand one = getSqlSession().selectOne("board.selectOne", i);
 		
 		return one;
+	}
+	
+	public int update_b_count(int i){
+		int j = getSqlSession().update("board.update_b_count", i);
+		return j;
+	}
+	
+	public int insertOne(BoardCommand bc){
+		int i = getSqlSession().insert("board.insertOne", bc);
+		return i;
+	}
+	
+	public int deleteOne(int i){
+		int j = getSqlSession().delete("board.deleteOne", i);
+		return j;
 	}
 
 }

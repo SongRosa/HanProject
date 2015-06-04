@@ -9,9 +9,25 @@ public class BoardListCommand {
 	private String b_writer;
 	private Date b_regdate;
 	private int c_count;
+	private int b_count;
+	private String p_name;
+	
+	public BoardListCommand(){}
 	
 	
 	
+	public String getP_name() {
+		return p_name;
+	}
+	public void setP_name(String p_name) {
+		this.p_name = p_name;
+	}
+	public int getB_count() {
+		return b_count;
+	}
+	public void setB_count(int b_count) {
+		this.b_count = b_count;
+	}
 	public int getC_count() {
 		return c_count;
 	}

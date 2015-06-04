@@ -1,6 +1,8 @@
 package spring.controller;
 
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -66,14 +68,17 @@ public class BoardController {
 		String search_value = req.getParameter("search_value");
 		System.out.println(search_value);
 		
-		List list;
+		List<BoardListCommand> list;
 		
 		if(search_option.equals("sub")){
 			list = dao.board_search_subject(search_value);
 			System.out.println("dao.sear.sub");
-		}else{
+		}else if(search_option.equals("wri")){
 			list = dao.board_search_writer(search_value);
 			System.out.println("dao.sear.wri");
+		}else{
+			list = dao.board_selectList();
+			System.out.println("dao.selectAll");
 		}
 		int totalCount = list.size();
 		int currentPage = Integer.parseInt(p);
@@ -102,8 +107,70 @@ public class BoardController {
 		
 		BoardCommand bc = dao.selectOne(b_number);
 		model.addAttribute("detail", bc);
+		int i = dao.update_b_count(b_number);
 		
 		return "views/board/detail";
+	}
+	
+	@RequestMapping(value="insert.do", method=RequestMethod.GET)
+	public String insertForm(){
+		return "views/board/insertForm";
+	}
+	
+	
+	@RequestMapping(value="insert.do", method=RequestMethod.POST)
+	public String insert(HttpServletRequest req){
+		
+		String b_subject = req.getParameter("b_subject");
+		String b_writer = req.getParameter("b_writer");
+		String b_content = req.getParameter("b_content");
+		int p_number = Integer.parseInt(req.getParameter("b_subTab"));
+		
+		
+		
+		BoardCommand bc = new BoardCommand(p_number , b_subject, b_writer, b_content);
+		System.out.println(bc);
+		
+		int i = dao.insertOne(bc);
+		if(i==1){
+		
+			return "views/board/success/insert";
+		}else{
+			
+			return "views/board/fail/insert";
+		}
+	}
+	
+	@RequestMapping(value="deleteForm.do", method=RequestMethod.GET)
+	public String deleteForm(){
+
+		return "views/board/deleteForm";
+	}
+	
+	@RequestMapping(value="deleteForm.do", method=RequestMethod.POST)
+	public String delete(HttpServletRequest req, Model model){
+		
+		String a = req.getParameter("b_number");
+		int b_number= Integer.parseInt(a);
+		System.out.println(b_number);
+		int i = dao.deleteOne(b_number);
+		if(i==1){
+			
+			return "views/board/success/delete";
+		}else{
+			
+			return "views/board/fail/delete";
+		}
+		
+	}
+	
+	@RequestMapping(value="updateForm.do", method=RequestMethod.GET)
+	public String updateForm(HttpServletRequest req, Model model){
+		int i = Integer.parseInt(req.getParameter("b_number"));
+		BoardCommand bc = dao.selectOne(i);
+		model.addAttribute("detail", bc);
+		
+		return "views/board/updateForm";
 	}
 	
 

@@ -10,6 +10,25 @@ public class BoardCommand {
 	private Date b_regdate;
 	private String b_content;
 	private int b_count;
+	private int p_number;
+	
+	
+	
+
+	public BoardCommand(){}
+	public BoardCommand(int p_number, String b_subject, String b_writer, String b_content){
+		this.p_number=p_number;
+		this.b_subject=b_subject;
+		this.b_writer=b_writer;
+		this.b_content=b_content;
+	}
+	
+	public int getP_number() {
+		return p_number;
+	}
+	public void setP_number(int p_number) {
+		this.p_number = p_number;
+	}
 
 	public int getB_number() {
 		return b_number;

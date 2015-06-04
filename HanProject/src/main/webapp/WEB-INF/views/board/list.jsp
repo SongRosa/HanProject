@@ -19,13 +19,19 @@ function preSearch() {
 </script>
 </head>
 <body>
-<div align="center">
-	<table width="80%">
+<div id="board_tab" align="left">
+<select>
+<option selected="selected" value="0">글 분류</option>
+</select>
+</div>
+<div id="board_table" align="center">
+	<table width="1000">
 		<tr>
 			<td>글번호</td>
 			<td>글제목</td>
 			<td>작성자</td>
 			<td>작성일</td>
+			<td>조회수</td>
 		</tr>
 
 		<c:forEach var="one" items="${list }">
@@ -34,19 +40,20 @@ function preSearch() {
 				<td><a href="detail.do?b_number=${one.b_number }">${one.b_subject }</a>&nbsp; [${one.c_count }]</td>
 				<td>${one.b_writer }</td>
 				<td><fmt:formatDate value="${one.b_regdate }" type="date" /></td>
+				<td>${one.b_count }</td>
 			</tr>
 		</c:forEach>
 		
 	</table>
 	</div>
-	<div align="right">
-	<button onclick="window.location='''">글쓰기</button></div>
+	<div id="board_write_btn" align="right">
+	<button onclick="window.location='insert.do'">글쓰기</button></div>
 	<br>
 	<div align="center">
 	${paging }
 	</div>
 	<br>
-	<div align="center">
+	<div id="board_searchbar" align="center">
 	<form name="search" onsubmit=" return preSearch();" method="post" >
 		<select name="search_option">
 			<option selected="selected" value="sub">제목</option>
