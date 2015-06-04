@@ -14,10 +14,6 @@
 		border-style: solid;
 		border: 2dp;
 	}
-	
-	#content{
-		height: 75%;
-	}
 </style>
 <head>
 	<title>han</title>
@@ -34,7 +30,7 @@
 
 <body>
 	<div id = "logo" align = "center">	
-		<img width="150px" height = "80px" alt="로고 위치" src="photo/templogo.png">
+		<img width="150px" height = "80px" alt="로고 위치" src="/HanProject/photo/templogo.png">
 	</div>
 	<hr/>
 	<div id = "content">
