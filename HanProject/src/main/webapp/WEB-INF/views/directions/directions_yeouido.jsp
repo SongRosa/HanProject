@@ -15,334 +15,116 @@
 	</div>
 	
 	<div id="view_directions">
-		<h5>버스로 오실 때는</h5>
-		<ul>
-			<li>여의나루역 2번출구 하차
-				<ul>
-					<li>7613, 7611, 5713, 5633, 5618, 5615, 5534, 1008, 753, 261, 61번, 10번</li>
-				</ul>
-			</li>
-			<li>여의나루역 1번출구 하차
-				<ul>
-					<li>7611, 6623, 5713, 5633, 5534, 753, 360, 261, 262, 662, 7007-1</li>
-				</ul>
-			</li>
-		</ul>
-		
-		<h5>지하철로 오실 때는</h5>
-		<ul>
-			<li><a href="http://www.smrt.co.kr/program/Train/Station/Station_info.jsp?station=2528&amp;menuID=001011002001" target="_blank" title="새창(도시철도공사 사이버스테이션)">여의도한강공원 5호선 여의나루역 2,3번출구, 샛강생태공원 9호선 샛강역 4번출구, 9호선 여의도역 1번 출구</a></li>
-		</ul>
-		
-		<h5>승용차를 이용하여 오실 때는</h5>
-		<ul>
-			<li>올림픽대로 잠실방향으로 오실 때
-				<ul>
-					<li>여의도 밑으로 진입하여 노량진수산시장 방향으로 들어온 후 주차장 이용</li>
-				</ul>
-			</li>
-			<li>올림픽대로 공항방향으로 오실 때
-				<ul>
-					<li>한강철교를 지나 63빌딩앞 진입로 이용</li>
-				</ul>
-			</li>
-			<li>강변북로(강북방면)로 오실 때
-				<ul>
-					<li>원효대교 건너 남단에서 우회전 진입</li>
-				</ul>
-			</li>
-		</ul>
-
-		<h5><버스정류소별 경유노선 번호> - 샛강</h5>
-		
-		<table summary="버스정류소별 경유노선 번호표. 샛강역앙카라공원, 지적공사_남측, 지적공사_북측, 여의도역_남측, 여의도역_북측, 전경련회관, KBS정류소를 경유하는 노선 안내">
-			<caption>버스정류소별 경유노선 번호</caption>
+		<p>버스로 오실 때는</p>
+			<table summary="버스로 오실 때 하차하는 정류장을 안내하는 표. 하차정류장명, 버스번호, 도보로 이용 가능한 접근로명, 정류장~접근로거리로 구성.">
 			<colgroup>
-				<col />
-				<col />
-				<col />
-				<col />
-				<col />
-				<col />
+				<col width="23%" />
+				<col width="32%" />
+				<col width="25%" />
+				<col width="20%" />
 			</colgroup>
 			<thead>
-				<tr>
-					<th scope="col">
-						샛강역앙카라공원<br />
-						(8개노선)
-					</th>
-					<th scope="col">
-						지적공사_남측<br />
-						(10개노선)
-					</th>
-					<th scope="col">
-						지적공사_북측<br />
-						(13개노선)
-					</th>
-					<th scope="col">
-						여의도역_남측<br />
-						(14개노선)
-					</th>
-					<th scope="col">
-						여의도역_북측<br />
-						(15개노선)
-					</th>
-					<th scope="col">
-						전경련회관<br />
-						(27개노선)
-					</th>
-					<th scope="col">
-						KBS<br />
-						(6개노선)
-					</th>
-				</tr>
+			<tr id="table_header">
+			<th scope="col">하차 정류장명</th>
+			<th scope="col">버스번호</th>
+			<th scope="col">도보로 이용 가능한<br />접근로명</th>
+			<th scope="col">정류장~접근로 거리</th>
+			</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>162번</td>
-					<td>153번</td>
-					<td>153번</td>
-					<td>153번</td>
-					<td>153번</td>
-					<td>160번</td>
-					<td>162번</td>
+					<th scope="row">여의도중학교</th>
+					<td >261, 5534, 5618, 5633, 7611, 108</td>
+					<td>
+						여의나루로
+					</td>
+					<td>255m</td>
+				</tr>	
+				<tr>
+					<th scope="row">여의나루역(2번 출구)</th>
+					<td >7613, 7611, 5713, 5633, 5618, 5615, 5534, 1008, 753, 261, 61, 10</td>
+					<td>
+						여의나루로
+					</td>
+					<td>340m</td>
 				</tr>
 				<tr>
-					<td>362번</td>
-					<td>162번</td>
-					<td>162번</td>
-					<td>162번</td>
-					<td>162번</td>
-					<td>162번</td>
-					<td>261번</td>
+					<th scope="row">여의나루역(1번 출구)</th>
+					<td >7611, 6623, 5713, 5633, 5534, 753, 360, 261, 262, 662, 7007-1</td>
+					<td>
+						여의나루로
+					</td>
+					<td>340m</td>
 				</tr>
 				<tr>
-					<td>5012번</td>
-					<td>362번</td>
-					<td>261번</td>
-					<td>362번</td>
-					<td>261번</td>
-					<td>260번</td>
-					<td>262번</td>
-				</tr>
+					<th scope="row">KBS</th>
+					<td >162, 261, 262, 5615, 5618,<br> 10(부천), 70-2(부천)</td>
+					<td>
+						여의공원로
+					</td>
+					<td>500m</td>
+				</tr>				
 				<tr>
-					<td>503번</td>
-					<td>461번</td>
-					<td>262번</td>
-					<td>461번</td>
-					<td>262번</td>
-					<td>261번</td>
-					<td>5615번</td>
-				</tr>
+					<th scope="row">지적공사(남측)</th>
+					<td >153, 162, 362, 461, 5012,<br> 503, 5618, 61, 753, 5623</td>
+					<td>
+						의사당대로
+					</td>
+					<td>890m</td>
+				</tr>	
 				<tr>
-					<td>505번</td>
-					<td>5012번</td>
-					<td>461번</td>
-					<td>5012번</td>
-					<td>461번</td>
-					<td>262번</td>
-					<td>5618번</td>
-				</tr>
+					<th scope="row">지적공사(북측)</th>
+					<td >153, 162, 261, 262, 461, 5012, 503, <br>5623, 62, 6513, 753, 8153, 5601</td>
+					<td>
+						의사당대로
+					</td>
+					<td>1.09km</td>
+				</tr>	
 				<tr>
-					<td>5534번</td>
-					<td>503번</td>
-					<td>5012번</td>
-					<td>503번</td>
-					<td>5012번</td>
-					<td>360번</td>
-					<td>10 부천</td>
-				</tr>
+					<th scope="row">샛강역. 앙카라공원</th>
+					<td >162, 362, 5012, 503, 505, 5534, <br>5633, 61</td>
+					<td>
+						의사당대로
+					</td>
+					<td>1.4km</td>
+				</tr>										
 				<tr>
-					<td>5633번</td>
-					<td>5618번</td>
-					<td>503번</td>
-					<td>5618번</td>
-					<td>503번</td>
-					<td>2012번</td>
-					<td>70-2 부천</td>
-				</tr>
-				<tr>
-					<td>61번</td>
-					<td>61번</td>
-					<td>5623번</td>
-					<td>5623번</td>
-					<td>5623번</td>
-					<td>503번</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>753번</td>
-					<td>62번</td>
-					<td>61번</td>
-					<td>62번</td>
-					<td>5615번</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>5623번</td>
-					<td>6513번</td>
-					<td>6513번</td>
-					<td>6513번</td>
-					<td>5618번</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>753번</td>
-					<td>753번</td>
-					<td>753번</td>
-					<td>5713번</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>8153번</td>
-					<td>108 고양</td>
-					<td>8153번(맞춤)</td>
-					<td>600번</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>5601번</td>
-					<td>5601 안산</td>
-					<td>5601 안산</td>
-					<td>6513번</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>7007-1 광주</td>
-					<td>7007-1 광주</td>
-					<td>661번</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>700 부천</td>
-					<td>6628번</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>5012번</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>10 부천</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>11-1 광명</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>11-2 광명</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>300 인천</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>301 안산</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>320 안산</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>510 시흥</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>700 부천</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>83 부천</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>871 고양</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>88 부천</td>
-					<td>&nbsp;</td>
+					<th scope="row">전경련회관</th>
+					<td >160, 162, 260, 261, 262, 360, 2012, <br>503, 5615, 5618, 5713, 600, 6513,<br> 661, 6628, 5012, 10(부천),<br> 11-1(광명), 11-2(광명), 300(인천), <br>301(안산)
+						 302(안산), 510(시흥), <br>700(부천), 83(부천), 871(고양),<br> 88(부천)</td>
+					<td>
+						여의대로
+					</td>
+					<td>515m</td>
 				</tr>
 			</tbody>
 		</table>
+		
+		<p>지하철로 오실 때는</p>
+		<ul>
+			<li id="subway">여의도한강공원 5호선 여의나루역 2,3번출구</li> <p>
+			<li id="subway">샛강생태공원 9호선 샛강역 4번출구</li><p>
+			<li id="subway">9호선 여의도역 1번 출구</li><p>
+		</ul>
+		
+		<p>승용차를 이용하여 오실 때는</p>
+		<ul>
+			<li id="car_maps">올림픽대로 잠실방향으로 오실 때 <p>
+				<ul>
+					<li>여의도 밑으로 진입하여 노량진수산시장 방향으로 들어온 후 주차장 이용</li> <p>
+				</ul>
+			</li>
+			<li id="car_maps">올림픽대로 공항방향으로 오실 때 <p>
+				<ul>
+					<li>한강철교를 지나 63빌딩앞 진입로 이용</li> <p>
+				</ul>
+			</li>
+			<li id="car_maps">강변북로(강북방면)로 오실 때 <p>
+				<ul>
+					<li>원효대교 건너 남단에서 우회전 진입</li> <p>
+				</ul>
+			</li>
+		</ul>
 	</div>
 </body>
 </html>

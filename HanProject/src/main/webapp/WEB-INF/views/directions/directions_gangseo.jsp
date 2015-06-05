@@ -16,16 +16,41 @@
 	
 	<div id="view_directions">
 		<p>버스로 오실 때는</p>
-		<ul>
-			<li>(6641, 6646, 6712, 642, 651, 672) 방화역 하차 &rarr; 지하철 5호선 방화역 2번 출구앞 강서07번 마을버스 탑승 &rarr; 약 5분 소요 &rarr; 생태공원육갑문 회차지점 하차 &rarr; 50m
-		
-		앞 올림픽도로 아래 정곡나들목 통과 &rarr; 강서한강공원</li>
-		</ul>
+			<table summary="버스로 오실 때 하차하는 정류장을 안내하는 표. 하차정류장명, 버스번호, 도보로 이용 가능한 접근로명, 정류장~접근로거리로 구성.">
+			<colgroup>
+				<col width="23%" />
+				<col width="32%" />
+				<col width="25%" />
+				<col width="20%" />
+			</colgroup>
+			<thead>
+			<tr id="table_header">
+			<th scope="col">하차 정류장명</th>
+			<th scope="col">버스번호</th>
+			<th scope="col">도보로 이용 가능한<br />접근로명</th>
+			<th scope="col">정류장~접근로 거리</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">생태공원</th>
+					<td >강서07</td>
+					<td>
+						정곡나들목 <br> (양천로27길)
+					</td>
+					<td>811m</td>
+				</tr>						
+			</tbody>
+		</table>
 		
 		<p>지하철로 오실 때는</p>
 		<ul>
-			<li>지하철 5호선 방화역 2번 출구 &rarr; 강서07번 마을버스 탑승 &rarr; 약 5분 소요 &rarr; 생태공원육갑문 회차지점하차 &rarr; 
-				50m앞 올림픽도로 아래 정곡나들목 통과 &rarr; 강서한강공원</li>
+			<li id="subway">5호선 방화역(2번 출구) <p>
+				<ul>
+					<li> 강서07번 마을버스 탑승 &rarr; 약 5분 소요 &rarr; 생태공원 정류장하차 &rarr; 50m앞 올림픽도로 아래 정곡나들목 통과 &rarr; 강서한강공원
+					</li>
+				</ul>
+			</li>
 		</ul>
 		
 		<p>승용차를 이용하여 오실 때는</p>
