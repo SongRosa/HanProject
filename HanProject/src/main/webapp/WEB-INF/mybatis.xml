@@ -28,6 +28,6 @@
 			<constructor-arg ref = "sqlSessionFactory"/>
 		</bean>
 		<bean id="boardDao" class="spring.mybatis.BoardDAO" p:sqlSessionFactory-ref="sqlSessionFactory"/>
-		<!-- 
-		<bean id = "fileDao" class = "spring.mybatis.FileDAO" p:sqlSessionFactory-ref = "sqlSessionFactory"/> -->
+		<bean id = "userDao" class = "spring.mybatis.UserDAO" p:sqlSessionFactory-ref = "sqlSessionFactory"/>
+		<bean id = "zipDao" class = "spring.mybatis.ZipDAO" p:sqlSessionFactory-ref = "sqlSessionFactory"/>
 </beans>
