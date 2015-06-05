@@ -5,11 +5,17 @@
 <title>오시는 길 안내 페이지</title>
 <link href="css/directions_style.css" rel="stylesheet" type="text/css">
 </head>
+<script type="text/javascript">
+	$(function(){
+		$("#pageName").change(function(){
+		})
+	}) 
+</script>
 <body>
 	<div id ="view_top">
 		<div align="right">
 			<label> 다른 공원 가기</label>			
-			<select>
+			<select id="pageName" name="pageName" onchange="return goURL()">
 				<option label="강서" value="javascript:window.location='directionPage.do?parkNum=1'">강서 한강공원</option>
 				<option label="광나루" onchange="javascript:window.location='directionPage.do?parkNum=2'">광나루 한강공원</option>
 				<option label="난지">난지 한강공원</option>
