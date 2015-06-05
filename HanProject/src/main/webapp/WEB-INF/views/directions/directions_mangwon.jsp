@@ -7,7 +7,23 @@
 </head>
 <body>
 	<div id ="view_top">
-		<p id="direction_txt">오시는 길</p>
+		<div align="right">
+			<label> 다른 공원 가기</label>			
+			<select>
+				<option label="강서" value="javascript:window.location='directionPage.do?parkNum=1'">강서 한강공원</option>
+				<option label="광나루" onchange="javascript:window.location='directionPage.do?parkNum=2'">광나루 한강공원</option>
+				<option label="난지">난지 한강공원</option>
+				<option label="뚝섬">뚝섬 한강공원</option>
+				<option label="망원" selected="selected">망원 한강공원</option>
+				<option label="반포">반포 한강공원</option>
+				<option label="양화">양화 한강공원</option>
+				<option label="여의도">여의도 한강공원</option>
+				<option label="이촌">이촌 한강공원</option>
+				<option label="잠실">잠실 한강공원</option>
+				<option label="잠원">잠원 한강공원</option>
+			</select>
+		</div>
+		<p id="direction_txt">오시는 길</p>	
 	</div>
 	
 	<div id="view_maps">
@@ -16,15 +32,52 @@
 	
 	<div id="view_directions">
 		<p>버스로 오실 때는</p>
-		<ul>
-			<li>마을버스 9번(지하철6호선 <a href="http://www.smrt.co.kr/Train/Station/Station_info.jsp?station=2622" target="_blank" title="새창으로 열립니다.">☞망원역</a> 1번출구)</li>
-			<li>마을버스 16번(지하철2호선 합정역 1번 출구)</li>
-		</ul>
-		
+			<table summary="버스로 오실 때 하차하는 정류장을 안내하는 표. 하차정류장명, 버스번호, 도보로 이용 가능한 접근로명, 정류장~접근로거리로 구성.">
+			<colgroup>
+				<col width="23%" />
+				<col width="32%" />
+				<col width="25%" />
+				<col width="20%" />
+			</colgroup>
+			<thead>
+			<tr id="table_header">
+			<th scope="col">하차 정류장명</th>
+			<th scope="col">버스번호</th>
+			<th scope="col">도보로 이용 가능한<br />접근로명</th>
+			<th scope="col">정류장~접근로 거리</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">망원유수지.<br> 망원한강공원</th>
+					<td>마포16</td>
+					<td>
+						망원로
+					</td>
+					<td>431m</td>
+				</tr>
+				<tr>
+					<th scope="row">망원유수지.<br> 망원한강공원</th>
+					<td >마포09</td>
+					<td>
+						합정나들목<br>(망원로)
+					</td>
+					<td>500m</td>
+				</tr>				
+			</tbody>
+		</table>
 		<p>지하철로 오실 때는</p>
 		<ul>
-			<li>지하철6호선 망원역 1번출구에서 9번 마을버스</li>
-			<li>지하철2호선 합정역 1번 출구에서 16번 마을버스</li>
+			<li id="subway">6호선 망원역(1번출구) <p>
+				<ul>
+					<li>마포 09번 버스 이용</li><p>
+				</ul>
+			</li>			
+			<li id="subway">2호선 합정역(1번출구)<p>
+				<ul>
+					<li>마포 16번 버스 이용</li><p>
+				</ul>
+			</li>
 		</ul>
 		
 		<p>승용차를 이용하여 오실 때는</p>
