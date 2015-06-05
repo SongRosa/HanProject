@@ -19,6 +19,10 @@
 		border-style: solid;
 		border: 2dp;
 	}
+	#clear{
+		clear: both;
+	}
+	
 </style>
 <head>
 	<title>han</title>
@@ -38,11 +42,11 @@
 		<img width="150px" height = "80px" alt="로고 위치" src="/HanProject/photo/templogo.png">
 	</div>
 	<hr/>
-	<div id = "content">
-	
-	</div>
 	<decorator:body />
-	<hr/>
+	
+	<div id="content"></div>
+	
+	<hr id="clear"/>
 	<div id="footer" align="center">
 		회사이름 : Kosmo <br>
 		(153-759) 서울특별시 금천구 가산동 월드메르디앙 2차 4층<br>

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/main_style.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 
@@ -10,7 +11,7 @@
 		$("#park_icon button").click(function(){
 			$("#main_picture").css("display", "none");
 			$("#park_container").css("display", "block"); 
-		})
+		});
 		
 		$("#rm1").click(function(){
 			$("#park_img").attr("src", "river_picture/강서1.jpg");
@@ -111,38 +112,38 @@
 <body>
 	<div id="container">
 	
-		<div id="home" style="width:1000; height: 500; border: 1px solid;">
+		<div id="home">
 		
-			<div id="main_picture" style="width:1000; height:380;display: block;">
-				<img src="picture/hanrivermap.jpg" width="1000" height="380">
+			<div id="main_picture">
+				<img src="picture/hanrivermap.jpg" width="980" height="380">
 			</div>
 			
-			<div id="park_container" style="width:1000; height:380;display: none;">
+			<div id="park_container">
 			
-				<div id="park_picture" style="width: 500; height: 380; float: left;">
-					<img id="park_img" src="" width="500" height="380">
+				<div id="park_picture">
+					<img id="park_img" src="" width="450" height="380">
 				</div>
 				
-				<div id="park_introduce" style="width: 450; height: 380; float: left;">
+				<div id="park_introduce">
 					<div align="right"><button id="close" >X</button></div>	
 					
 					<div class="0" id="park_name" align="center" style="width: 200">
-						<div class="1" style="display: none;">강서</div>
-						<div class="2" style="display: none;">광나루</div>
-						<div class="3" style="display: none;">난지</div>
-						<div class="4" style="display: none;">뚝섬</div>
-						<div class="5" style="display: none;">망원</div>
-						<div class="6" style="display: none;">반포</div>
-						<div class="7" style="display: none;">양화</div>
-						<div class="8" style="display: none;">여의도</div>
-						<div class="9" style="display: none;">이촌</div>
-						<div class="10" style="display: none;">잠실</div>
-						<div class="11" style="display: none;">잠원</div>
+						<div class="1">강서</div>
+						<div class="2">광나루</div>
+						<div class="3">난지</div>
+						<div class="4">뚝섬</div>
+						<div class="5">망원</div>
+						<div class="6">반포</div>
+						<div class="7">양화</div>
+						<div class="8">여의도</div>
+						<div class="9">이촌</div>
+						<div class="10">잠실</div>
+						<div class="11">잠원</div>
 						
 					</div>
-					<div class="0" id="park_info" style="width: 430">
+					<div class="0" id="park_info">
 					
-					<div class="1" style="display: none;">
+					<div class="1">
 				 		<table>
 							<tr>
 								<td width="100">주소</td>
@@ -155,7 +156,7 @@
 						</table>
 					</div>
 					
-					<div class="2" style="display: none;">
+					<div class="2">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -168,7 +169,7 @@
 						</table>
 					</div>
 					
-					<div class="3" style="display: none;">
+					<div class="3">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -181,7 +182,7 @@
 						</table>
 					</div>
 					
-					<div class="4" style="display: none;">
+					<div class="4">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -194,7 +195,7 @@
 						</table>
 					</div>
 					
-					<div class="5" style="display: none;">
+					<div class="5">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -207,7 +208,7 @@
 						</table>
 					</div>
 					
-					<div class="6" style="display: none;">
+					<div class="6">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -220,7 +221,7 @@
 						</table>
 					</div>
 					
-					<div class="7" style="display: none;">
+					<div class="7">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -233,7 +234,7 @@
 						</table>
 					</div>
 					
-					<div class="8" style="display: none;">
+					<div class="8">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -246,7 +247,7 @@
 						</table>
 					</div>
 					
-					<div class="9" style="display: none;">
+					<div class="9">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -259,7 +260,7 @@
 						</table>
 					</div>
 					
-					<div class="10" style="display: none;">
+					<div class="10">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -272,7 +273,7 @@
 						</table>
 					</div>
 					
-					<div class="11" style="display: none;">
+					<div class="11">
 						<table>
 							<tr>
 								<td width="100">주소</td>
@@ -286,93 +287,95 @@
 					</div>				
 				</div>
 				
+				<div id="no_mean" style="width: 0;height: 0;margin: 0;padding: 0;"></div>
+				
 				<div class="0" id="park_btn">
-					
-						<div class="1" style="display: none;">
+				
+						<div class="1">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="2" style="display: none;">
+						<div class="2">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="3" style="display: none;">
+						<div class="3">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="4" style="display: none;">
+						<div class="4">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="5" style="display: none;">
+						<div class="5">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="6" style="display: none;">
+						<div class="6">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="7" style="display: none;">
+						<div class="7">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="8" style="display: none;">
+						<div class="8">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="9" style="display: none;">
+						<div class="9">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="10" style="display: none;">
+						<div class="10">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
-						<div class="11" style="display: none;">
+						<div class="11">
 					 		<ul>
-								<li id="way" style="float: left;">오시는길</li>
-								<li id="map" style="float: left;">안내지도</li>
-								<li id="bd" style="float: left;">자유 게시판</li>
+								<li id="way" style="float: left;"><button>오시는길</button></li>
+								<li id="map" style="float: left;"><button>안내지도</button></li>
+								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -382,19 +385,19 @@
 				
 			</div>
 
-			<div id="park_icon" style="width:1000; height:80 ">
+			<div id="park_icon">
 				<ul >
-					<li><button><img id="rm1" src="icon/icon1.png" width="60" height="80"></button></li>
-					<li><button><img id="rm2" src="icon/icon2.png" width="60" height="80"></button></li>
-					<li><button><img id="rm3" src="icon/icon3.png" width="60" height="80"></button></li>
-					<li><button><img id="rm4" src="icon/icon4.png" width="60" height="80"></button></li>
-					<li><button><img id="rm5" src="icon/icon5.png" width="60" height="80"></button></li>
-					<li><button><img id="rm6" src="icon/icon6.png" width="60" height="80"></button></li>
-					<li><button><img id="rm7" src="icon/icon7.png" width="60" height="80"></button></li>
-					<li><button><img id="rm8" src="icon/icon8.png" width="60" height="80"></button></li>
-					<li><button><img id="rm9" src="icon/icon9.png" width="60" height="80"></button></li>
-					<li><button><img id="rm10" src="icon/icon10.png" width="60" height="80"></button></li>
-					<li><button><img id="rm11" src="icon/icon11.png" width="60" height="80"></button></li>
+					<li><button><img id="rm1" src="icon/icon1.png" width="57" height="70"></button></li>
+					<li><button><img id="rm2" src="icon/icon2.png" width="57" height="70"></button></li>
+					<li><button><img id="rm3" src="icon/icon3.png" width="57" height="70"></button></li>
+					<li><button><img id="rm4" src="icon/icon4.png" width="57" height="70"></button></li>
+					<li><button><img id="rm5" src="icon/icon5.png" width="57" height="70"></button></li>
+					<li><button><img id="rm6" src="icon/icon6.png" width="57" height="70"></button></li>
+					<li><button><img id="rm7" src="icon/icon7.png" width="57" height="70"></button></li>
+					<li><button><img id="rm8" src="icon/icon8.png" width="57" height="70"></button></li>
+					<li><button><img id="rm9" src="icon/icon9.png" width="57" height="70"></button></li>
+					<li><button><img id="rm10" src="icon/icon10.png" width="57" height="70"></button></li>
+					<li><button><img id="rm11" src="icon/icon11.png" width="57" height="70"></button></li>
 				</ul>
 			</div>
 			
