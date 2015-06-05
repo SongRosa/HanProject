@@ -7,61 +7,86 @@
 <html>
 <head>
 <title>자유게시판 목록</title>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script>
+$(function(){
+	$("#p_number").change(function(){
+		var g_num =  $(":selected").attr("value");
+		window.location="list.do?g="+g_num;
+		
+	});
+});
+</script>
 <script type="text/javascript">
-function preSearch() {
-	if(document.search.search_value.value==""){
-		alert("검색하실 내용을 입력하세요.")
-		document.search.search_value.focus();
-		return false;
+	function preSearch() {
+		if (document.search.search_value.value == "") {
+			alert("검색하실 내용을 입력하세요.")
+			document.search.search_value.focus();
+			return false;
+		}
 	}
-}
-
+	
 </script>
 </head>
 <body>
-<div id="board_tab" align="left">
-<select>
-<option selected="selected" value="0">글 분류</option>
-</select>
-</div>
-<div id="board_table" align="center">
-	<table width="1000">
-		<tr>
-			<td>글번호</td>
-			<td>글제목</td>
-			<td>작성자</td>
-			<td>작성일</td>
-			<td>조회수</td>
-		</tr>
+	<div id="board_tab" align="left">
+		<select id="p_number" name="p_number">
 
-		<c:forEach var="one" items="${list }">
+			<option selected="selected" value="0">글분류</option>
+			<option value="1">강서</option>
+			<option value="2">광나루</option>
+			<option value="3">난지</option>
+			<option value="4">뚝섬</option>
+			<option value="5">망원</option>
+			<option value="6">반포</option>
+			<option value="7">양화</option>
+			<option value="8">여의도</option>
+			<option value="9">이촌</option>
+			<option value="10">잠실</option>
+			<option value="11">잠원</option>
+			<option value="12">자유글</option>
+		</select>
+
+	</div>
+	<div id="board_table" align="center">
+		<table width="1000">
 			<tr>
-				<td>${one.b_number }</td>
-				<td><a href="detail.do?b_number=${one.b_number }">${one.b_subject }</a>&nbsp; [${one.c_count }]</td>
-				<td>${one.b_writer }</td>
-				<td><fmt:formatDate value="${one.b_regdate }" type="date" /></td>
-				<td>${one.b_count }</td>
+				<td>글번호</td>
+				<td>글분류</td>
+				<td>글제목</td>
+				<td>작성자</td>
+				<td>작성일</td>
+				<td>조회수</td>
 			</tr>
-		</c:forEach>
-		
-	</table>
+
+			<c:forEach var="one" items="${list }">
+				<tr>
+					<td>${one.b_number }</td>
+					<td>${one.p_name }</td>
+					<td><a href="detail.do?b_number=${one.b_number }">${one.b_subject }</a>&nbsp;
+						[${one.c_count }]</td>
+					<td>${one.b_writer }</td>
+					<td><fmt:formatDate value="${one.b_regdate }" type="date" /></td>
+					<td>${one.b_count }</td>
+				</tr>
+			</c:forEach>
+
+		</table>
 	</div>
 	<div id="board_write_btn" align="right">
-	<button onclick="window.location='insert.do'">글쓰기</button></div>
-	<br>
-	<div align="center">
-	${paging }
+		<button onclick="window.location='insert.do'">글쓰기</button>
 	</div>
 	<br>
+	<div align="center">${paging }</div>
+	<br>
 	<div id="board_searchbar" align="center">
-	<form name="search" onsubmit=" return preSearch();" method="post" >
-		<select name="search_option">
-			<option selected="selected" value="sub">제목</option>
-			<option value="wri">작성자</option>
-		</select> 
-		<input maxlength="15" name="search_value" />
-		<input type="submit" value="검색">
-	</form>
+		<form name="search" onsubmit=" return preSearch();" method="post">
+			<select name="search_option">
+				<option selected="selected" value="sub">제목</option>
+				<option value="wri">작성자</option>
+			</select> <input maxlength="15" name="search_value" /> <input type="submit"
+				value="검색">
+		</form>
 	</div>
 </body>
 </html>

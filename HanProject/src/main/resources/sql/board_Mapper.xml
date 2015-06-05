@@ -5,27 +5,96 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="board">
 
-    <select id="selectList" resultType="spring.command.BoardListCommand" >
-        select b_number,b_subject,b_writer,b_regdate,
-        (select count(*) from comments c where c.b_number=b.b_number) c_count 
-        from board b order by b_number desc
-    </select>
-    
-    <select id="countComment"></select>
-    
-    <select id="search_subject" parameterType="string" resultType="spring.command.BoardCommand">
-        select * from board where b_subject like '%'||#{string}||'%'
-    </select>
-    
-    <select id="search_writer" parameterType="string" resultType="spring.command.BoardCommand">
-        select * from board where b_writer like '%'||#{string}||'%'
-    </select>
-    
-    <select id="selectOne" parameterType="int" resultType="spring.command.BoardCommand">
-		select * from board where b_number=#{int}        
-    </select>
-    
-    
-    
-    
+	<select id="selectList" resultType="spring.command.BoardCommand">
+		select b_number,b_subject,b_writer,b_regdate,b_count,
+		(select count(*) from comments c where c.b_number=b.b_number) c_count,
+		(select p_name from park p where p.p_number = b.p_number) p_name
+		from board b
+		order by b_number desc
+	</select>
+	
+	<select id="grouping_selectList" parameterType="string" resultType="spring.command.BoardCommand">
+	    select b_number,b_subject,b_writer,b_regdate,b_count,
+		(select count(*) from comments c where c.b_number=b.b_number) c_count,
+		(select p_name from park p where p.p_number = b.p_number) p_name
+		from board b 
+		where p_number=#{grouping}
+		order by b_number desc
+	</select>
+
+
+	<select id="search_subject" parameterType="string"
+		resultType="spring.command.BoardCommand">
+		select b_number,b_subject,b_writer,b_regdate,b_count,
+		(select count(*) from comments c where c.b_number=b.b_number) c_count,
+		(select p_name from park p where p.p_number = b.p_number) p_name
+		from board b
+		where b_subject like '%'||#{string}||'%'
+		order by b_number desc
+	</select>
+
+	<select id="grouping_search_subject" parameterType="spring.command.BoardGroupingCommand"
+		resultType="spring.command.BoardCommand">
+		select b_number,b_subject,b_writer,b_regdate,b_count,
+		(select count(*) from comments c where c.b_number=b.b_number) c_count,
+		(select p_name from park p where p.p_number = b.p_number) p_name
+		from board b where b_subject like '%'||#{keyword}||'%'
+		where p_number=#{grouping}
+		order by b_number desc
+	</select>
+
+	<select id="search_writer" parameterType="string"
+		resultType="spring.command.BoardCommand">
+		select b_number,b_subject,b_writer,b_regdate,b_count,
+		(select count(*) from comments c where c.b_number=b.b_number) c_count,
+		(select p_name from park p where p.p_number = b.p_number) p_name
+		from board where b_writer like '%'||#{string}||'%'
+		order by b_number desc
+	</select>
+	
+	<select id="grouping_search_writer" parameterType="spring.command.BoardGroupingCommand"
+		resultType="spring.command.BoardCommand">
+		select b_number,b_subject,b_writer,b_regdate,b_count,
+		(select count(*) from comments c where c.b_number=b.b_number) c_count,
+		(select p_name from park p where p.p_number = b.p_number) p_name
+		from board where b_writer like '%'||#{keyword}||'%'
+		where p_number=#{grouping}
+		order by b_number desc
+	    
+	</select>
+	
+
+	<select id="selectOne" parameterType="int"
+		resultType="spring.command.BoardCommand">
+		select
+		b_number,b_subject,b_writer,b_regdate,b_count,p_number,b_content,
+		(select count(*) from comments c where c.b_number=b.b_number) c_count,
+		(select p_name from park p where p.p_number = b.p_number) p_name
+		from
+		board b where b_number=#{int}
+	</select>
+
+	<update id="update_b_count" parameterType="int">
+		update board set b_count=b_count+1 where b_number=#{int}
+	</update>
+
+	<insert id="insertOne" parameterType="spring.command.BoardCommand">
+		insert into board (b_number,b_subject,b_writer,b_regdate,b_content,p_number)
+		values(seq_b_number.NEXTVAL, #{b_subject},
+		#{b_writer},sysdate,#{b_content},#{p_number})
+	</insert>
+
+	<update id="updateOne" parameterType="spring.command.BoardCommand">
+		update board
+		set b_subject=#{b_subject},b_writer=#{b_writer}, b_content=#{b_content},
+		p_number=#{p_number}
+		where b_number=#{b_number}
+	</update>
+
+	<delete id="deleteOne" parameterType="int">
+		delete from board where b_number=#{int}
+	</delete>
+
+
+
 </mapper>

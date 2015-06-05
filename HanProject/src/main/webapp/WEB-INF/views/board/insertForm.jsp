@@ -28,7 +28,7 @@ function checkBlank(){
 					<td>제목</td>
 					<td>
 					<select name="p_number">
-					<option selected="selected" value="0">자유글</option>
+					<option selected="selected" value="12">자유글</option>
 					<option value="1">강서</option>
 					<option value="2">광나루</option>
 					<option value="3">난지</option>

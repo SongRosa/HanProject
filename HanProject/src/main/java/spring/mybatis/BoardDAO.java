@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import spring.command.BoardCommand;
-import spring.command.BoardListCommand;
+import spring.command.BoardGroupingCommand;
 
 @Component
 public class BoardDAO extends SqlSessionDaoSupport {
@@ -20,20 +20,38 @@ public class BoardDAO extends SqlSessionDaoSupport {
 		this.sqlSession = sqlSession;
 	}
 
-	public List<BoardListCommand> board_selectList(){
-		List<BoardListCommand> list = getSqlSession().selectList("board.selectList"); 
+	public List<BoardCommand> board_selectList(){
+		List<BoardCommand> list = getSqlSession().selectList("board.selectList"); 
 		
 		return list;
 	}
 	
-	public List<BoardListCommand> board_search_subject(String str){
-		List<BoardListCommand> list = getSqlSession().selectList("board.search_subject", str);
+	public List<BoardCommand> board_grouping_selectList(String g){
+		List<BoardCommand> list = getSqlSession().selectList("board.grouping_selectList", g);
+		return list;
+	}
+	
+	public List<BoardCommand> board_search_subject(String str){
+		List<BoardCommand> list = getSqlSession().selectList("board.search_subject", str);
 		
 		return list;
 	}
 	
-	public List<BoardListCommand> board_search_writer(String str){
-		List<BoardListCommand> list = getSqlSession().selectList("board.search_writer", str);
+	public List<BoardCommand> board_grouping_search_subject(BoardGroupingCommand bgc){
+		List<BoardCommand> list = getSqlSession().selectList("board.grouping_search_subject", bgc);
+		
+		return list;
+	}
+	
+	
+	public List<BoardCommand> board_search_writer(String str){
+		List<BoardCommand> list = getSqlSession().selectList("board.search_writer", str);
+		
+		return list;
+	}
+	
+	public List<BoardCommand> board_grouping_search_writer(BoardGroupingCommand bgc){
+		List<BoardCommand> list = getSqlSession().selectList("board.grouping_search_writer", bgc);
 		
 		return list;
 	}
@@ -51,6 +69,11 @@ public class BoardDAO extends SqlSessionDaoSupport {
 	
 	public int insertOne(BoardCommand bc){
 		int i = getSqlSession().insert("board.insertOne", bc);
+		return i;
+	}
+	
+	public int updateOne(BoardCommand bc){
+		int i = getSqlSession().update("board.updateOne", bc);
 		return i;
 	}
 	
