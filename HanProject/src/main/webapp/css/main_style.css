@@ -1,0 +1,80 @@
+#container{
+		width: 1000;
+		height: 500;
+		margin: auto;
+	}
+	#home{
+		width: 1000;
+		height: 500;
+		border: 1px solid;
+	}
+	#main_picture{
+		width: 980;
+		height: 380;
+		display: block;
+		margin: auto;
+		margin-top: 10;
+	}
+	#park_container{
+		width: 950;
+		height: 380;
+		display: none;
+		margin: auto;
+		margin-top: 10;
+/* 		background-image: url('icon/book.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		 */
+	}
+	#park_picture{
+		width: 450;
+		height: 380;
+		margin-right: 15;
+		float: left;
+	}
+	#park_introduce{
+		width: 480;
+		height: 380;
+		float: left;
+		border:green 1px solid;
+	}
+	#park_name{
+		width:50;
+		height:80;
+		margin: auto;
+	}
+	#park_info{
+		width:480;
+		height:150;
+		margin: auto;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	#park_info div{
+		display: none;
+	}
+	#park_btn{
+		width:480;
+		height:100;
+		margin: auto;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	#park_name div{
+		display: none;
+	}
+	#park_btn li{
+		margin-right: 10;
+	}
+	#park_btn div{
+		display: none;
+	}
+	#park_icon{
+		height: 80;
+		margin: auto;
+		
+	}
+	#park_icon li{
+		float: left;
+		margin-right: 12;
+	}

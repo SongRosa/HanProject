@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=euc-kr" %>
 <%@ page trimDirectiveWhitespaces="true" %>
-<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %> 
-<html lang="ko">
+<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
+<html>
 <style>
 	a:link, a:visited, a:active{
 		text-decoration:none;
@@ -19,10 +19,16 @@
 		border-style: solid;
 		border: 2dp;
 	}
+	#clear{
+		clear: both;
+	}
+	
 </style>
 <head>
-	<title>han</title>
+<title>han</title>
 </head>
+
+
 	<decorator:head />
 	<div id="header" align="right">
 		<a href="">로그인  </a> &nbsp;
@@ -35,14 +41,14 @@
 
 <body>
 	<div id = "logo" align = "center">	
-		<img width="150px" height = "80px" alt="로고 위치" src="/HanProject/photo/templogo.png">
+		<a href="test.do"><img width="150px" height = "80px" alt="로고 위치" src="/HanProject/photo/templogo.png"></a>
 	</div>
 	<hr/>
-	<div id = "content">
-	
-	</div>
 	<decorator:body />
-	<hr/>
+	
+	<div id="content"></div>
+	
+	<hr id="clear"/>
 	<div id="footer" align="center">
 		회사이름 : Kosmo <br>
 		(153-759) 서울특별시 금천구 가산동 월드메르디앙 2차 4층<br>
