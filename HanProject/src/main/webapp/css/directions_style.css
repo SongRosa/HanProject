@@ -76,3 +76,16 @@ tr#table_header{
 td{
 	text-align: center;
 }
+
+label{
+	color:navy;
+	font-size: 15px;
+	font-family: 'Nanum Gothic', sans-serif;
+	margin-right: 10px;
+}
+
+select {
+	width: 150px;
+	font-size: 15px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
