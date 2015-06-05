@@ -24,7 +24,7 @@ function openDeleteForm(b_number) {
 <td align="left" colspan="5">${detail.b_subject }</td>
 </tr>
 <tr>
-<td align="center" colspan="6">${detail.b_content }</td>
+<td align="center" colspan="6"> &lt;${detail.p_name}&gt; ${detail.b_content }</td>
 </tr>
 <tr>
 <td colspan="6" align="right">
