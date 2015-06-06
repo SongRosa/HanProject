@@ -56,8 +56,9 @@ public class BoardController {
 
 			list = list.subList(ps.getStartCount(), lastCount);
 		} else {
+			
 			list = dao.board_grouping_selectList(g);
-			System.out.println("dao.selectAll");
+			System.out.println("dao.selectGroupingAll");
 
 			int totalCount = list.size();
 			int currentPage = Integer.parseInt(p);
@@ -126,17 +127,17 @@ public class BoardController {
 			if (search_option.equals("sub")) {
 
 				list = dao.board_grouping_search_subject(bgc);
-				System.out.println("dao.sear.sub");
+				System.out.println("dao.g.sear.sub");
 
 			} else if (search_option.equals("wri")) {
 
 				list = dao.board_grouping_search_writer(bgc);
-				System.out.println("dao.sear.wri");
+				System.out.println("dao.g.sear.wri");
 
 			} else {
 
 				list = dao.board_grouping_selectList(g);
-				System.out.println("dao.selectAll");
+				System.out.println("dao.g.selectAll");
 			}
 			int totalCount = list.size();
 			int currentPage = Integer.parseInt(p);
