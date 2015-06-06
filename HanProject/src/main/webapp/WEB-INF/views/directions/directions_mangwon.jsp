@@ -4,29 +4,26 @@
 <head>
 <title>오시는 길 안내 페이지</title>
 <link href="css/directions_style.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="js/goAnotherPage.js"></script>
 </head>
-<script type="text/javascript">
-	$(function(){
-		$("#pageName").change(function(){
-		})
-	}) 
-</script>
+
 <body>
 	<div id ="view_top">
 		<div align="right">
 			<label> 다른 공원 가기</label>			
-			<select id="pageName" name="pageName" onchange="return goURL()">
-				<option label="강서" value="javascript:window.location='directionPage.do?parkNum=1'">강서 한강공원</option>
-				<option label="광나루" onchange="javascript:window.location='directionPage.do?parkNum=2'">광나루 한강공원</option>
-				<option label="난지">난지 한강공원</option>
-				<option label="뚝섬">뚝섬 한강공원</option>
-				<option label="망원" selected="selected">망원 한강공원</option>
-				<option label="반포">반포 한강공원</option>
-				<option label="양화">양화 한강공원</option>
-				<option label="여의도">여의도 한강공원</option>
-				<option label="이촌">이촌 한강공원</option>
-				<option label="잠실">잠실 한강공원</option>
-				<option label="잠원">잠원 한강공원</option>
+			<select id="pageName" name="pageName">
+				<option label="강서" value="1">강서 한강공원</option>
+				<option label="광나루" value="2">광나루 한강공원</option>
+				<option label="난지"  value="3">난지 한강공원</option>
+				<option label="뚝섬"  value="4">뚝섬 한강공원</option>
+				<option label="망원" value="5" selected="selected">망원 한강공원</option>
+				<option label="반포" value="6">반포 한강공원</option>
+				<option label="양화" value="7">양화 한강공원</option>
+				<option label="여의도" value="8">여의도 한강공원</option>
+				<option label="이촌" value="9">이촌 한강공원</option>
+				<option label="잠실" value="10">잠실 한강공원</option>
+				<option label="잠원" value="11">잠원 한강공원</option>
 			</select>
 		</div>
 		<p id="direction_txt">오시는 길</p>	
