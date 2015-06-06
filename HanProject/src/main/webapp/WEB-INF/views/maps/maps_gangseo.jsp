@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<link href="css/maps_style.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript" src="js/goAnotherPage.js"></script>
 </head>
@@ -12,7 +13,7 @@
 <div id ="view_top">
 		<div align="right">
 			<label> 다른 공원 가기</label>			
-			<select id="pageName" name="pageName">
+			<select id="map_pageName" name="pageName">
 				<option label="강서" value="1" selected="selected">강서 한강공원</option>
 				<option label="광나루" value="2">광나루 한강공원</option>
 				<option label="난지"  value="3">난지 한강공원</option>
@@ -27,6 +28,25 @@
 			</select>
 		</div>
 		<p id="direction_txt">공원 안내지도</p>	
+	</div>
+	
+	<div id="view_content">
+		<div id="view_maps">
+			
+		</div>
+		
+		<div id="view_btn" align="center">
+			<button id="information"><img id="mapicons" src="mapIcons/information.png"></img></button>
+			<button id="park_bicycle"><img id="mapicons" src="mapIcons/park_bicycle.png"></button>
+			<button id="lend_bicycle"><img id="mapicons" src="mapIcons/lend_bicycle.png" ></button>
+			<button id="drink_water"><img id="mapicons" src="mapIcons/drink_water.png" ></button>
+			<button id="policestation"><img id="mapicons" src="mapIcons/policestation.png"></button>
+		</div>
+	
+	</div>
+	
+	<div id="view_bottom">
+	
 	</div>
 </body>
 </html>
