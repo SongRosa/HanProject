@@ -58,7 +58,7 @@ li#header{
 
 table{
 	border-width:2px;
-	border-color: gray;
+	border-color: #323c73;
 	border-style: solid;	
 	
 	width: 850px;
@@ -67,7 +67,7 @@ table{
 	margin-bottom: 30px;
 }
 tr{
-	height:50px;
+	height:60px;
 }
 tr#table_header{
 	background-color: #C8D7FF ;
