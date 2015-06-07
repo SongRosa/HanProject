@@ -41,7 +41,7 @@
 
 <body>
 	<div id = "logo" align = "center">	
-		<a href="test.do"><img width="150px" height = "80px" alt="로고 위치" src="/HanProject/photo/templogo.png"></a>
+		<a href="/HanProject/test.do"><img width="150px" height = "80px" alt="로고 위치" src="/HanProject/photo/templogo.png"></a>
 	</div>
 	<hr/>
 	<decorator:body />
