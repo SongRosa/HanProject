@@ -48,3 +48,12 @@ select {
 	font-size: 15px;
 	font-family: 'Nanum Gothic', sans-serif;
 }
+
+button#go_direction, button#go_board{
+	width: 150px;	
+	height:25px;
+	font-size: 15px;
+	font-family: 'Nanum Gothic', sans-serif;
+	
+	margin-top: 5px;
+}

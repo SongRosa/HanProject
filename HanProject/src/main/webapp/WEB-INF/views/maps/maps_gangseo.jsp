@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,6 +26,10 @@
 				<option label="잠실" value="10">잠실 한강공원</option>
 				<option label="잠원" value="11">잠원 한강공원</option>
 			</select>
+		</div>
+		<div align="right">			
+			<button id="go_direction" value=${parkNum}> 오시는길가기 </button><br>
+			<button id="go_board" value=${parkNum}> 자유게시판가기 </button><br>
 		</div>
 		<p id="direction_txt">공원 안내지도</p>	
 	</div>
