@@ -30,7 +30,7 @@
 			b+=c;
 			
 			if(b==(c*2)) {
-				display(i);
+				//display(i);
 				b-=c;
 			} else {
 				b=0;
@@ -45,8 +45,12 @@
 		
 		$("#close").click(function(){
 			a=0;
-			$("#main_picture").css("display", "block");
-			$("#park_container").css("display", "none"); 
+			$("#park_container").fadeOut(300,function(){
+				$("#main_picture").fadeIn(300);
+			});
+			
+			
+			//$("#park_container").css("display", "none"); 
 		});
 	});
 </script>
@@ -63,33 +67,36 @@
 			<div id="park_container">
 			
 				<div id="park_picture">
-					<img id="park_img" src="" width="450" height="380">
+					<img id="park_img" src="" width="500" height="380">
 				</div>
 				
 				<div id="park_introduce">
-					<div align="right"><button id="close" >X</button></div>	
+				
+					<div align="right" ><button id="close">X</button></div>
 					
 					<div class="0" id="park_name" align="center" style="width: 200">
-						<div class="1">강서</div>
-						<div class="2">광나루</div>
-						<div class="3">난지</div>
-						<div class="4">뚝섬</div>
-						<div class="5">망원</div>
-						<div class="6">반포</div>
-						<div class="7">양화</div>
-						<div class="8">여의도</div>
-						<div class="9">이촌</div>
-						<div class="10">잠실</div>
-						<div class="11">잠원</div>
-						
+						<div class="1"><img src="park_name/name1.png" width="200" height="70"></div>
+						<div class="2"><img src="park_name/name2.png" width="200" height="70"></div>
+						<div class="3"><img src="park_name/name3.png" width="200" height="70"></div>
+						<div class="4"><img src="park_name/name4.png" width="200" height="70"></div>
+						<div class="5"><img src="park_name/name5.png" width="200" height="70"></div>
+						<div class="6"><img src="park_name/name6.png" width="200" height="70"></div>
+						<div class="7"><img src="park_name/name7.png" width="200" height="70"></div>
+						<div class="8"><img src="park_name/name8.png" width="200" height="70"></div>
+						<div class="9"><img src="park_name/name9.png" width="200" height="70"></div>
+						<div class="10"><img src="park_name/name10.png" width="200" height="70"></div>
+						<div class="11"><img src="park_name/name11.png" width="200" height="70"></div>
 					</div>
+					
+					
+					
 					<div class="0" id="park_info">
 					
 					<div class="1">
 				 		<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 강서구 양천로27길 279-23 (방화동 47)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 강서구 양천로27길 <br/>279-23 (방화동 47)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -101,8 +108,8 @@
 					<div class="2">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 강동구 선사로83-66 (암사동 637-6)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 강동구 선사로 <br/>83-66 (암사동 637-6)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -114,8 +121,8 @@
 					<div class="3">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 마포구 한강난지로 162 (상암동 487-116)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 마포구 한강난지로 <br/>162 (상암동 487-116)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -127,8 +134,8 @@
 					<div class="4">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 광진구 강변북로 139 (자양동 704-1)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 광진구 강변북로 <br/>139 (자양동 704-1)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -140,8 +147,8 @@
 					<div class="5">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 마포구 마포나루길 467 (망원동 205-4)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 마포구 마포나루길 <br/>467 (망원동 205-4)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -153,8 +160,8 @@
 					<div class="6">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 서초구 신반포로11길 40 (반포동 115-5)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 서초구 신반포로11길 <br/>40 (반포동 115-5)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -166,8 +173,8 @@
 					<div class="7">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 영등포구 노들로 221(당산동 98-1)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 영등포구 노들로 <br/>221(당산동 98-1)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -179,8 +186,8 @@
 					<div class="8">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 영등포구 여의동로 330 (여의도동 8)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 영등포구 여의동로 <br/>330 (여의도동 8)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -192,8 +199,8 @@
 					<div class="9">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 용산구 이촌로72길 62 (이촌동 302-17)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 용산구 이촌로72길 <br/>62 (이촌동 302-17)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -205,8 +212,8 @@
 					<div class="10">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 송파구 한가람로65 (잠실동1-1)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 송파구 한가람로 <br/>65 (잠실동1-1)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -218,8 +225,8 @@
 					<div class="11">
 						<table>
 							<tr>
-								<td width="100">주소</td>
-								<td width="320">서울시 서초구 잠원로 221-124 (잠원동 121)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 서초구 잠원로 <br/>221-124 (잠원동 121)</td>
 							</tr>
 							<tr>
 								<td>전화번호</td>
@@ -342,8 +349,16 @@
 					<li><button value="11"><img id="rm11" src="icon/icon11.png" width="57" height="70"></button></li>
 				</ul>
 			</div>
-			
-			
+		</div>
+	</div>
+	
+	<div style="margin: auto; margin-top:20; margin-bottom:20; width: 1000; height: 300;">
+		<div id="weather" style="display:inline-block; width: 390; height: 300; border: 1px black solid; margin-right: 10;">
+			날씨
+		</div>
+		
+		<div id="notify" style="display:inline-block; width: 590;height: 300; border: 1px black solid;">
+			공지사항
 		</div>
 	</div>
 </body>
