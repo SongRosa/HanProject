@@ -10,11 +10,20 @@
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 $(function(){
+	
+	var number = ${param.parkNum}
+	
+	if(number!=0){
+		$("option:first").removeAttr("selected");
+		$("option:nth-child(${param.parkNum+1})").attr("selected","selected");
+	}
 
 	$("#p_number").change(function(){
-		var parkNum =  $(":selected").attr("value");
-		window.location="board_list.do?parkNum="+parkNum;
+		var g_num =  $(":selected").attr("value");
+		window.location="board_list.do?parkNum="+g_num;
 	});
+	
+	
 	
 });
 </script>
@@ -32,7 +41,6 @@ $(function(){
 <body>
 	<div id="board_tab" align="left">
 		<select id="p_number" name="p_number">
-
 			<option id="p_number0" selected="selected" value="0">글분류</option>
 			<option id="p_number1" value="1">강서</option>
 			<option id="p_number2" value="2">광나루</option>

@@ -61,8 +61,9 @@ function checkBlank(){
 					<td colspan="4"><textarea name="b_content" rows="15" cols="100" >${detail.b_content }</textarea>
 			</table>
 			<div id="board_btnGroup" align="right">
-				<input type="submit" value="글쓰기" /> <input type="reset" value="초기화" />
-				<input type="button" value="목록" onclick="window.location='board_list.do'" />
+				<input type="submit" value="글쓰기" />
+				<input type="reset" value="초기화" />
+				<input type="button" value="취소" onclick="javascript:history.go(-1)" />
 			</div>
 		</form>
 

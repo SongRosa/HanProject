@@ -48,7 +48,7 @@ function checkBlank(){
 			</table>
 			<div id="board_btnGroup" align="right">
 				<input type="submit" value="글쓰기" /> <input type="reset" value="초기화" />
-				<input type="button" value="목록" onclick="window.location='board_list.do'" />
+				<input type="button" value="목록" onclick="window.location='board_list.do?parkNum=0'" />
 			</div>
 		</form>
 

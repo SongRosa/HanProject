@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import spring.command.BoardCommand;
 import spring.command.BoardGroupingCommand;
+import spring.command.CommentsCommand;
 
 @Component
 public class BoardDAO extends SqlSessionDaoSupport {
@@ -79,6 +80,31 @@ public class BoardDAO extends SqlSessionDaoSupport {
 	
 	public int deleteOne(int i){
 		int j = getSqlSession().delete("board.deleteOne", i);
+		return j;
+	}
+	
+	public List<CommentsCommand> selectCommentsList(int i){
+		List<CommentsCommand> list = getSqlSession().selectList("board.selectCommentsList", i);
+		return list;
+	}
+	
+	public int insertComments(CommentsCommand cc){
+		int i = getSqlSession().insert("board.insertComments", cc);
+		return i;
+	}
+	
+	public int deleteComments(CommentsCommand cc){
+		int i = getSqlSession().delete("board.deleteComments", cc);
+		return i;
+	}
+	
+	public int countComments(int i){
+		int j = getSqlSession().selectOne("board.countComments", i);
+		return j;
+	}
+	
+	public int delteAllComments(int i){
+		int j = getSqlSession().delete("board.deleteAllComments", i);
 		return j;
 	}
 
