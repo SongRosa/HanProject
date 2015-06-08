@@ -5,104 +5,46 @@
 <head>
 <link href="css/main_style.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script type="text/javascript">
 
 	$(function(){
-		$("#park_icon button").click(function(){
+		var a=0;
+		var b=0;
+		
+		function display(i){
 			$("#main_picture").css("display", "none");
-			$("#park_container").css("display", "block"); 
-		});
-		
-		$("#rm1").click(function(){
-			$("#park_img").attr("src", "river_picture/°­¼­1.jpg");
 			$("#park_name div").css("display", "none");
 			$("#park_info div").css("display", "none");
 			$("#park_btn div").css("display", "none");
-			$(".1").css("display", "block");
-		});
+			
+			$("#park_container").show("clip");
+			$('.'+i).css("display", "block");
+			$("#park_img").attr("src", "river_picture/river"+i+".jpg");
+		}
 		
-		$("#rm2").click(function(){
-			$("#park_img").attr("src", "river_picture/±¤³ª·ç1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".2").css("display", "block");
+		$("#park_icon button").click(function(){
+			a=1;
+			var i = $(this).val();
+			c=Number(i);
+			b+=c;
+			
+			if(b==(c*2)) {
+				display(i);
+				b-=c;
+			} else {
+				b=0;
+				b+=c;
+				
+				if(a==1) {
+					$("#park_container").css("display", "none");
+					display(i);
+				}
+			}
 		});
-		
-		$("#rm3").click(function(){
-			$("#park_img").attr("src", "river_picture/³­Áö1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".3").css("display", "block");
-		});
-		
-		$("#rm4").click(function(){
-			$("#park_img").attr("src", "river_picture/¶Ò¼¶1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".4").css("display", "block");
-		});
-		
-		$("#rm5").click(function(){
-			$("#park_img").attr("src", "river_picture/¸Á¿ø1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".5").css("display", "block");
-		});
-		
-		$("#rm6").click(function(){
-			$("#park_img").attr("src", "river_picture/¹ÝÆ÷1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".6").css("display", "block");
-		});
-		
-		$("#rm7").click(function(){
-			$("#park_img").attr("src", "river_picture/¾çÈ­1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".7").css("display", "block");
-		});
-		
-		$("#rm8").click(function(){
-			$("#park_img").attr("src", "river_picture/¿©ÀÇµµ1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".8").css("display", "block");
-		});
-		
-		$("#rm9").click(function(){
-			$("#park_img").attr("src", "river_picture/ÀÌÃÌ1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".9").css("display", "block");
-		});
-		
-		$("#rm10").click(function(){
-			$("#park_img").attr("src", "river_picture/Àá½Ç1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".10").css("display", "block");
-		});
-		
-		$("#rm11").click(function(){
-			$("#park_img").attr("src", "river_picture/Àá¿ø1.jpg");
-			$("#park_name div").css("display", "none");
-			$("#park_info div").css("display", "none");
-			$("#park_btn div").css("display", "none");
-			$(".11").css("display", "block");
-		});
-		
 		
 		$("#close").click(function(){
+			a=0;
 			$("#main_picture").css("display", "block");
 			$("#park_container").css("display", "none"); 
 		});
@@ -387,17 +329,17 @@
 
 			<div id="park_icon">
 				<ul >
-					<li><button><img id="rm1" src="icon/icon1.png" width="57" height="70"></button></li>
-					<li><button><img id="rm2" src="icon/icon2.png" width="57" height="70"></button></li>
-					<li><button><img id="rm3" src="icon/icon3.png" width="57" height="70"></button></li>
-					<li><button><img id="rm4" src="icon/icon4.png" width="57" height="70"></button></li>
-					<li><button><img id="rm5" src="icon/icon5.png" width="57" height="70"></button></li>
-					<li><button><img id="rm6" src="icon/icon6.png" width="57" height="70"></button></li>
-					<li><button><img id="rm7" src="icon/icon7.png" width="57" height="70"></button></li>
-					<li><button><img id="rm8" src="icon/icon8.png" width="57" height="70"></button></li>
-					<li><button><img id="rm9" src="icon/icon9.png" width="57" height="70"></button></li>
-					<li><button><img id="rm10" src="icon/icon10.png" width="57" height="70"></button></li>
-					<li><button><img id="rm11" src="icon/icon11.png" width="57" height="70"></button></li>
+					<li><button value="1"><img id="rm1" src="icon/icon1.png" width="57" height="70"></button></li>
+					<li><button value="2"><img id="rm2" src="icon/icon2.png" width="57" height="70"></button></li>
+					<li><button value="3"><img id="rm3" src="icon/icon3.png" width="57" height="70"></button></li>
+					<li><button value="4"><img id="rm4" src="icon/icon4.png" width="57" height="70"></button></li>
+					<li><button value="5"><img id="rm5" src="icon/icon5.png" width="57" height="70"></button></li>
+					<li><button value="6"><img id="rm6" src="icon/icon6.png" width="57" height="70"></button></li>
+					<li><button value="7"><img id="rm7" src="icon/icon7.png" width="57" height="70"></button></li>
+					<li><button value="8"><img id="rm8" src="icon/icon8.png" width="57" height="70"></button></li>
+					<li><button value="9"><img id="rm9" src="icon/icon9.png" width="57" height="70"></button></li>
+					<li><button value="10"><img id="rm10" src="icon/icon10.png" width="57" height="70"></button></li>
+					<li><button value="11"><img id="rm11" src="icon/icon11.png" width="57" height="70"></button></li>
 				</ul>
 			</div>
 			
