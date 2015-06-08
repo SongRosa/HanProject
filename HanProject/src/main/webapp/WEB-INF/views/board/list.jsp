@@ -12,8 +12,8 @@
 $(function(){
 
 	$("#p_number").change(function(){
-		var g_num =  $(":selected").attr("value");
-		window.location="board_list.do?g="+g_num;
+		var parkNum =  $(":selected").attr("value");
+		window.location="board_list.do?parkNum="+parkNum;
 	});
 	
 });
