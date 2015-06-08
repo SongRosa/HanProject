@@ -9,8 +9,8 @@
 <br><a href="directionPage.do?parkNum=1">directionPage</a>
 <br><a href="mapPage.do?parkNum=1">mapPage</a>
 <br>
-<a href="join/input.do">회원가입</a><br>
-<a href="log/loginForm.do">로그인</a><br>
+<a href="join_input.do">회원가입</a><br>
+<a href="log_loginForm.do">로그인</a><br>
 </body>
 </html>
  

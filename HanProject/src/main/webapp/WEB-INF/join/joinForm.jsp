@@ -152,7 +152,7 @@
 				<td colspan="2" align="center"><input type="submit"
 					name="confirm" value="등   록"> 
 					<input type="reset"	name="reset" value="다시입력"> 
-					<input type="button" value="취소" 	onclick="javascript:window.location='/HanProject/log/loginForm.do'">
+					<input type="button" value="취소" 	onclick="javascript:window.location='/HanProject/log_loginForm.do'">
 				</td>
 			</tr>
 		</table>

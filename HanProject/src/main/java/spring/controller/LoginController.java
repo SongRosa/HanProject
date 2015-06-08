@@ -20,12 +20,12 @@ public class LoginController {
 		this.dao = dao;
 	}
 
-	@RequestMapping(value = "log/loginForm.do")
+	@RequestMapping(value = "log_loginForm.do")
 	public String login() {
 		return "log/loginForm";
 	}
 
-	@RequestMapping(value = "log/login.do")
+	@RequestMapping(value = "log_login.do")
 	public String login(UserInfo useri, Model model, HttpSession session) {
 		int x = dao.isId(useri);
 		if (x == 1) {
@@ -36,7 +36,7 @@ public class LoginController {
 		}
 	}
 
-	@RequestMapping(value = "log/logout.do")
+	@RequestMapping(value = "log_logout.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "log/loginForm";

@@ -5,7 +5,7 @@
 <title>로그인</title>
 </head>
 <body>
-<form name="myform" action="/HanProject/log/login.do" method="post">
+<form name="myform" action="/HanProject/log_login.do" method="post">
 	<table cellspacing=1 cellpadding=1 border=1 align="center">
 		<tr height="30">
 			<td colspan="3" align="middle"><strong>회원로그인</strong>	</td>
@@ -33,7 +33,7 @@
 			<td colspan="3" align="middle">
 				<input type=submit value="ID 찾기">
 				<input type=reset value="비밀번호 찾기">
-				<input type="button" value="회원가입" onclick="javascript:window.location='/HanProject/join/input.do'">
+				<input type="button" value="회원가입" onclick="javascript:window.location='/HanProject/join_input.do'">
 			</td>
 	
 		</tr>

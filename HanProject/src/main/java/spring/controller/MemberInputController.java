@@ -33,13 +33,13 @@ public class MemberInputController {
 		this.zipdao = zipdao;
 	}
 
-	@RequestMapping(value = "join/input.do")
+	@RequestMapping(value = "join_input.do")
 	public String memberInput(@ModelAttribute("join") UserInfo useri) {
 		return "join/joinForm";
 	}
 
 	
-	@RequestMapping(value = "join/memsub.do", method = RequestMethod.POST)
+	@RequestMapping(value = "join_memsub.do", method = RequestMethod.POST)
 	public String memSub(@ModelAttribute("join") UserInfo useri,
 			BindingResult result) {
 		useri.setEmail(useri.getEmail1()+"@"+useri.getEmail2());
@@ -52,19 +52,19 @@ public class MemberInputController {
 		return "log/loginForm";
 	}
 
-	@RequestMapping(value = "join/zipCheck.do")
+	@RequestMapping(value = "join_zipCheck.do")
 	public String zipCheck() {
 		return "join/zipCheck";
 	}
 
-	@RequestMapping(value = "join/dongseach.do", method = RequestMethod.POST)
+	@RequestMapping(value = "join_dongseach.do", method = RequestMethod.POST)
 	public String dongSearch(ZipInfo dong, Model model) {
 		List<ZipInfo> zip = zipdao.selectzip(dong.getDong());
 		model.addAttribute("zip", zip);
 		return "join/zipCheck";
 	}
 	
-	@RequestMapping(value = "join/idCheck.do")
+	@RequestMapping(value = "join_idCheck.do")
 	public String IdCheck(String id,Model model) {
 		if(id==""){
 			int x=1;
@@ -83,7 +83,7 @@ public class MemberInputController {
 		}
 	}
 		
-	@RequestMapping(value = "join/nickCheck.do")
+	@RequestMapping(value = "join_nickCheck.do")
 	public String NickCheck(String nick,Model model) {
 		if(nick==""){
 			int x=1;
@@ -102,7 +102,7 @@ public class MemberInputController {
 		}
 	}
 	
-	@RequestMapping(value = "join/emailCheck.do")
+	@RequestMapping(value = "join_emailCheck.do")
 	public String EmailCheck(String email,String email1,String email2,Model model) {
 		if(email1=="" || email2==""){
 			int x=1;
