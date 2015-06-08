@@ -5,6 +5,7 @@
 <title>삭제 성공</title>
 <script type="text/javascript">
 function closeDeleteForm() {
+	window.opener.location="board_list.do?parkNum=0";
 	window.close();
 }
 </script>

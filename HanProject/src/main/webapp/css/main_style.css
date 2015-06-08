@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 #container{
 		width: 1000;
 		height: 500;
@@ -13,30 +15,31 @@
 		height: 380;
 		display: block;
 		margin: auto;
-		margin-top: 10;
+		margin-top: 20;
 	}
 	#park_container{
 		width: 950;
 		height: 380;
 		display: none;
 		margin: auto;
-		margin-top: 10;
+		margin-top: 20;
+		position: relative;
 /* 		background-image: url('icon/book.png');
 		background-repeat: no-repeat;
 		background-position: center;
 		 */
 	}
 	#park_picture{
-		width: 450;
+		width: 500;
 		height: 380;
-		margin-right: 15;
+		margin-right: 45;
 		float: left;
 	}
 	#park_introduce{
-		width: 480;
+		width: 400;
 		height: 380;
 		float: left;
-		border:green 1px solid;
+		/* border:green 1px solid; */
 	}
 	#park_name{
 		width:50;
@@ -52,6 +55,21 @@
 	}
 	#park_info div{
 		display: none;
+	}
+	#park_info table{
+		margin-top:30;
+		margin-left: 30;
+	}
+	#park_info tr{
+		height: 50;
+	}
+	#park_info td:first-child{
+		font-size: 20;
+		font-family: 'Nanum Gothic', sans-serif;
+		font-weight: bold;	
+	}
+	#park_info td{
+		font-family: 'Nanum Gothic', sans-serif;
 	}
 	#park_btn{
 		width:480;
