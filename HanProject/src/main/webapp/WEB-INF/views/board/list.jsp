@@ -13,7 +13,7 @@ $(function(){
 
 	$("#p_number").change(function(){
 		var g_num =  $(":selected").attr("value");
-		window.location="list.do?g="+g_num;
+		window.location="board_list.do?g="+g_num;
 	});
 	
 });
@@ -64,7 +64,7 @@ $(function(){
 				<tr>
 					<td>${one.b_number }</td>
 					<td>${one.p_name }</td>
-					<td><a href="detail.do?b_number=${one.b_number }">${one.b_subject }</a>&nbsp;
+					<td><a href="board_detail.do?b_number=${one.b_number }">${one.b_subject }</a>&nbsp;
 						[${one.c_count }]</td>
 					<td>${one.b_writer }</td>
 					<td><fmt:formatDate value="${one.b_regdate }" type="date" /></td>
@@ -75,7 +75,7 @@ $(function(){
 		</table>
 	</div>
 	<div id="board_write_btn" align="right">
-		<button onclick="window.location='insert.do'">글쓰기</button>
+		<button onclick="window.location='board_insert.do'">글쓰기</button>
 	</div>
 	<br>
 	<div align="center">${paging }</div>

@@ -18,7 +18,6 @@ import spring.service.GroupingPagingService;
 import spring.service.PagingService;
 
 @Controller
-@RequestMapping("/board/")
 public class BoardController {
 
 	@Autowired
@@ -31,14 +30,16 @@ public class BoardController {
 	int blockCount = 5;
 	int blockPage = 3;
 
-	@RequestMapping(value = "list.do", method = RequestMethod.GET)
+	
+	/*초기상태의 리스트를 불러오는 메서드*/
+	@RequestMapping(value = "board_list.do", method = RequestMethod.GET)
 	public String list(@RequestParam(value = "p", defaultValue = "1") String p,
-			@RequestParam(value = "g", defaultValue = "0") String g, Model model) {
+			@RequestParam(value = "parkNum", defaultValue = "0") String parkNum, Model model) {
 
-		List<BoardCommand> list;
+		List<BoardCommand> list; 
 		String page;
 
-		if (g.equals("0")) {
+		if (parkNum.equals("0"))/*글분류가 0 일때는 전체글을 불러옴*/ {
 			list = dao.board_selectList();
 
 			int totalCount = list.size();
@@ -55,15 +56,15 @@ public class BoardController {
 			}
 
 			list = list.subList(ps.getStartCount(), lastCount);
-		} else {
+		} else /*글분류가 0이 아닐때는 parkNum에 해당하는 공원 글을 불러옴*/ {
 			
-			list = dao.board_grouping_selectList(g);
+			list = dao.board_grouping_selectList(parkNum);
 			System.out.println("dao.selectGroupingAll");
 
 			int totalCount = list.size();
 			int currentPage = Integer.parseInt(p);
 			GroupingPagingService gps = new GroupingPagingService(currentPage,
-					totalCount, totalCount, currentPage, g);
+					totalCount, totalCount, currentPage, parkNum);
 
 			page = gps.getPagingHtml().toString();
 
@@ -80,11 +81,13 @@ public class BoardController {
 		model.addAttribute("list", list);
 		return "views/board/list";
 	}
-
-	@RequestMapping(value = "list.do", method = RequestMethod.POST)
+	
+	
+	/*검색을 한뒤에 리스트를 불러오는 메서드*/
+	@RequestMapping(value = "board_list.do", method = RequestMethod.POST)
 	public String searchList(
 			@RequestParam(value = "p", defaultValue = "1") String p,
-			@RequestParam(value = "g", defaultValue = "0") String g,
+			@RequestParam(value = "parkNum", defaultValue = "0") String parkNum,
 			HttpServletRequest req, Model model) {
 
 		String search_option = req.getParameter("search_option");
@@ -94,7 +97,7 @@ public class BoardController {
 		BoardGroupingCommand bgc;
 		String page;
 
-		if (g.equals("0")) {
+		if (parkNum.equals("0")) {
 
 			if (search_option.equals("sub")) {
 				list = dao.board_search_subject(search_value);
@@ -122,7 +125,7 @@ public class BoardController {
 			list = list.subList(ps.getStartCount(), lastCount);
 
 		} else {
-			bgc = new BoardGroupingCommand(search_value, g);
+			bgc = new BoardGroupingCommand(search_value, parkNum);
 
 			if (search_option.equals("sub")) {
 
@@ -136,13 +139,13 @@ public class BoardController {
 
 			} else {
 
-				list = dao.board_grouping_selectList(g);
+				list = dao.board_grouping_selectList(parkNum);
 				System.out.println("dao.g.selectAll");
 			}
 			int totalCount = list.size();
 			int currentPage = Integer.parseInt(p);
 			GroupingPagingService gps = new GroupingPagingService(currentPage,
-					totalCount, totalCount, currentPage, g);
+					totalCount, totalCount, currentPage, parkNum);
 
 			page = gps.getPagingHtml().toString();
 
@@ -161,7 +164,8 @@ public class BoardController {
 		return "views/board/list";
 	}
 
-	@RequestMapping("detail.do")
+	/*글의 내용을 보게 해주는 메서드*/
+	@RequestMapping("board_detail.do")
 	public String viewDetail(@RequestParam int b_number, Model model) {
 
 		BoardCommand bc = dao.selectOne(b_number);
@@ -171,12 +175,15 @@ public class BoardController {
 		return "views/board/detail";
 	}
 
-	@RequestMapping(value = "insert.do", method = RequestMethod.GET)
+	/*목록에서 글 쓰기를 불렀을 때 실행해주는 메서드*/ 
+	@RequestMapping(value = "board_insert.do", method = RequestMethod.GET)
 	public String insertForm() {
 		return "views/board/insertForm";
 	}
 
-	@RequestMapping(value = "insert.do", method = RequestMethod.POST)
+	
+	/*글쓰기를 서브밋했을 때 실행되는 메서드*/ 
+	@RequestMapping(value = "board_insert.do", method = RequestMethod.POST)
 	public String insert(HttpServletRequest req) {
 
 		String b_subject = req.getParameter("b_subject");
@@ -198,13 +205,15 @@ public class BoardController {
 		}
 	}
 
-	@RequestMapping(value = "deleteForm.do", method = RequestMethod.GET)
+	/*글 내용에서 삭제 버튼을 누르면 실행되는 메서드*/
+	@RequestMapping(value = "board_deleteForm.do", method = RequestMethod.GET)
 	public String deleteForm() {
 
 		return "views/board/deleteForm";
 	}
 
-	@RequestMapping(value = "deleteForm.do", method = RequestMethod.POST)
+	/*삭제 확인을 하면 실행되는 메서드*/
+	@RequestMapping(value = "board_deleteForm.do", method = RequestMethod.POST)
 	public String delete(HttpServletRequest req, Model model) {
 
 		int b_number = Integer.parseInt(req.getParameter("b_number"));
@@ -220,7 +229,8 @@ public class BoardController {
 
 	}
 
-	@RequestMapping(value = "updateForm.do", method = RequestMethod.GET)
+	/*글 내용에서 수정 버튼을 누르면 실행되는 메서드*/
+	@RequestMapping(value = "board_updateForm.do", method = RequestMethod.GET)
 	public String updateForm(HttpServletRequest req, Model model) {
 		int i = Integer.parseInt(req.getParameter("b_number"));
 		BoardCommand bc = dao.selectOne(i);
@@ -229,8 +239,9 @@ public class BoardController {
 
 		return "views/board/updateForm";
 	}
-
-	@RequestMapping(value = "updateForm.do", method = RequestMethod.POST)
+	
+	/*글 수정에서 서브밋을 하면 실행되는 메서드*/
+	@RequestMapping(value = "board_updateForm.do", method = RequestMethod.POST)
 	public String update(BoardCommand command) {
 		System.out.println(command);
 		int i = dao.updateOne(command);

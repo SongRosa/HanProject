@@ -5,7 +5,7 @@
 <head>
 <script type="text/javascript">
 function openDeleteForm(b_number) {
-	window.open("deleteForm.do?b_number="+ b_number , "글 삭제", "width=400,height=300,left=400,right=400,top=200");
+	window.open("board_deleteForm.do?b_number="+ b_number , "글 삭제", "width=400,height=300,left=400,right=400,top=200");
 	
 }
 </script>
@@ -28,9 +28,9 @@ function openDeleteForm(b_number) {
 </tr>
 <tr>
 <td colspan="6" align="right">
-<button onclick="window.location='updateForm.do?b_number=${detail.b_number}'">수정</button>
+<button onclick="window.location='board_updateForm.do?b_number=${detail.b_number}'">수정</button>
 <button onclick="openDeleteForm(${detail.b_number })">삭제</button>
-<button onclick="window.location='list.do'">목록</button>
+<button onclick="window.location='board_list.do'">목록</button>
 </td></tr>
 </table>
 
