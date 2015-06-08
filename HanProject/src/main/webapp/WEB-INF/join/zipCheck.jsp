@@ -28,7 +28,7 @@
 		<b> 우편번호 찾기 </b>
 	</center>
 	<table>
-		<form name="zipForm" method="post" action="dongseach.do">
+		<form name="zipForm" method="post" action="join_dongseach.do">
 			<tr>
 				<td><br> 동이름 입력 : <input name="dong" type="text">
 					<input type="button" value="검색" onclick="dongCheck();"></td>

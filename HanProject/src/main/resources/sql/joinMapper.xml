@@ -16,24 +16,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="countId" resultType="int" parameterType="String">
-		select
-		count(*) from member where id=#{id}
+		select count(*) from member where id=#{id}
 	</select>
 
 	<select id="countNick" resultType="int" parameterType="String">
-		select
-		count(*) from member where nick=#{nick}
+		select count(*) from member where nick=#{nick}
 	</select>
-
+ 
 	<select id="countEmail" resultType="int" parameterType="String">
-		select
-		count(*) from member where email=#{email}
+		select count(*) from member where email=#{email}
 	</select>
 
 	<select id="isId" resultType="int" parameterType="spring.command.UserInfo">
 
-		select count(*)
-		from member where id=#{id} and pwd=#{pwd}
+		select count(*)	from member where id=#{id} and pwd=#{pwd}
 
 	</select>
 </mapper>

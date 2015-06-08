@@ -31,7 +31,7 @@
 </table>
 </c:if>
 <!-- 다른닉네임을 검색할 수 있는 폼을 만들어 준다. -->
-<form name="nickcheckForm" method="post" action="nickCheck.do">
+<form name="nickcheckForm" method="post" action="join_nickCheck.do">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
 <tr>
 <td align="center">
@@ -53,8 +53,7 @@
 </tr>
 </table>
 </c:if>
-</body>
-</html>
+
 <script>
 function nickCheck(){
 	if(nickcheckForm.nick.value==0){
@@ -72,3 +71,6 @@ function setnick()
 }
 
 </script>
+
+</body>
+</html>

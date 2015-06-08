@@ -27,8 +27,28 @@ public class UserDAO  extends SqlSessionDaoSupport{
 	}
 		
 	
-	public int isId(UserInfo id) {
-		int x = getSqlSession().selectOne("JoinMap.isId", id);
+	public int isId(UserInfo ui) {
+		int x = getSqlSession().selectOne("JoinMap.isId", ui);
 		return x;
+	}
+	
+	public int isId2(UserInfo useri) {
+		int x = getSqlSession().selectOne("SearchMap.isId", useri);
+		return x;
+	}
+	
+	public UserInfo selectId(UserInfo useri) {
+		UserInfo id = getSqlSession().selectOne("SearchMap.selectId", useri);
+		return id;
+	}
+	
+	public int isPwd2(UserInfo useri) {
+		int x = getSqlSession().selectOne("SearchMap.isPwd", useri);
+		return x;
+	}
+	
+	public UserInfo selectPwd(UserInfo useri) {
+		UserInfo pwd = getSqlSession().selectOne("SearchMap.selectPwd", useri);
+		return pwd;
 	}
 }

@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import spring.command.UserInfo;
 import spring.mybatis.UserDAO;
 import spring.validation.LoginCommandValidator;
+import spring.validation.SearchValidation;
 
 @Controller
-public class LoginController {
+public class SearchIdController {
 
 	@Autowired
 	UserDAO dao;
@@ -24,35 +25,40 @@ public class LoginController {
 		this.dao = dao;
 	}
 
-	@ModelAttribute("loginform")
-	UserInfo getLoginform(){
+	@ModelAttribute("searchidform")
+	UserInfo getSearchidform(){
 		return new UserInfo();
 	}
 	
-	@RequestMapping(value = "log_loginForm.do")
-	public String login() {
-		return "log/loginForm";
+	@RequestMapping(value = "searchIdForm.do")
+	public String search() {
+		return "search/searchIdForm";
 	}
 
-	@RequestMapping(value = "log_login.do",method = RequestMethod.POST)
-	public String login2(@ModelAttribute("loginform") UserInfo useri,BindingResult result, HttpSession session) {
-		new LoginCommandValidator().validate(useri, result);
+	@RequestMapping(value = "searchId.do",method = RequestMethod.POST)
+	public String search(@ModelAttribute("searchidform") UserInfo useri,BindingResult result, HttpSession session) {
+		new SearchValidation().validate(useri, result);
+
 		if (result.hasErrors()) {
-			return "log/loginForm";
+
+			return "search/searchIdForm";
 		}
-		int x = dao.isId(useri);
+		int x = dao.isId2(useri);
+		UserInfo id = dao.selectId(useri);
 		if (x == 1) {
-			session.setAttribute("id", useri.getId());
-			return "log/login";
+			String a=id.getId();
+			session.setAttribute("id", a);
+			return "search/searchIdSuccess";
 		} else {
-			return "log/loginForm";
+			return "search/searchIdFail";
 		}
 	}
+	
 
-	@RequestMapping(value = "log_logout.do")
+/*	@RequestMapping(value = "log_logout.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "log/loginForm";
-	}
+	}*/
 
 }
