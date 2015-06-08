@@ -28,6 +28,10 @@
 				<option label="잠원" value="11">잠원 한강공원</option>
 			</select>
 		</div>
+		<div align="right">			
+			<button id="go_maps" value=${parkNum}> 공원안내가기 </button><br>
+			<button id="go_board" value=${parkNum}> 자유게시판가기 </button><br>
+		</div>
 		<p id="direction_txt">오시는 길</p>	
 	</div>
 	
@@ -52,7 +56,7 @@
 			<th scope="col">정류장~접근로 거리</th>
 			</tr>
 			</thead>
-			<tbody>
+			<tbody id="yeouido">
 				<tr>
 					<th scope="row">여의도중학교</th>
 					<td >261, 5534, 5618, 5633, 7611, 108</td>
@@ -109,15 +113,6 @@
 					</td>
 					<td>1.4km</td>
 				</tr>										
-				<tr>
-					<th scope="row">전경련회관</th>
-					<td >160, 162, 260, 261, 262, 360, 2012, <br>503, 5615, 5618, 5713, 600, 6513,<br> 661, 6628, 5012, 10(부천),<br> 11-1(광명), 11-2(광명), 300(인천), <br>301(안산)
-						 302(안산), 510(시흥), <br>700(부천), 83(부천), 871(고양),<br> 88(부천)</td>
-					<td>
-						여의대로
-					</td>
-					<td>515m</td>
-				</tr>
 			</tbody>
 		</table>
 		

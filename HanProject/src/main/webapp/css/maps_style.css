@@ -7,6 +7,13 @@ p#direction_txt{
 	color: black;
 }
 
+label{
+	color:navy;
+	font-size: 15px;
+	font-family: 'Nanum Gothic', sans-serif;
+	margin-right: 10px;
+}
+
 div#view_top{
 	width:1000px;
 	margin: auto;
@@ -17,7 +24,7 @@ div#view_maps{
 	height: 400px;
 	margin: auto;
 	
-	border-color: gray;
+	border-color: #000069;
 	border-width: 1px;
 	border-style: solid;
 }
@@ -47,4 +54,13 @@ select {
 	width: 150px;
 	font-size: 15px;
 	font-family: 'Nanum Gothic', sans-serif;
+}
+
+button#go_direction, button#go_board{
+	width: 150px;	
+	height:25px;
+	font-size: 15px;
+	font-family: 'Nanum Gothic', sans-serif;
+	
+	margin-top: 5px;
 }

@@ -14,8 +14,8 @@
 		<div align="right">
 			<label> 다른 공원 가기</label>			
 			<select id="map_pageName" name="pageName">
-				<option label="강서" value="1" selected="selected">강서 한강공원</option>
-				<option label="광나루" value="2">광나루 한강공원</option>
+				<option label="강서" value="1" >강서 한강공원</option>
+				<option label="광나루" value="2" selected="selected">광나루 한강공원</option>
 				<option label="난지"  value="3">난지 한강공원</option>
 				<option label="뚝섬"  value="4">뚝섬 한강공원</option>
 				<option label="망원" value="5">망원 한강공원</option>

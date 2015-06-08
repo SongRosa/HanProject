@@ -58,7 +58,7 @@ li#header{
 
 table{
 	border-width:2px;
-	border-color: gray;
+	border-color: #323c73;
 	border-style: solid;	
 	
 	width: 850px;
@@ -67,10 +67,10 @@ table{
 	margin-bottom: 30px;
 }
 tr{
-	height:50px;
+	height:60px;
 }
 tr#table_header{
-	background-color: threedhighlight;
+	background-color: #C8D7FF ;
 }
 
 td{
@@ -87,5 +87,14 @@ label{
 select {
 	width: 150px;
 	font-size: 15px;
+	font-family: 'Nanum Gothic', sans-serif;	
+}
+
+button#go_maps, button#go_board{
+	width: 150px;	
+	height:25px;
+	font-size: 15px;
 	font-family: 'Nanum Gothic', sans-serif;
+	
+	margin-top: 5px;
 }

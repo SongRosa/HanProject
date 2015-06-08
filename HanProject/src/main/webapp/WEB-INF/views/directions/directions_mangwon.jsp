@@ -26,6 +26,10 @@
 				<option label="잠원" value="11">잠원 한강공원</option>
 			</select>
 		</div>
+		<div align="right">			
+			<button id="go_maps" value=${parkNum}> 공원안내가기 </button><br>
+			<button id="go_board" value=${parkNum}> 자유게시판가기 </button><br>
+		</div>
 		<p id="direction_txt">오시는 길</p>	
 	</div>
 	
