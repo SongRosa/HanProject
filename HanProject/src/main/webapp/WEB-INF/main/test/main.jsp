@@ -237,7 +237,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=1'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=1'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=1'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -245,7 +245,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=2'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=2'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=2'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -253,7 +253,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=3'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=3'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=3'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -261,7 +261,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=4'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=4'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=4'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -269,7 +269,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=5'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=5'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=5'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -277,7 +277,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=6'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=6'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=6'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -285,7 +285,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=7'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=7'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=7'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -293,7 +293,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=8'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=8'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=8'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -301,7 +301,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=9'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=9'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=9'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -309,7 +309,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=10'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=10'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=10'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
@@ -317,7 +317,7 @@
 					 		<ul>
 								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=11'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=11'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button>자유 게시판</button></li>
+								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=11'">자유 게시판</button></li>
 							</ul>
 						</div>
 						
