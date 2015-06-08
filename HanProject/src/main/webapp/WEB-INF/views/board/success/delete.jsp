@@ -13,4 +13,4 @@ function closeDeleteForm() {
 삭제에 성공했습니다.<br>
 <div align="center"><button onclick="closeDeleteForm()">닫기</button></div>
 </body>
-</html>
+</html> <!-- /// -->

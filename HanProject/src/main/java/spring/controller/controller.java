@@ -10,5 +10,4 @@ public class controller {
 	public String site(){
 		return "main/test/main";
 	}
-
 }

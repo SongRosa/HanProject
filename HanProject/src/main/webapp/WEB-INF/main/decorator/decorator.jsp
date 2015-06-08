@@ -31,10 +31,10 @@
 
 	<decorator:head />
 	<div id="header" align="right">
-		<a href="log/loginForm.do">로그인  </a> &nbsp;
-		<a href="join/input.do">회원가입  </a>&nbsp;
+		<a href="log_loginForm.do">로그인  </a> &nbsp;
+		<a href="join_input.do">회원가입  </a>&nbsp;
 		<a href="">공지사항  </a>&nbsp;
-		<a href="board/list.do">자유게시판  </a>&nbsp;
+		<a href="board_list.do">자유게시판  </a>&nbsp;
 		<a href="">사이트맵  </a>&nbsp;&nbsp;&nbsp;
 	</div>
 	<hr/>
