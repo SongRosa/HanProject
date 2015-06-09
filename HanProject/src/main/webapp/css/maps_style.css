@@ -68,3 +68,7 @@ ul{
 	border-style: dotted;
 	border-color: gray;
 }
+
+#information img:HOVER {
+	background: url("mapIcons/information_clicked.png");
+}

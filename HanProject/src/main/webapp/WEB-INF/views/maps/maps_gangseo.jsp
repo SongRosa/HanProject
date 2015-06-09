@@ -45,15 +45,15 @@
 		
 		<div id="view_btn" align="center">
 			<ul >
-				<li id="information" value="1"><img id="mapicons_1" src="mapIcons/information.png"></img></li>
+				<li id="information" value="1"><img id="mapicons1" src="mapIcons/mapIcons1.png"></img></li>
 				<li>
 					<input type="hidden" id="info_lat" value = "37.5870070">		
 					<input type="hidden" id="info_lon" value = "126.8181035">
 				</li>
-				<li id="parking" value="2"> <img id="mapicons" src="mapIcons/bicycle_parking.png"></img></li>
-				<li id="lending" value="3"><img id="mapicons" src="mapIcons/bicycle.png" ></img></li>
-				<li id="drinking" value="4"><img id="mapicons" src="mapIcons/drinking.png" ></img></li>
-				<li id="police" value="5"><img id="mapicons" src="mapIcons/police.png"></img></li>
+				<li id="parking" value="2"> <img id="mapicons2" src="mapIcons/mapIcons2.png"></img></li>
+				<li id="lending" value="3"><img id="mapicons3" src="mapIcons/mapIcons3.png" ></img></li>
+				<li id="drinking" value="4"><img id="mapicons4" src="mapIcons/mapIcons4.png" ></img></li>
+				<li id="police" value="5"><img id="mapicons5" src="mapIcons/mapIcons5.png"></img></li>
 			</ul>
 		</div>
 	</div>
