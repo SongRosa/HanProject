@@ -89,11 +89,9 @@
 	}
 	#park_icon{
 		height: 80;
-		margin: auto;
-		
+		margin-left: -35;
 	}
 	#park_icon li{
 		position: relative;
 		float: left;
-		margin-right: 12;
 	}

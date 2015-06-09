@@ -23,11 +23,17 @@
 			$("#park_img").attr("src", "river_picture/river"+i+".jpg");
 		}
 		
-		$("#park_icon button").click(function(){
-			a=1;
+		$("#park_icon li").click(function(){
 			var i = $(this).val();
 			c=Number(i);
 			b+=c;
+			
+			for(d=1;d<12;d++){
+				$("#park_icon").find('.'+d).attr("src", "icon_complete/parkIcon"+d+".png");
+				if(d==i){
+					$("#park_icon").find('.'+i).attr("src", "icon_complete/parkIcon"+i+"_1.png");
+				}
+			}
 			
 			if(b==(c*2)) {
 				//display(i);
@@ -36,21 +42,34 @@
 				b=0;
 				b+=c;
 				
-				if(a==1) {
-					$("#park_container").css("display", "none");
-					display(i);
-				}
+				$("#park_container").css("display", "none");
+				display(i);
 			}
 		});
+		
+		$("#park_icon li").mouseenter(function(){
+			var i = $(this).val();
+			
+			$(this).find("img").attr("src", "icon_complete/parkIcon"+i+"_1.png");
+		});
+		
+		$("#park_icon li").mouseleave(function(){
+			var i = $(this).val();
+			var m = $("#park_name").find('.'+i).css("display");
+			
+			if(m == "none"){
+				$(this).find("img").attr("src", "icon_complete/parkIcon"+i+".png");
+			} else if(m == "block") {
+				
+			}
+		});
+		
 		
 		$("#close").click(function(){
 			a=0;
 			$("#park_container").fadeOut(300,function(){
 				$("#main_picture").fadeIn(300);
 			});
-			
-			
-			//$("#park_container").css("display", "none"); 
 		});
 	});
 </script>
@@ -242,7 +261,7 @@
 				
 						<div class="1">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=1'">오시는길</button></li>
+								<li value="1" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=1'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=1'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=1'">자유 게시판</button></li>
 							</ul>
@@ -250,7 +269,7 @@
 						
 						<div class="2">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=2'">오시는길</button></li>
+								<li value="2" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=2'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=2'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=2'">자유 게시판</button></li>
 							</ul>
@@ -258,7 +277,7 @@
 						
 						<div class="3">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=3'">오시는길</button></li>
+								<li value="3" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=3'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=3'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=3'">자유 게시판</button></li>
 							</ul>
@@ -266,7 +285,7 @@
 						
 						<div class="4">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=4'">오시는길</button></li>
+								<li value="4" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=4'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=4'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=4'">자유 게시판</button></li>
 							</ul>
@@ -274,7 +293,7 @@
 						
 						<div class="5">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=5'">오시는길</button></li>
+								<li value="5" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=5'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=5'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=5'">자유 게시판</button></li>
 							</ul>
@@ -282,7 +301,7 @@
 						
 						<div class="6">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=6'">오시는길</button></li>
+								<li value="6" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=6'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=6'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=6'">자유 게시판</button></li>
 							</ul>
@@ -290,7 +309,7 @@
 						
 						<div class="7">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=7'">오시는길</button></li>
+								<li value="7" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=7'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=7'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=7'">자유 게시판</button></li>
 							</ul>
@@ -298,7 +317,7 @@
 						
 						<div class="8">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=8'">오시는길</button></li>
+								<li value="8" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=8'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=8'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=8'">자유 게시판</button></li>
 							</ul>
@@ -306,7 +325,7 @@
 						
 						<div class="9">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=9'">오시는길</button></li>
+								<li value="9" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=9'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=9'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=9'">자유 게시판</button></li>
 							</ul>
@@ -314,7 +333,7 @@
 						
 						<div class="10">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=10'">오시는길</button></li>
+								<li value="10" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=10'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=10'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=10'">자유 게시판</button></li>
 							</ul>
@@ -322,7 +341,7 @@
 						
 						<div class="11">
 					 		<ul>
-								<li id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=11'">오시는길</button></li>
+								<li value="11" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=11'">오시는길</button></li>
 								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=11'">안내지도</button></li>
 								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=11'">자유 게시판</button></li>
 							</ul>
@@ -335,18 +354,18 @@
 			</div>
 
 			<div id="park_icon">
-				<ul >
-					<li><button value="1"><img id="rm1" src="icon/icon1.png" width="57" height="70"></button></li>
-					<li><button value="2"><img id="rm2" src="icon/icon2.png" width="57" height="70"></button></li>
-					<li><button value="3"><img id="rm3" src="icon/icon3.png" width="57" height="70"></button></li>
-					<li><button value="4"><img id="rm4" src="icon/icon4.png" width="57" height="70"></button></li>
-					<li><button value="5"><img id="rm5" src="icon/icon5.png" width="57" height="70"></button></li>
-					<li><button value="6"><img id="rm6" src="icon/icon6.png" width="57" height="70"></button></li>
-					<li><button value="7"><img id="rm7" src="icon/icon7.png" width="57" height="70"></button></li>
-					<li><button value="8"><img id="rm8" src="icon/icon8.png" width="57" height="70"></button></li>
-					<li><button value="9"><img id="rm9" src="icon/icon9.png" width="57" height="70"></button></li>
-					<li><button value="10"><img id="rm10" src="icon/icon10.png" width="57" height="70"></button></li>
-					<li><button value="11"><img id="rm11" src="icon/icon11.png" width="57" height="70"></button></li>
+				<ul>
+					<li value="1"><img class="1" id="rm1" src="icon_complete/parkIcon1.png" width="90" height="75"></li>
+					<li value="2"><img class="2" id="rm2" src="icon_complete/parkIcon2.png" width="90" height="75"></li>
+					<li value="3"><img class="3" id="rm3" src="icon_complete/parkIcon3.png" width="90" height="75"></li>
+					<li value="4"><img class="4" id="rm4" src="icon_complete/parkIcon4.png" width="90" height="75"></li>
+					<li value="5"><img class="5" id="rm5" src="icon_complete/parkIcon5.png" width="90" height="75"></li>
+					<li value="6"><img class="6" id="rm6" src="icon_complete/parkIcon6.png" width="90" height="75"></li>
+					<li value="7"><img class="7" id="rm7" src="icon_complete/parkIcon7.png" width="90" height="75"></li>
+					<li value="8"><img class="8" id="rm8" src="icon_complete/parkIcon8.png" width="90" height="75"></li>
+					<li value="9"><img class="9" id="rm9" src="icon_complete/parkIcon9.png" width="90" height="75"></li>
+					<li value="10"><img class="10" id="rm10" src="icon_complete/parkIcon10.png" width="90" height="75"></li>
+					<li value="11"><img class="11" id="rm11" src="icon_complete/parkIcon11.png" width="90" height="75"></li>
 				</ul>
 			</div>
 		</div>
