@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 <html lang="ko" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
@@ -8,9 +9,12 @@
 	<link href="css/maps_style.css" rel="stylesheet" type="text/css">
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script type="text/javascript" src="js/goAnotherPage.js"></script>
+	<script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=74eaecd03f436f5fb05d2a980537b8ee"></script>
 </head>
 <body>
 <div id ="view_top">
+		<input id="parkNum" type="hidden" value = ${parkNum}> 
+		<input id="tempNum" type="hidden" value = ${tempNum}>
 		<div align="right">
 			<label> 다른 공원 가기</label>			
 			<select id="map_pageName" name="pageName">
@@ -35,27 +39,30 @@
 	</div>
 	
 	<div id="view_content">
-		<div id="view_maps">			
+		<div id="view_maps">					
+			<script type="text/javascript" src="js/parkMap.js"></script>
 		</div>
 		
 		<div id="view_btn" align="center">
 			<ul >
-				<li id="information"><img id="mapicons" src="mapIcons/information.png"></img></li>
+				<li id="information" value="1"><img id="mapicons_1" src="mapIcons/information.png"></img></li>
 				<li>
-					<input type="hidden" id="information_d" value = "37.5178442">
-					<input type="hidden" id="information_r" value = "127.0818811">
+					<input type="hidden" id="info_lat" value = "37.5870070">		
+					<input type="hidden" id="info_lon" value = "126.8181035">
 				</li>
-				<li id="parking"><img id="mapicons" src="mapIcons/bicycle_parking.png"></img></li>
-				<li id="lending"><img id="mapicons" src="mapIcons/bicycle.png" ></img></li>
-				<li id="drinking"><img id="mapicons" src="mapIcons/drinking.png" ></img></li>
-				<li id="p"><img id="mapicons" src="mapIcons/police.png"></img></li>
+				<li id="parking" value="2"> <img id="mapicons" src="mapIcons/bicycle_parking.png"></img></li>
+				<li id="lending" value="3"><img id="mapicons" src="mapIcons/bicycle.png" ></img></li>
+				<li id="drinking" value="4"><img id="mapicons" src="mapIcons/drinking.png" ></img></li>
+				<li id="police" value="5"><img id="mapicons" src="mapIcons/police.png"></img></li>
 			</ul>
 		</div>
-	
 	</div>
 	
 	<div id="view_bottom">
-	
+		<c:forEach var="location" items="${location}">
+			<input type="hidden" class="${location.f_number}" value="${location.lat}" title="${location.lon}">
+		</c:forEach>
 	</div>
+	
 </body>
 </html>
