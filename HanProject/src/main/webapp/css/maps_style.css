@@ -14,42 +14,27 @@ label{
 	margin-right: 10px;
 }
 
-div#view_top{
+#view_top{
 	width:1000px;
 	margin: auto;
 }
 
-div#view_maps{
+#view_maps{
 	width: 800px;
-	height: 400px;
+	height: 500px;
+	margin: auto;	
+
+	border: 1px solid gray;
+}
+
+#view_btn{
+	width: 800px;
+	height: 70px;
 	margin: auto;
 	
-	border-color: #000069;
-	border-width: 1px;
-	border-style: solid;
+	margin-bottom:70px;
 }
 
-div#view_btn{
-	width: 800px;
-	height: 50px;
-	margin: auto;
-	margin-bottom:20px;
-	
-	border-color: gray;
-	border-width: 1px;
-	border-style: solid;
-}
-
-button{
-	width: 155px;
-	height: 50px;
-	margin: auto;
-}
-
-#mapicons{
-	width:140px;
-	height:45px;
-}
 select {
 	width: 150px;
 	font-size: 15px;
@@ -63,4 +48,23 @@ button#go_direction, button#go_board{
 	font-family: 'Nanum Gothic', sans-serif;
 	
 	margin-top: 5px;
+}
+
+ul{	
+	margin-top: -10px;
+	margin-left:-40px;
+}
+
+#view_btn li{
+	position: relative;
+	float: left;
+}
+
+#view_btn img{
+	width:158px;
+	height:80px;	
+	
+	border-width:1px;
+	border-style: dotted;
+	border-color: gray;
 }

@@ -19,40 +19,54 @@ function confirmDelete(c_num,b_num){
 	}
 	
 }
+function checkBlank(){
+	if(document.CommentsCommand.c_writer.value==""){
+		return false;
+	}
+	
+	if(document.CommentsCommand.c_content.value==""){
+		return false;
+	}
+	
+}
 
 </script>
 <title>${detail.b_number }번째 글</title>
+<link href="css/board/detail_style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<div>
-<table border="1" width="1000">
+<div align="center" id="detail_div">
+<table class="detail_table" width="1000">
 
 <tr>
-<td align="center">글번호</td><td align="center"> ${detail.b_number}</td>
-<td align="center">작성자</td><td align="center"> ${detail.b_writer }</td>
-<td align="center">작성일</td><td align="center"><fmt:formatDate value="${detail.b_regdate }" type="date"/></td>
+<td class="detail_table_number1" align="center">글번호</td><td class="detail_table_number2" align="center"> ${detail.b_number}</td>
+<td class="detail_table_writer1" align="center">작성자</td><td class="detail_table_writer2" align="center"> ${detail.b_writer }</td>
+<td class="detail_table_date1" align="center">작성일</td><td class="detail_table_date2" align="center"><fmt:formatDate value="${detail.b_regdate }" type="date"/></td>
 </tr>
 <tr>
-<td align="center">제목</td>
-<td align="left" colspan="5">${detail.b_subject }</td>
+<td class="detail_table_subject1" align="center">제목</td>
+<td class="detail_table_subject2" align="left" colspan="5"> &lt;${detail.p_name}&gt; ${detail.b_subject }</td>
 </tr>
 <tr>
-<td align="center" colspan="6"> &lt;${detail.p_name}&gt; ${detail.b_content }</td>
+<td class="detail_table_content" colspan="6"> ${detail.b_content }</td>
 </tr>
 <tr>
-<td colspan="6" align="right">
-<button onclick="window.location='board_updateForm.do?b_number=${detail.b_number}'">수정</button>
-<button onclick="openDeleteForm(${detail.b_number })">삭제</button>
-<button onclick="javascript:history.go(-1)">목록</button>
+<td class="detail_table_btnGroup" colspan="6" align="right">
+<button class="detail_table_updateBtn" onclick="window.location='board_updateForm.do?b_number=${detail.b_number}'">&nbsp;</button>
+<button class="detail_table_deleteBtn" onclick="openDeleteForm(${detail.b_number })">&nbsp;</button>
+<button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=0'">&nbsp;</button>
 </td></tr>
 </table>
 </div>
-<div>
-<table>
+
+<p><br></p>
+
+<div id="comments_div" align="center">
+<table class="comments_table">
 
 <c:if test="${empty commentsList }">
 <tr>
-<td colspan="3" align="center">등록 된 코멘트가 없습니다.</td>
+<td class="comments_table_nothing" colspan="3" align="center">등록 된 코멘트가 없습니다.</td>
 </tr>
 </c:if>
 
@@ -60,35 +74,30 @@ function confirmDelete(c_num,b_num){
 <c:if test="${!empty commentsList }">
 <c:forEach var="comment" items="${commentsList }">
 <tr>
-<td width="20%" align="center">${comment.c_writer }</td>
-<td width="60%">${comment.c_content }</td>
-<td width="20%"><fmt:formatDate value="${comment.c_regdate }" type="both"/></td>
-<td><button onclick="confirmDelete(${comment.c_number},${detail.b_number })"> X </button>
+<td class="comments_table_writer" width="10%" align="center">${comment.c_writer }</td>
+<td class="comments_table_content" width="60%">${comment.c_content }</td>
+<td class="comments_table_date" width="25%"><fmt:formatDate value="${comment.c_regdate }" type="both"/></td>
+<td><button class="comments_table_deleteBtn" onclick="confirmDelete(${comment.c_number},${detail.b_number })">&nbsp;</button>
 </tr>
 </c:forEach>
-
 <tr>
-<td align="center" colspan="4">${paging }</td>
+<td id="comments_table_paging" align="center" colspan="4">${paging }</td>
 </tr>
 </c:if>
-
-
-<tr>
-<form name="CommentsCommand" method="post">
-
-<td><input size="5" name="c_writer"></td>
-<td><input size="100" name="c_content"></td>
-<td><input type="submit" value="입력"></td>
-
-<input type="hidden" name="b_number" value="${detail.b_number}">
-
-</form>
-</tr>
 </table>
 </div>
 <p></p>
+<div id="input_div" align="center">
+<form name="CommentsCommand" method="post" onsubmit="return checkBlank();">
+<table class="input_table" ><tr>
+<td><input class="input_table_writer" size="5" name="c_writer"></td>
+<td><input class="input_table_content" size="100" name="c_content"></td>
+<td><input class="input_table_submitBtn" type="submit" value="&nbsp;"></td>
+</tr></table>
+<input type="hidden" name="b_number" value="${detail.b_number}">
 
-
+</form>
+</div>
 
 </body>
 </html>
