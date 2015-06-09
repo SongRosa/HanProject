@@ -2,49 +2,55 @@
 
 #container{
 		width: 1000;
-		height: 500;
+		height: 460;
 		margin: auto;
+		border: 1px solid black;
 	}
 	#home{
 		width: 1000;
-		height: 500;
-		border: 1px solid;
+		height: 460;
 	}
 	#main_picture{
-		width: 980;
+		width: 1000;
 		height: 380;
 		display: block;
 		margin: auto;
-		margin-top: 20;
 	}
 	#park_container{
-		width: 950;
+		width: 1000;
 		height: 380;
 		display: none;
 		margin: auto;
-		margin-top: 20;
-		position: relative;
 /* 		background-image: url('icon/book.png');
 		background-repeat: no-repeat;
 		background-position: center;
 		 */
 	}
 	#park_picture{
-		width: 500;
+		width: 580;
 		height: 380;
-		margin-right: 45;
 		float: left;
 	}
 	#park_introduce{
-		width: 400;
+		width: 420;
 		height: 380;
 		float: left;
+		background: url('../icon/background2.png');
 		/* border:green 1px solid; */
 	}
 	#park_name{
 		width:50;
 		height:80;
-		margin: auto;
+		margin-left:110;
+		margin-top:15;
+		display: inline-block;
+	}
+	#x{
+		margin-top:20;
+		margin-right:20;
+		vertical-align:top;
+		float:right;
+		display: inline-block;
 	}
 	#park_info{
 		width:480;
@@ -74,7 +80,6 @@
 	#park_btn{
 		width:480;
 		height:100;
-		margin: auto;
 		display: table-cell;
 		vertical-align: middle;
 	}
@@ -87,13 +92,25 @@
 	#park_btn div{
 		display: none;
 	}
+	#way{
+		margin-left: 15;
+	}
+	#park_btn img{
+		width: 80;
+		height: 80;
+		margin-right: 30;
+	}
 	#park_icon{
 		height: 80;
-		margin: auto;
-		
+		margin-left: -39.8;
+		margin-top: -15.55;
 	}
 	#park_icon li{
-		position: relative;
+		margin:0;
+		padding:0;
 		float: left;
-		margin-right: 12;
+	}
+	#park_icon img{
+		margin:0;
+		padding:0;
 	}

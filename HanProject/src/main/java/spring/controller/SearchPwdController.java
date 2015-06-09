@@ -39,14 +39,18 @@ public class SearchPwdController {
 	@RequestMapping(value = "searchPwd.do",method = RequestMethod.POST)
 	public String search(@ModelAttribute("searchpwdform") UserInfo useri,BindingResult result, HttpSession session) {
 		new SearchValidation().validate(useri, result);
+		
 
 		if (result.hasErrors()) {
 
 			return "search/searchPwdForm";
 		}
 		int x = dao.isPwd2(useri);
-		UserInfo pwd = dao.selectPwd(useri);
+		
 		if (x == 1) {
+			useri.setPwd("temp"+(int)(Math.random()*10000));
+			dao.tempPwd(useri);
+			UserInfo pwd = dao.selectPwd(useri);
 			String a=pwd.getPwd();
 			session.setAttribute("pwd", a);
 			return "search/searchPwdSuccess";

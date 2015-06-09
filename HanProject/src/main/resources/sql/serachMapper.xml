@@ -20,4 +20,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="isPwd" resultType="int" parameterType="spring.command.UserInfo">
 		select count(*) from member where id=#{id} and name=#{name} and email=#{email}
 	</select>
+	
+	<update id="tempPwd">
+	    update member set pwd=#{pwd} where id=#{id}
+	</update>
 </mapper>

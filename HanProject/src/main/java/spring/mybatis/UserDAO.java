@@ -51,4 +51,9 @@ public class UserDAO  extends SqlSessionDaoSupport{
 		UserInfo pwd = getSqlSession().selectOne("SearchMap.selectPwd", useri);
 		return pwd;
 	}
+	
+	public UserInfo tempPwd(UserInfo useri) {
+		UserInfo tempPwd = getSqlSession().selectOne("SearchMap.tempPwd", useri);
+		return tempPwd;
+	}
 }
