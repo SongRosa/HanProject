@@ -34,16 +34,34 @@ public class LoginController {
 		return "log/loginForm";
 	}
 
-	@RequestMapping(value = "log_login.do",method = RequestMethod.POST)
-	public String login2(@ModelAttribute("loginform") UserInfo useri,BindingResult result, HttpSession session) {
+	@RequestMapping(value = "log_login.do")
+	public String login(@ModelAttribute("loginform") UserInfo useri,BindingResult result, HttpSession session,Model model) {
 		new LoginCommandValidator().validate(useri, result);
 		if (result.hasErrors()) {
 			return "log/loginForm";
 		}
 		int x = dao.isId(useri);
+		UserInfo ui=dao.selectInfo(useri);
 		if (x == 1) {
-			session.setAttribute("id", useri.getId());
-			return "log/login";
+			session.setAttribute("user", ui);
+			return "mypage/mypageForm";
+		} else {
+			return "log/loginForm";
+		}
+	}
+	
+	@RequestMapping(value = "log_login.do",method = RequestMethod.POST)
+	public String login2(@ModelAttribute("loginform") UserInfo useri,BindingResult result, HttpSession session,Model model) {
+		new LoginCommandValidator().validate(useri, result);
+		if (result.hasErrors()) {
+			return "log/loginForm";
+		}
+		int x = dao.isId(useri);
+		UserInfo ui=dao.selectInfo(useri);
+		if (x == 1) {
+			session.setAttribute("user", ui);
+			//DB select¹® Ãß°¡
+			return "mypage/mypageForm";
 		} else {
 			return "log/loginForm";
 		}
