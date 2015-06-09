@@ -18,16 +18,14 @@ public void validate(Object target, Errors errors) {
 
 	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "id", "required");
 	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pwd", "required");
-	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nick", "required");		
+	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nick", "required");
 
 	if(!(ui.getId()==null || ui.getId().trim().isEmpty())){
 	if(!ui.getCheckid().equals("yes")){
 		errors.rejectValue("checkid", "checkcheck");
 	}
 	}
-	
 
-	
 	if(!(ui.getPwd()==null || ui.getPwd().trim().isEmpty())){
 		if(ui.getPwd().length()<8){
 			errors.rejectValue("pwd", "checkcheck");

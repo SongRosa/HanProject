@@ -42,7 +42,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select b_number,b_subject,b_writer,b_regdate,b_count,p_number,
 		(select count(*) from comments c where c.b_number=b.b_number) c_count,
 		(select p_name from park p where p.p_number = b.p_number) p_name
-		from board where b_writer like '%'||#{string}||'%'
+		from board b where b_writer like '%'||#{string}||'%'
 		order by b_number desc
 	</select>
 	
@@ -50,7 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select b_number,b_subject,b_writer,b_regdate,b_count,p_number,
 		(select count(*) from comments c where c.b_number=b.b_number) c_count,
 		(select p_name from park p where p.p_number = b.p_number) p_name
-		from board where b_writer like '%'||#{keyword}||'%' and p_number=#{grouping}
+		from board b where b_writer like '%'||#{keyword}||'%' and p_number=#{grouping}
 		order by b_number desc
 	    
 	</select>
@@ -83,6 +83,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<delete id="deleteOne" parameterType="int">
 		delete from board where b_number=#{int}
+	</delete>
+	
+	<select id="selectCommentsList" parameterType="int" resultType="spring.command.CommentsCommand">
+	    select c_number, c_writer, c_content, c_regdate from comments where b_number=#{int} order by c_number
+	</select>
+	
+	<insert id="insertComments" parameterType="spring.command.CommentsCommand">
+	    insert into comments (c_number, b_number, c_writer, c_regdate, c_content) 
+	    values(seq_c_number.NEXTVAL,#{b_number}, #{c_writer}, sysdate, #{c_content})
+	</insert>
+	
+	<delete id="deleteComments" parameterType="spring.command.CommentsCommand">
+	    delete from comments where c_number=#{c_number} and b_number=#{b_number}
+	</delete>
+	
+	<select id="countComments" parameterType="int" resultType="int">
+		select count(*) from comments where b_number=#{int}
+	</select>
+	
+	<delete id="deleteAllComments" parameterType="int">
+	    delete from comments where b_number=#{int}
 	</delete>
 
 

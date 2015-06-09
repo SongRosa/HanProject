@@ -7,13 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import spring.command.BoardCommand;
 import spring.command.BoardGroupingCommand;
+import spring.command.CommentsCommand;
 import spring.mybatis.BoardDAO;
+import spring.service.CommentsPagingService;
 import spring.service.GroupingPagingService;
 import spring.service.PagingService;
 
@@ -30,16 +33,17 @@ public class BoardController {
 	int blockCount = 5;
 	int blockPage = 3;
 
-	
-	/*초기상태의 리스트를 불러오는 메서드*/
+	/* 초기상태의 리스트를 불러오는 메서드 */
 	@RequestMapping(value = "board_list.do", method = RequestMethod.GET)
-	public String list(@RequestParam(value = "p", defaultValue = "1") String p,
-			@RequestParam(value = "parkNum", defaultValue = "0") String parkNum, Model model) {
+	public String list(
+			@RequestParam(value = "p", defaultValue = "1") String p,
+			@RequestParam(value = "parkNum", defaultValue = "0") String parkNum,
+			Model model) {
 
-		List<BoardCommand> list; 
+		List<BoardCommand> list;
 		String page;
 
-		if (parkNum.equals("0"))/*글분류가 0 일때는 전체글을 불러옴*/ {
+		if (parkNum.equals("0"))/* 글분류가 0 일때는 전체글을 불러옴 */{
 			list = dao.board_selectList();
 
 			int totalCount = list.size();
@@ -56,8 +60,8 @@ public class BoardController {
 			}
 
 			list = list.subList(ps.getStartCount(), lastCount);
-		} else /*글분류가 0이 아닐때는 parkNum에 해당하는 공원 글을 불러옴*/ {
-			
+		} else /* 글분류가 0이 아닐때는 parkNum에 해당하는 공원 글을 불러옴 */{
+
 			list = dao.board_grouping_selectList(parkNum);
 			System.out.println("dao.selectGroupingAll");
 
@@ -81,9 +85,8 @@ public class BoardController {
 		model.addAttribute("list", list);
 		return "views/board/list";
 	}
-	
-	
-	/*검색을 한뒤에 리스트를 불러오는 메서드*/
+
+	/* 검색을 한뒤에 리스트를 불러오는 메서드 */
 	@RequestMapping(value = "board_list.do", method = RequestMethod.POST)
 	public String searchList(
 			@RequestParam(value = "p", defaultValue = "1") String p,
@@ -164,25 +167,77 @@ public class BoardController {
 		return "views/board/list";
 	}
 
-	/*글의 내용을 보게 해주는 메서드*/
-	@RequestMapping("board_detail.do")
-	public String viewDetail(@RequestParam int b_number, Model model) {
+	/* 글의 내용을 보게 해주는 메서드 */
+	@RequestMapping(value="board_detail.do" ,method= RequestMethod.GET)
+	public String viewDetail(@RequestParam(value = "p", defaultValue = "1") String p, @RequestParam int b_number, Model model) {
 
 		BoardCommand bc = dao.selectOne(b_number);
 		model.addAttribute("detail", bc);
-		int i = dao.update_b_count(b_number);
+		dao.update_b_count(b_number);
+		
+		int c_block_page = 3;
+		int c_block_count = 100;
+		
+		List<CommentsCommand> list = dao.selectCommentsList(b_number);
+		
+		int totalCount = list.size();
+		int currentPage = Integer.parseInt(p);
+		
+		CommentsPagingService cps = new CommentsPagingService(currentPage, totalCount, c_block_count, c_block_page, b_number);
+
+		String page = cps.getPagingHtml().toString();
+
+		int lastCount = totalCount;
+
+		if (cps.getEndCount() < totalCount) {
+			lastCount = cps.getEndCount() + 1;
+		}
+
+		list = list.subList(cps.getStartCount(), lastCount);
+
+		model.addAttribute("commentsList", list);
+		model.addAttribute("paging", page);
 
 		return "views/board/detail";
 	}
+	
+	@RequestMapping(value="board_detail.do" ,method= RequestMethod.POST)
+	public String insertComments(HttpServletRequest req){
+		System.out.println("post");
+		String c_writer = req.getParameter("c_writer");
+		String c_content = req.getParameter("c_content");
+		int b_number = Integer.parseInt(req.getParameter("b_number"));
+		CommentsCommand cc = new CommentsCommand();
+		cc.setB_number(b_number);
+		cc.setC_content(c_content);
+		cc.setC_writer(c_writer);
+		
+		dao.insertComments(cc);
+		System.out.println("cc");
+		
+		return "redirect:board_detail.do?b_number="+b_number;
+	}
+	
+	@RequestMapping("commentsDel.do")
+	public String commentsDel(HttpServletRequest req){
+		
+		int c_number = Integer.parseInt(req.getParameter("c_number"));
+		int b_number = Integer.parseInt(req.getParameter("b_number"));
+		
+		CommentsCommand cc = new CommentsCommand(c_number, b_number);
+		dao.deleteComments(cc);
+		
+		return"redirect:board_detail.do?b_number="+b_number;
+	}
 
-	/*목록에서 글 쓰기를 불렀을 때 실행해주는 메서드*/ 
+
+	/* 목록에서 글 쓰기를 불렀을 때 실행해주는 메서드 */
 	@RequestMapping(value = "board_insert.do", method = RequestMethod.GET)
 	public String insertForm() {
 		return "views/board/insertForm";
 	}
 
-	
-	/*글쓰기를 서브밋했을 때 실행되는 메서드*/ 
+	/* 글쓰기를 서브밋했을 때 실행되는 메서드 */
 	@RequestMapping(value = "board_insert.do", method = RequestMethod.POST)
 	public String insert(HttpServletRequest req) {
 
@@ -205,31 +260,51 @@ public class BoardController {
 		}
 	}
 
-	/*글 내용에서 삭제 버튼을 누르면 실행되는 메서드*/
+	/* 글 내용에서 삭제 버튼을 누르면 실행되는 메서드 */
 	@RequestMapping(value = "board_deleteForm.do", method = RequestMethod.GET)
 	public String deleteForm() {
 
 		return "views/board/deleteForm";
 	}
 
-	/*삭제 확인을 하면 실행되는 메서드*/
+	/* 삭제 확인을 하면 실행되는 메서드 */
 	@RequestMapping(value = "board_deleteForm.do", method = RequestMethod.POST)
 	public String delete(HttpServletRequest req, Model model) {
 
 		int b_number = Integer.parseInt(req.getParameter("b_number"));
 		System.out.println(b_number);
-		int i = dao.deleteOne(b_number);
-		if (i == 1) {
+		
+		int i = dao.countComments(b_number);
+		
+		if (i==0) {
+			int j = dao.deleteOne(b_number);
+			if (j == 1) {
 
-			return "views/board/success/delete";
+				return "views/board/success/delete";
+			} else {
+
+				return "views/board/fail/delete";
+			}
 		} else {
+			dao.delteAllComments(b_number);
+			
+			int j = dao.deleteOne(b_number);
+			if (j == 1) {
 
-			return "views/board/fail/delete";
+				return "views/board/success/delete";
+			} else {
+
+				return "views/board/fail/delete";
+			}
+
 		}
+		
+		
+		
 
 	}
 
-	/*글 내용에서 수정 버튼을 누르면 실행되는 메서드*/
+	/* 글 내용에서 수정 버튼을 누르면 실행되는 메서드 */
 	@RequestMapping(value = "board_updateForm.do", method = RequestMethod.GET)
 	public String updateForm(HttpServletRequest req, Model model) {
 		int i = Integer.parseInt(req.getParameter("b_number"));
@@ -239,8 +314,8 @@ public class BoardController {
 
 		return "views/board/updateForm";
 	}
-	
-	/*글 수정에서 서브밋을 하면 실행되는 메서드*/
+
+	/* 글 수정에서 서브밋을 하면 실행되는 메서드 */
 	@RequestMapping(value = "board_updateForm.do", method = RequestMethod.POST)
 	public String update(BoardCommand command) {
 		System.out.println(command);

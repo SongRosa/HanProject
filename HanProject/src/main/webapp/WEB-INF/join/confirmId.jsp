@@ -31,7 +31,7 @@
 </table>
 </c:if>
 <!-- 다른아이디를 검색할 수 있는 폼을 만들어 준다. -->
-<form name="idcheckForm" method="post" action="idCheck.do">
+<form name="idcheckForm" method="post" action="join_idCheck.do">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
 <tr>
 <td align="center">
@@ -55,8 +55,7 @@
 </tr>
 </table>
 </c:if>
-</body>
-</html>
+
 <script>
 
 function setid()
@@ -66,4 +65,6 @@ function setid()
 	self.close();
 }
 
-</script> <!-- /////////////// -->
+</script> 
+</body>
+</html>

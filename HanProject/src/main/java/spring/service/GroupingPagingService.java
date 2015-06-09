@@ -54,8 +54,8 @@ public class GroupingPagingService {
 			// 이전 block 페이지
 			pagingHtml = new StringBuffer();
 			if (currentPage > blockPage) {
-				pagingHtml.append("<a href=/HanProject/board/list.do?p="
-						+ (startPage - 1)+"&g="+g+ ">");
+				pagingHtml.append("<a href=/TestHan/board_list.do?p="
+						+ (startPage - 1)+"&parkNum="+g+ ">");
 				pagingHtml.append("이전");
 				pagingHtml.append("</a>");
 			}
@@ -73,9 +73,9 @@ public class GroupingPagingService {
 					pagingHtml.append("</font></b>");
 				} else {
 					pagingHtml
-							.append("&nbsp;<a href='/HanProject/board/list.do?p=");
+							.append("&nbsp;<a href='/TestHan/board_list.do?p=");
 					pagingHtml.append(i);
-					pagingHtml.append("&g="+g+"'>");
+					pagingHtml.append("&parkNum="+g+"'>");
 					pagingHtml.append(i);
 					pagingHtml.append("</a>");
 				}
@@ -87,8 +87,8 @@ public class GroupingPagingService {
 
 			// 다음 block 페이지
 			if (totalPage - startPage >= blockPage) {
-				pagingHtml.append("<a href=/HanProject/board/list.do?p="
-						+ (endPage + 1)+"&g="+g+ ">");
+				pagingHtml.append("<a href=/TestHan/board_list.do?p="
+						+ (endPage + 1)+"&parkNum="+g+ ">");
 				pagingHtml.append("다음");
 				pagingHtml.append("</a>");
 			}
