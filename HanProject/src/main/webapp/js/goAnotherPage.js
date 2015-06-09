@@ -31,9 +31,10 @@ $(function() {
 });
 
 $(function() {
-	$("#go_board").click(function (parkNum) {
+	$("#go_board").click(function () {
 		var parkNum = $(":button").attr("value");
 		
 		window.location = "board_list.do?parkNum="+parkNum;
 	});
 });
+

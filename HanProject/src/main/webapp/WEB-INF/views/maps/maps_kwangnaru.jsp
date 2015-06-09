@@ -1,37 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page isELIgnored="false" %>
+
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 <link href="css/maps_style.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript" src="js/goAnotherPage.js"></script>
 </head>
+
 <body>
 <div id ="view_top">
 		<div align="right">
-			<label> ´Ù¸¥ °ø¿ø °¡±â</label>			
+			<label> ë‹¤ë¥¸ ê³µì› ê°€ê¸°</label>			
 			<select id="map_pageName" name="pageName">
-				<option label="°­¼­" value="1" >°­¼­ ÇÑ°­°ø¿ø</option>
-				<option label="±¤³ª·ç" value="2" selected="selected">±¤³ª·ç ÇÑ°­°ø¿ø</option>
-				<option label="³­Áö"  value="3">³­Áö ÇÑ°­°ø¿ø</option>
-				<option label="¶Ò¼¶"  value="4">¶Ò¼¶ ÇÑ°­°ø¿ø</option>
-				<option label="¸Á¿ø" value="5">¸Á¿ø ÇÑ°­°ø¿ø</option>
-				<option label="¹ÝÆ÷" value="6">¹ÝÆ÷ ÇÑ°­°ø¿ø</option>
-				<option label="¾çÈ­" value="7">¾çÈ­ ÇÑ°­°ø¿ø</option>
-				<option label="¿©ÀÇµµ" value="8">¿©ÀÇµµ ÇÑ°­°ø¿ø</option>
-				<option label="ÀÌÃÌ" value="9">ÀÌÃÌ ÇÑ°­°ø¿ø</option>
-				<option label="Àá½Ç" value="10">Àá½Ç ÇÑ°­°ø¿ø</option>
-				<option label="Àá¿ø" value="11">Àá¿ø ÇÑ°­°ø¿ø</option>
+				<option label="ê°•ì„œ" value="1" >ê°•ì„œ í•œê°•ê³µì›</option>
+				<option label="ê´‘ë‚˜ë£¨" value="2" selected="selected">ê´‘ë‚˜ë£¨ í•œê°•ê³µì›</option>
+				<option label="ë‚œì§€"  value="3">ë‚œì§€ í•œê°•ê³µì›</option>
+				<option label="ëšì„¬"  value="4">ëšì„¬ í•œê°•ê³µì›</option>
+				<option label="ë§ì›" value="5">ë§ì› í•œê°•ê³µì›</option>
+				<option label="ë°˜í¬" value="6">ë°˜í¬ í•œê°•ê³µì›</option>
+				<option label="ì–‘í™”" value="7">ì–‘í™” í•œê°•ê³µì›</option>
+				<option label="ì—¬ì˜ë„" value="8">ì—¬ì˜ë„ í•œê°•ê³µì›</option>
+				<option label="ì´ì´Œ" value="9">ì´ì´Œ í•œê°•ê³µì›</option>
+				<option label="ìž ì‹¤" value="10">ìž ì‹¤ í•œê°•ê³µì›</option>
+				<option label="ìž ì›" value="11">ìž ì› í•œê°•ê³µì›</option>
 			</select>
 		</div>
 		<div align="right">			
-			<button id="go_direction" value=${parkNum}> ¿À½Ã´Â±æ°¡±â </button><br>
-			<button id="go_board" value=${parkNum}> ÀÚÀ¯°Ô½ÃÆÇ°¡±â </button><br>
+			<button id="go_direction" value=${parkNum}> ì˜¤ì‹œëŠ”ê¸¸ê°€ê¸° </button><br>
+			<button id="go_board" value=${parkNum}> ìžìœ ê²Œì‹œíŒê°€ê¸° </button><br>
 		</div>
-		<p id="direction_txt">°ø¿ø ¾È³»Áöµµ</p>	
+		<p id="direction_txt">ê³µì› ì•ˆë‚´ì§€ë„</p>	
 	</div>
 	
 	<div id="view_content">
@@ -40,11 +42,17 @@
 		</div>
 		
 		<div id="view_btn" align="center">
-			<button id="information"><img id="mapicons" src="mapIcons/information.png"></img></button>
-			<button id="park_bicycle"><img id="mapicons" src="mapIcons/park_bicycle.png"></button>
-			<button id="lend_bicycle"><img id="mapicons" src="mapIcons/lend_bicycle.png" ></button>
-			<button id="drink_water"><img id="mapicons" src="mapIcons/drink_water.png" ></button>
-			<button id="policestation"><img id="mapicons" src="mapIcons/policestation.png"></button>
+			<ul >
+				<li id="information"><img id="mapicons" src="mapIcons/information.png"></img></li>
+				<li>
+					<input type="hidden" id="information_d" value = "37.5178442">
+					<input type="hidden" id="information_r" value = "127.0818811">
+				</li>
+				<li id="parking"><img id="mapicons" src="mapIcons/bicycle_parking.png"></img></li>
+				<li id="lending"><img id="mapicons" src="mapIcons/bicycle.png" ></img></li>
+				<li id="drinking"><img id="mapicons" src="mapIcons/drinking.png" ></img></li>
+				<li id="p"><img id="mapicons" src="mapIcons/police.png"></img></li>
+			</ul>
 		</div>
 	
 	</div>
