@@ -1,0 +1,49 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body{
+	font-family: 'Nanum Gothic', sans-serif;}
+
+.detail_table {
+	clear:both; width:850; table-layout:fixed;  border-collapse: collapse;}
+.detail_table td{
+	border-bottom: 1px solid gray ; padding: 10 10 0 10;
+}
+.detail_table .detail_table_number1,.detail_table_number2,.detail_table_writer1,.detail_table_writer2
+,.detail_table_date1,.detail_table_date2{
+	background: url("/TestHan/board_img/title_bg.gif") repeat-x ;
+}
+.detail_table .detail_table_subject1,.detail_table_subject2{
+	background-color: #fdfdfd;
+}
+.detail_table td.detail_table_content{
+	}
+.detail_table td.detail_table_btnGroup{
+	border-bottom: 0px solid gray ;}
+.detail_table td.detail_table_content{
+	padding: 50 0 50 10;}
+.detail_table .detail_table_updateBtn{ 
+	width: 48; height: 23; background: url("/TestHan/board_img/btn_modify.gif") no-repeat center; border-radius: 3px;
+}
+.detail_table .detail_table_deleteBtn{
+	width: 48; height: 23; background: url("/TestHan/board_img/btn_delete.gif") no-repeat center ; border-radius: 3px;
+}
+.detail_table .detail_table_goListBtn{
+	width: 48; height: 23; background: url("/TestHan/board_img/btn_list.gif") no-repeat center ; border-radius: 3px;
+}
+
+
+.comments_table{
+	clear:both; width:850; table-layout:fixed; border-top:2px solid #ccc; border-bottom: 2px solid #ccc; border-collapse: collapse;}
+.comments_table td{
+	border-bottom: 1px dashed gray ; padding: 10 10 0 10;
+}
+.comments_table .comments_table_deleteBtn{
+	width: 25; height: 25; background: url("/TestHan/board_img/x_button2.png") no-repeat center; border-radius: 3px; 
+	border-width: 0px;
+}
+
+
+.input_table .input_table_submitBtn{
+	width: 56; height: 27; background: url("/TestHan/board_img/co_btn_write.gif") no-repeat center ; overflow: hidden; border-radius: 3px;
+}
+

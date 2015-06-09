@@ -3,10 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page trimDirectiveWhitespaces="true"%>
 
 <html>
+
 <head>
+
 <title>자유게시판 목록</title>
+<link href="css/board/list_style.css" rel="stylesheet" type="text/css"/>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 $(function(){
@@ -39,7 +43,12 @@ $(function(){
 </script>
 </head>
 <body>
-	<div id="board_tab" align="left">
+	
+	<div id="board_table" align="center">
+
+		<table class="board_table">
+		<tr align="left" >
+			<td align="left">
 		<select id="p_number" name="p_number">
 			<option id="p_number0" selected="selected" value="0">글분류</option>
 			<option id="p_number1" value="1">강서</option>
@@ -55,46 +64,47 @@ $(function(){
 			<option id="p_number11" value="11">잠원</option>
 			<option id="p_number12" value="12">자유글</option>
 		</select>
-
-	</div>
-	<div id="board_table" align="center">
-		<table width="1000">
+		</td>
+		</tr>
 			<tr>
-				<td>글번호</td>
-				<td>글분류</td>
-				<td>글제목</td>
-				<td>작성자</td>
-				<td>작성일</td>
-				<td>조회수</td>
+				<th class="col1">글번호</th>
+				<th class="col2">글분류</th>
+				<th class="col3">제&nbsp;&nbsp;목</th>
+				<th class="col4">작성자</th>
+				<th class="col5">작성일</th>
+				<th class="col6">조회수</th>
 			</tr>
 
-			<c:forEach var="one" items="${list }">
-				<tr>
-					<td>${one.b_number }</td>
-					<td>${one.p_name }</td>
-					<td><a href="board_detail.do?b_number=${one.b_number }">${one.b_subject }</a>&nbsp;
+			<c:forEach var="one" items="${list }" >
+				<tr class="list">
+					<td class="num">${one.b_number }</td>
+					<td class="name">${one.p_name }</td>
+					<td class="subject"><a href="board_detail.do?b_number=${one.b_number }">${one.b_subject }</a>&nbsp;
 						[${one.c_count }]</td>
-					<td>${one.b_writer }</td>
-					<td><fmt:formatDate value="${one.b_regdate }" type="date" /></td>
-					<td>${one.b_count }</td>
+					<td class="name">${one.b_writer }</td>
+					<td class="date"><fmt:formatDate value="${one.b_regdate }" type="date" /></td>
+					<td class="hit">${one.b_count }</td>
 				</tr>
 			</c:forEach>
-
+			<tr>
+			<td style="float: right;" colspan="6" align="right">
+			<button class="board_write_btn" onclick="window.location='board_insert.do'">&nbsp;</button>
+			</td>
+			</tr>
 		</table>
 	</div>
-	<div id="board_write_btn" align="right">
-		<button onclick="window.location='board_insert.do'">글쓰기</button>
-	</div>
+	<br>
 	<br>
 	<div align="center">${paging }</div>
 	<br>
-	<div id="board_searchbar" align="center">
+	<div class="board_searchbar" align="center">
 		<form name="search" onsubmit=" return preSearch();" method="post">
 			<select name="search_option">
 				<option selected="selected" value="sub">제목</option>
 				<option value="wri">작성자</option>
-			</select> <input maxlength="15" name="search_value" /> <input type="submit"
-				value="검색">
+			</select> 
+			<input class="search_text" size="25" maxlength="25" name="search_value" />
+			<input class="btn_search" type="submit" value="&nbsp;">
 		</form>
 	</div>
 </body>
