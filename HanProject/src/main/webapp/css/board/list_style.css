@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 body{font-family: 'Nanum Gothic', sans-serif;}
-#p_number{ background: transparent url("/TestHan/board_img/btn_down.gif") no-repeat right center; width: 70; padding: 5px;
+#p_number{ background: transparent url("/HanProject/board_img/btn_down.gif") no-repeat right center; width: 70; padding: 5px;
 font-size: 13px;
 line-height: 1;
 border: 0; border-radius: 0;
@@ -9,7 +9,7 @@ border: 0; border-radius: 0;
 .board_table { clear:both; width:850; table-layout:fixed; border-collapse: collapse;}
 .board_table th { font-weight:bold; font-size:15px; }
 .board_table th { border-bottom: 3px solid gray;  } 
-.board_table th { background: url("/TestHan/board_img/title_bg.gif") repeat-x;  } 
+.board_table th { background: url("/HanProject/board_img/title_bg.gif") repeat-x;  } 
 .board_table th { white-space:nowrap; height:34px; overflow:hidden; text-align:center; } 
 .board_table th.col1{width: 10%;}
 .board_table th.col2{width: 10%;}
@@ -30,19 +30,19 @@ border: 0; border-radius: 0;
 
 #p_number{margin-right: 100px; margin-left: -20px;}
 .board_write_btn{
-	width: 74px; height: 25px;  margin: 0 -400 0 400; background: url("/TestHan/board_img/btn_write.gif") no-repeat center ;
+	width: 74px; height: 25px;  margin: 0 -400 0 400; background: url("/HanProject/board_img/btn_write.gif") no-repeat center ;
 	!border-top: 2px solid #ccc;
 	
 	}
 
 .board_searchbar { text-align:center;  display: inline; vertical-align: baseline;   }
-.board_searchbar select{ background: transparent url("/TestHan/board_img/btn_down.gif") no-repeat right center; width: 70; padding: 1px;
+.board_searchbar select{ background: transparent url("/HanProject/board_img/btn_down.gif") no-repeat right center; width: 70; padding: 1px;
 font-size: 13px;
 line-height: 1;
 border: 1; border-radius: 0;
 -webkit-appearance: none;}
 .board_searchbar .btn_search{width: 42; height: 23;
-background: url("/TestHan/board_img/btn_search.gif") no-repeat center ;
+background: url("/HanProject/board_img/btn_search.gif") no-repeat center ;
 border-radius: 3px;
 cursor: pointer;
 }

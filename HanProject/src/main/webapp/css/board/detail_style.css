@@ -22,13 +22,13 @@ body{
 .detail_table td.detail_table_content{
 	padding: 50 0 50 10;}
 .detail_table .detail_table_updateBtn{ 
-	width: 48; height: 23; background: url("/TestHan/board_img/btn_modify.gif") no-repeat center; border-radius: 3px;
+	width: 48; height: 23; background: url("/HanProject/board_img/btn_modify.gif") no-repeat center; border-radius: 3px;
 }
 .detail_table .detail_table_deleteBtn{
-	width: 48; height: 23; background: url("/TestHan/board_img/btn_delete.gif") no-repeat center ; border-radius: 3px;
+	width: 48; height: 23; background: url("/HanProject/board_img/btn_delete.gif") no-repeat center ; border-radius: 3px;
 }
 .detail_table .detail_table_goListBtn{
-	width: 48; height: 23; background: url("/TestHan/board_img/btn_list.gif") no-repeat center ; border-radius: 3px;
+	width: 48; height: 23; background: url("/HanProject/board_img/btn_list.gif") no-repeat center ; border-radius: 3px;
 }
 
 
@@ -38,12 +38,12 @@ body{
 	border-bottom: 1px dashed gray ; padding: 10 10 0 10;
 }
 .comments_table .comments_table_deleteBtn{
-	width: 25; height: 25; background: url("/TestHan/board_img/x_button2.png") no-repeat center; border-radius: 3px; 
+	width: 25; height: 25; background: url("/HanProject/board_img/x_button2.png") no-repeat center; border-radius: 3px; 
 	border-width: 0px;
 }
 
 
 .input_table .input_table_submitBtn{
-	width: 56; height: 27; background: url("/TestHan/board_img/co_btn_write.gif") no-repeat center ; overflow: hidden; border-radius: 3px;
+	width: 56; height: 27; background: url("/HanProject/board_img/co_btn_write.gif") no-repeat center ; overflow: hidden; border-radius: 3px;
 }
 
