@@ -7,8 +7,8 @@
 	</decorator>
 	
 
-	<!-- <excludes>
-		<pattern>/chap19/hello/exclude.jsp</pattern>
+<!-- 	<excludes>
+		<pattern>/delete.jsp</pattern>
 	</excludes> -->
 
 </decorators>

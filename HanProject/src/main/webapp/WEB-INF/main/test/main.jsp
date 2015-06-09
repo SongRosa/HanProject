@@ -18,7 +18,7 @@
 			$("#park_info div").css("display", "none");
 			$("#park_btn div").css("display", "none");
 			
-			$("#park_container").show("clip");
+			$("#park_container").show("clip",700);
 			$('.'+i).css("display", "block");
 			$("#park_img").attr("src", "river_picture/river"+i+".jpg");
 		}
@@ -64,12 +64,51 @@
 			}
 		});
 		
+		$("#park_btn li").mouseenter(function(){
+			var i = $(this).val();
+			var j = i-1;
+			var a = "";
+			
+			if(i==1){
+				a = "parkIcon/marker_clicked.png";
+			} else if(i==2){
+				a = "parkIcon/parkmap_clicked.png";
+			} else if(i==3){
+				a = "parkIcon/board_clicked.png";
+			}
+			
+			$("#park_btn ul").find("img:eq("+j+")").attr("src", a);
+		});
+		
+		$("#park_btn li").mouseleave(function(){
+			var i = $(this).val();
+			var j = i-1;
+			var a = "";
+			
+			if(i==1){
+				a = "parkIcon/marker.png";
+			} else if(i==2){
+				a = "parkIcon/parkmap.png";
+			} else if(i==3){
+				a = "parkIcon/board.png";
+			}
+			
+			$("#park_btn ul").find("img:eq("+j+")").attr("src", a);
+		});
+		
+		
 		
 		$("#close").click(function(){
 			a=0;
+			
+			for(d=1;d<12;d++){
+				$("#park_icon").find('.'+d).attr("src", "icon_complete/parkIcon"+d+".png");
+			}
+			
 			$("#park_container").fadeOut(300,function(){
 				$("#main_picture").fadeIn(300);
 			});
+			
 		});
 	});
 </script>
@@ -80,18 +119,17 @@
 		<div id="home">
 		
 			<div id="main_picture">
-				<img src="picture/hanrivermap.jpg" width="980" height="380">
+				<img src="picture/hanrivermap.jpg" width="999" height="380">
 			</div>
 			
 			<div id="park_container">
 			
 				<div id="park_picture">
-					<img id="park_img" src="" width="500" height="380">
+					<img id="park_img" src="" width="580" height="380">
 				</div>
 				
 				<div id="park_introduce">
 				
-					<div align="right" ><button id="close">X</button></div>
 					
 					<div class="0" id="park_name" align="center" style="width: 200">
 						<div class="1"><img src="park_name/name1.png" width="200" height="70"></div>
@@ -106,7 +144,7 @@
 						<div class="10"><img src="park_name/name10.png" width="200" height="70"></div>
 						<div class="11"><img src="park_name/name11.png" width="200" height="70"></div>
 					</div>
-					
+					<div id="x" align="right" ><img id="close" src="parkIcon/x_button.png" width="30" height="30"></div>
 					
 					
 					<div class="0" id="park_info">
@@ -261,111 +299,174 @@
 				
 						<div class="1">
 					 		<ul>
-								<li value="1" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=1'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=1'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=1'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=1"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=1"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=1"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="2">
 					 		<ul>
-								<li value="2" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=2'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=2'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=2'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=2"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=2"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=2"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="3">
 					 		<ul>
-								<li value="3" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=3'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=3'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=3'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=3"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=3"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=3"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="4">
 					 		<ul>
-								<li value="4" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=4'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=4'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=4'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=4"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=4"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=4"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="5">
 					 		<ul>
-								<li value="5" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=5'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=5'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=5'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=5"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=5"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=5"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="6">
 					 		<ul>
-								<li value="6" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=6'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=6'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=6'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=6"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=6"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=6"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="7">
 					 		<ul>
-								<li value="7" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=7'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=7'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=7'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=7"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=7"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=7"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="8">
 					 		<ul>
-								<li value="8" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=8'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=8'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=8'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=8"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=8"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=8"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="9">
 					 		<ul>
-								<li value="9" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=9'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=9'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=9'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=9"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=9"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=9"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="10">
 					 		<ul>
-								<li value="10" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=10'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=10'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=10'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=10"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=10"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=10"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
 						
 						<div class="11">
 					 		<ul>
-								<li value="11" id="way" style="float: left;"><button onClick="javascript:window.location='directionPage.do?parkNum=11'">오시는길</button></li>
-								<li id="map" style="float: left;"><button onClick="javascript:window.location='mapPage.do?parkNum=11'">안내지도</button></li>
-								<li id="bd" style="float: left;"><button onClick="javascript:window.location='board_list.do?parkNum=11'">자유 게시판</button></li>
+								<li value="1" id="way" style="float: left;">
+									<a href="directionPage.do?parkNum=11"><img src="parkIcon/marker.png"></a>
+								</li>
+								<li value="2" id="map" style="float: left;">
+									<a href="mapPage.do?parkNum=11"><img src="parkIcon/parkmap.png"></a>
+								</li>
+								<li value="3" id="bd" style="float: left;">
+									<a href="board_list.do?parkNum=11"><img src="parkIcon/board.png"></a>
+								</li>
 							</ul>
 						</div>
-						
 					</div>
-
 				</div>
-				
 			</div>
 
 			<div id="park_icon">
 				<ul>
-					<li value="1"><img class="1" id="rm1" src="icon_complete/parkIcon1.png" width="90" height="75"></li>
-					<li value="2"><img class="2" id="rm2" src="icon_complete/parkIcon2.png" width="90" height="75"></li>
-					<li value="3"><img class="3" id="rm3" src="icon_complete/parkIcon3.png" width="90" height="75"></li>
-					<li value="4"><img class="4" id="rm4" src="icon_complete/parkIcon4.png" width="90" height="75"></li>
-					<li value="5"><img class="5" id="rm5" src="icon_complete/parkIcon5.png" width="90" height="75"></li>
-					<li value="6"><img class="6" id="rm6" src="icon_complete/parkIcon6.png" width="90" height="75"></li>
-					<li value="7"><img class="7" id="rm7" src="icon_complete/parkIcon7.png" width="90" height="75"></li>
-					<li value="8"><img class="8" id="rm8" src="icon_complete/parkIcon8.png" width="90" height="75"></li>
-					<li value="9"><img class="9" id="rm9" src="icon_complete/parkIcon9.png" width="90" height="75"></li>
-					<li value="10"><img class="10" id="rm10" src="icon_complete/parkIcon10.png" width="90" height="75"></li>
-					<li value="11"><img class="11" id="rm11" src="icon_complete/parkIcon11.png" width="90" height="75"></li>
+					<li value="1"><img class="1" id="rm1" src="icon_complete/parkIcon1.png" width="90.9" height="80"></li>
+					<li value="2"><img class="2" id="rm2" src="icon_complete/parkIcon2.png" width="90.9" height="80"></li>
+					<li value="3"><img class="3" id="rm3" src="icon_complete/parkIcon3.png" width="90.9" height="80"></li>
+					<li value="4"><img class="4" id="rm4" src="icon_complete/parkIcon4.png" width="90.9" height="80"></li>
+					<li value="5"><img class="5" id="rm5" src="icon_complete/parkIcon5.png" width="90.9" height="80"></li>
+					<li value="6"><img class="6" id="rm6" src="icon_complete/parkIcon6.png" width="90.9" height="80"></li>
+					<li value="7"><img class="7" id="rm7" src="icon_complete/parkIcon7.png" width="90.9" height="80"></li>
+					<li value="8"><img class="8" id="rm8" src="icon_complete/parkIcon8.png" width="90.9" height="80"></li>
+					<li value="9"><img class="9" id="rm9" src="icon_complete/parkIcon9.png" width="90.9" height="80"></li>
+					<li value="10"><img class="10" id="rm10" src="icon_complete/parkIcon10.png" width="90.9" height="80"></li>
+					<li value="11"><img class="11" id="rm11" src="icon_complete/parkIcon11.png" width="90.9" height="80"></li>
 				</ul>
 			</div>
 		</div>
