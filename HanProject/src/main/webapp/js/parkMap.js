@@ -100,7 +100,7 @@ $.makeMap = function (oPoint) {
 	});
 	
     var mapZoom = new nhn.api.map.ZoomControl(); // - 줌 컨트롤 선언                        
-    mapZoom.setPosition({left:80, bottom:40}); // - 줌 컨트롤 위치 지정                        
+    mapZoom.setPosition({left:10, bottom:10}); // - 줌 컨트롤 위치 지정                        
     oMap.addControl(mapZoom); // - 줌 컨트롤 추가.
 }
 
@@ -120,26 +120,4 @@ $.makeMarker = function(oPoint) {
 
 $.loadDb = function(){
 	window.location="facility_search.do?parkNum="+parkNum;	
-	alert("DB야 로딩되지마ㅠㅠ");
 }
-
-
-/*
-$("#information").click(function(){
-	$("#mapicons_1").attr("src", "mapIcons/bicycle_parking_clicked.png");
-	buttonNum = $(this).val();
-	alert(buttonNum);
-	});*/
-/*
-if(tempNum == 1){
-	$(function(){
-		alert("tempNum :::: "+tempNum);
-	$(".1").each(function(){		
-		lat = $(this).attr("value");
-		lon = $(this).attr("title");
-		oPoint = new nhn.api.map.LatLng(lat, lon);
-		$.makeMarker(oPoint);	
-		$.changeLocation(oPoint);	
-	});
-	});
-}*/
