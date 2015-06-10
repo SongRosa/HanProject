@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<form:form commandName="searchpwdform" name="searchpwdform" action="searchPwd.do" method="post">
+<form:form commandName="loginform" name="searchpwdform" action="searchPwd.do" method="post">
 
 	<table cellspacing=1 cellpadding=1 border=1 align="center">
 		<tr height="30">

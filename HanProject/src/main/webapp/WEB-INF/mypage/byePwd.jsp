@@ -14,7 +14,7 @@ $(function (){
 </script>
 </head>
 <body>
-<form:form commandName="loginform" name="confirmpwdform" action="updatego.do" method="post">
+<form:form commandName="loginform" name="confirmpwdform" action="byebye.do" method="post">
 
 	<table cellspacing=1 cellpadding=1 border=1 align="center">
 		<tr height="30">
@@ -34,7 +34,7 @@ $(function (){
 		<tr height="30">
 			<td colspan="3" align="right">
 				<input type="submit" value="입 력">
-				<input type="button" value="취 소" onclick="javascript:window.location='log_login.do'">
+				<input type="button" value="취 소" onclick="javascript:window.location='mypageForm.do'">
 			</td>
 	
 		</tr>

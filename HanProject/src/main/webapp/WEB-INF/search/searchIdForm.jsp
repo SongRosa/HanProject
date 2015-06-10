@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<form:form commandName="searchidform" name="searchidform" action="searchId.do" method="post">
+<form:form commandName="loginform" name="searchidform" action="searchId.do" method="post">
 
 	<table cellspacing=1 cellpadding=1 border=1 align="center">
 		<tr height="30">

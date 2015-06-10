@@ -33,13 +33,13 @@ public class MemberInputController {
 	}
 
 	@RequestMapping(value = "join_input.do")
-	public String memberInput(@ModelAttribute("join") UserInfo useri) {
+	public String memberInput(@ModelAttribute("loginform") UserInfo useri) {
 		return "join/joinForm";
 	}
 
 	
 	@RequestMapping(value = "join_memsub.do", method = RequestMethod.POST)
-	public String memSub(@ModelAttribute("join") UserInfo useri,
+	public String memSub(@ModelAttribute("loginform") UserInfo useri,
 			BindingResult result) {
 		useri.setEmail(useri.getEmail1()+"@"+useri.getEmail2());
 		useri.setTel(useri.getTel1()+"-"+useri.getTel2()+"-"+useri.getTel3());
@@ -92,7 +92,7 @@ public class MemberInputController {
 			model.addAttribute("a",a);
 			return "join/confirmNick";
 		}else{
-		int x = dao.countId(nick);
+		int x = dao.countNick(nick);
 		int a=2;
 		model.addAttribute("nick",nick);
 		model.addAttribute("x",x);
@@ -111,7 +111,7 @@ public class MemberInputController {
 			return "join/confirmEmail";
 		}else{
 		email=email1+"@"+email2;
-		int x = dao.countId(email);
+		int x = dao.countEmail(email);
 		int a=2;
 		model.addAttribute("email1",email1);
 		model.addAttribute("email2",email2);
