@@ -4,7 +4,16 @@
 <head>
 <title>글쓰기</title>
 <link type="text/css" rel="stylesheet" href="css/board/insert_style.css" >
+<script src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
+$(function(){
+	if(${!empty p_number}){
+		$("option:first").removeAttr("selected");
+		$("option:nth-child(${p_number+1})").attr("selected","selected");
+	}
+	
+});
+
 function checkBlank(){
 	if(document.insertForm.b_subject.value==""){
 		alert("제목을 입력해 주세요.");
@@ -55,7 +64,7 @@ function checkBlank(){
 				<p class="btnGroup_p" align="right">
 				<input class="submitBtn" type="submit" value="&nbsp;" />
 				<input class="resetBtn" type="reset" value="&nbsp;" />
-				<input class="goListBtn" type="button" value="&nbsp;" onclick="window.location='board_list.do?parkNum=0'" />
+				<input class="goListBtn" type="button" value="&nbsp;" onclick="window.location='board_list.do?parkNum=${param.parkNum}'" />
 				</p>
 				</td>
 				</tr>

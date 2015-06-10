@@ -234,7 +234,11 @@ public class BoardController {
 
 	/* 목록에서 글 쓰기를 불렀을 때 실행해주는 메서드 */
 	@RequestMapping(value = "board_insert.do", method = RequestMethod.GET)
-	public String insertForm() {
+	public String insertForm(@RequestParam(value="parkNum",defaultValue="0") String parkNum, Model model ) {
+		
+		int p_number = Integer.parseInt(parkNum);
+		model.addAttribute("p_number", p_number);
+		
 		return "views/board/insertForm";
 	}
 
@@ -254,7 +258,7 @@ public class BoardController {
 		int i = dao.insertOne(bc);
 		if (i == 1) {
 
-			return "redirect:board_list.do?parkNum=0";
+			return "redirect:board_list.do?parkNum="+p_number;
 		} else {
 
 			return "views/board/fail/insert";
