@@ -43,13 +43,17 @@ $(function(){
 </script>
 </head>
 <body>
-	
+	<div id=p_number_div>
+		
+		</div>
 	<div id="board_table" align="center">
 
 		<table class="board_table">
-		<tr align="left" >
-			<td align="left">
-		<select id="p_number" name="p_number">
+		
+			<tr>
+				<th class="col1">글번호</th>
+				<th class="col2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<select id="p_number" name="p_number">
 			<option id="p_number0" selected="selected" value="0">전체글</option>
 			<option id="p_number1" value="1">강서</option>
 			<option id="p_number2" value="2">광나루</option>
@@ -64,11 +68,8 @@ $(function(){
 			<option id="p_number11" value="11">잠원</option>
 			<option id="p_number12" value="12">자유글</option>
 		</select>
-		</td>
-		</tr>
-			<tr>
-				<th class="col1">글번호</th>
-				<th class="col2">글분류</th>
+				</th>
+				
 				<th class="col3">제&nbsp;&nbsp;목</th>
 				<th class="col4">작성자</th>
 				<th class="col5">작성일</th>
@@ -78,7 +79,7 @@ $(function(){
 			<c:forEach var="one" items="${list }" >
 				<tr class="list">
 					<td class="num">${one.b_number }</td>
-					<td class="name">${one.p_name }</td>
+					<td class="name">&lt;${one.p_name }&gt;</td>
 					<td class="subject"><a href="board_detail.do?b_number=${one.b_number }">${one.b_subject }</a>&nbsp;
 						[${one.c_count }]</td>
 					<td class="name">${one.b_writer }</td>

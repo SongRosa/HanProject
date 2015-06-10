@@ -53,7 +53,7 @@ public class CommentsPagingService {
 		// 이전 block 페이지
 		pagingHtml = new StringBuffer();
 		if (currentPage > blockPage) {
-			pagingHtml.append("<a href=/HanProject/board_detail.do?b_number="+b_number+"&p="
+			pagingHtml.append("<a href=board_detail.do?b_number="+b_number+"&p="
 					+ (startPage - 1) + ">");
 			pagingHtml.append("이전");
 			pagingHtml.append("</a>");
@@ -72,7 +72,7 @@ public class CommentsPagingService {
 				pagingHtml.append("</font></b>");
 			} else {
 				pagingHtml
-						.append("&nbsp;<a href='/HanProject/board_detail.do?b_number="+b_number+"&p=");
+						.append("&nbsp;<a href='board_detail.do?b_number="+b_number+"&p=");
 				pagingHtml.append(i);
 				pagingHtml.append("'>");
 				pagingHtml.append(i);
@@ -86,7 +86,7 @@ public class CommentsPagingService {
 
 		// 다음 block 페이지
 		if (totalPage - startPage >= blockPage) {
-			pagingHtml.append("<a href=/HanProject/board_detail.do?b_number="+b_number+"&p="
+			pagingHtml.append("<a href=board_detail.do?b_number="+b_number+"&p="
 					+ (endPage + 1) + ">");
 			pagingHtml.append("다음");
 			pagingHtml.append("</a>");

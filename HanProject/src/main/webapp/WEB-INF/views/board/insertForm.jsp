@@ -3,6 +3,7 @@
 <html>
 <head>
 <title>글쓰기</title>
+<link type="text/css" rel="stylesheet" href="css/board/insert_style.css" >
 <script type="text/javascript">
 function checkBlank(){
 	if(document.insertForm.b_subject.value==""){
@@ -19,15 +20,15 @@ function checkBlank(){
 </script>
 </head>
 <body>
-	<div id="board_insertTable" align="center" width="1000">
+	<div id="insert_div" align="center" width="1000">
 		<form name="insertForm" method="post" onsubmit="return checkBlank();">
-			<table >
+			<table class="insert_table" >
 				<tr>
 				<td>작성자</td>
-					<td><input name="b_writer" size="5" maxlength="25"></td>
+					<td><input class="table_writer" name="b_writer" size="10" maxlength="25"></td>
 					<td>제목</td>
 					<td>
-					<select name="p_number">
+					<select class="p_number" name="p_number">
 					<option selected="selected" value="12">자유글</option>
 					<option value="1">강서</option>
 					<option value="2">광나루</option>
@@ -41,15 +42,24 @@ function checkBlank(){
 					<option value="10">잠실</option>
 					<option value="11">잠원</option>
 					</select>
-					<input name="b_subject" size="20" maxlength="100" /></td>
+					<input class="table_subject" name="b_subject" size="50" maxlength="100" /></td>
 				<tr>
+				
+					<td colspan="4">
+					<br>
+					<textarea class="table_content" name="b_content" rows="15" cols="100"  ></textarea>
+					</td>
+				</tr>
 				<tr>
-					<td colspan="4"><textarea name="b_content" rows="15" cols="100"  ></textarea>
+				<td colspan="4">
+				<p class="btnGroup_p" align="right">
+				<input class="submitBtn" type="submit" value="&nbsp;" />
+				<input class="resetBtn" type="reset" value="&nbsp;" />
+				<input class="goListBtn" type="button" value="&nbsp;" onclick="window.location='board_list.do?parkNum=0'" />
+				</p>
+				</td>
+				</tr>
 			</table>
-			<div id="board_btnGroup" align="right">
-				<input type="submit" value="글쓰기" /> <input type="reset" value="초기화" />
-				<input type="button" value="목록" onclick="window.location='board_list.do?parkNum=0'" />
-			</div>
 		</form>
 
 	</div>
