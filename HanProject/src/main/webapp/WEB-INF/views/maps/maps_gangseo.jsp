@@ -4,7 +4,7 @@
 <%@ page isELIgnored="false" %>
 <html lang="ko" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
-	<title>OpenAPI 2.0 - 지도 생성</title>
+	<title>강서한강공원 편의시설 지도</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="css/maps_style.css" rel="stylesheet" type="text/css">
 	<script src="http://code.jquery.com/jquery.js"></script>
@@ -39,17 +39,14 @@
 	</div>
 	
 	<div id="view_content">
-		<div id="view_maps">					
-			<script type="text/javascript" src="js/parkMap.js"></script>
+		<div id="view_maps">				
+			<!--<script type="text/javascript" src="js/TestParkMap.js"></script> -->
+			 	<script type="text/javascript" src="js/parkMap.js"></script>
 		</div>
 		
 		<div id="view_btn" align="center">
 			<ul >
 				<li id="information" value="1"><img id="mapicons1" src="mapIcons/mapIcons1.png"></img></li>
-				<li>
-					<input type="hidden" id="info_lat" value = "37.5870070">		
-					<input type="hidden" id="info_lon" value = "126.8181035">
-				</li>
 				<li id="parking" value="2"> <img id="mapicons2" src="mapIcons/mapIcons2.png"></img></li>
 				<li id="lending" value="3"><img id="mapicons3" src="mapIcons/mapIcons3.png" ></img></li>
 				<li id="drinking" value="4"><img id="mapicons4" src="mapIcons/mapIcons4.png" ></img></li>
