@@ -126,7 +126,6 @@
 				- <form:input path="tel2" size="4" maxlength="4" /> - <form:input path="tel3" size="4" maxlength="4" />
 			</tr>
 			<tr>
-			<tr>
 				<td width="200">우편번호</td>
 				<td><form:input path="zipcode" size="7" readonly="true" />
 				<input type="button" value="우편번호찾기" onClick="zipCheck()"></td>

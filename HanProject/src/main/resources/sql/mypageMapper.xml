@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypageMap">
+
+
+	<select id="selectId" resultType="int" parameterType="spring.command.UserInfo">
+		select count(*) from member where id=#{id} and pwd=#{pwd}
+	</select>
+	
+	<update id="updatePwd" parameterType="spring.command.UserInfo"> 
+	    update member set pwd=#{pwd} where id=#{id}
+	</update>
+	
+ 	<update id="updateNick" parameterType="spring.command.UserInfo"> 
+	    update member set nick=#{nick} where id=#{id}
+	</update>
+	
+ 	<select id="selectInfo" resultType="spring.command.UserInfo" parameterType="spring.command.UserInfo">
+		select * from member where id=#{id}
+	</select>
+</mapper>

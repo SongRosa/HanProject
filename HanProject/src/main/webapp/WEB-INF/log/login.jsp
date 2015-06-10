@@ -13,7 +13,7 @@ ${id }님이 <br>
 방문하셨습니다.
 <form method="post" action="logout.do">
 <input type="submit" value="로그아웃">
-<input type="button" value="회원정보변경" onclick="javascript:window.location='modify.jsp'">
+<input type="button" value="회원정보변경" onclick="javascript:window.location='confirmPwd.do'">
 <input type="button" value="게시판으로 이동" onclick="javascript:window.location='board_list.do'">
 </form>
 </td>

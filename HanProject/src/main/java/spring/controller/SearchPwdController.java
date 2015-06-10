@@ -4,7 +4,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import spring.command.UserInfo;
 import spring.mybatis.UserDAO;
-import spring.validation.LoginCommandValidator;
 import spring.validation.SearchValidation;
 
 @Controller
@@ -48,7 +46,7 @@ public class SearchPwdController {
 		int x = dao.isPwd2(useri);
 		
 		if (x == 1) {
-			useri.setPwd("temp"+(int)(Math.random()*10000));
+			useri.setPwd("tp"+(int)(Math.random()*10000000));
 			dao.tempPwd(useri);
 			UserInfo pwd = dao.selectPwd(useri);
 			String a=pwd.getPwd();

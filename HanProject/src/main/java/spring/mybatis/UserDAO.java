@@ -42,6 +42,14 @@ public class UserDAO  extends SqlSessionDaoSupport{
 		return id;
 	}
 	
+	public int selectId2(String id, String pwd) {
+		UserInfo d = new UserInfo();
+		d.setId(id);
+		d.setPwd(pwd);
+		int x = getSqlSession().selectOne("mypageMap.selectId", d);
+		return x;
+	}
+	
 	public int isPwd2(UserInfo useri) {
 		int x = getSqlSession().selectOne("SearchMap.isPwd", useri);
 		return x;
@@ -55,5 +63,25 @@ public class UserDAO  extends SqlSessionDaoSupport{
 	public UserInfo tempPwd(UserInfo useri) {
 		UserInfo tempPwd = getSqlSession().selectOne("SearchMap.tempPwd", useri);
 		return tempPwd;
+	}
+	
+	public UserInfo updatePwd(String id, String pwd){
+		UserInfo d = new UserInfo();
+		d.setId(id);
+		d.setPwd(pwd);
+		UserInfo x = getSqlSession().selectOne("mypageMap.updatePwd", d);
+		return x;
+	}
+	
+	public UserInfo updateNick(String id, String Nick){
+		UserInfo d = new UserInfo();
+		d.setId(id);
+		d.setNick(Nick);
+		UserInfo x = getSqlSession().selectOne("mypageMap.updateNick", d);
+		return x;
+	}
+	public UserInfo selectInfo(UserInfo useri){
+		UserInfo info = getSqlSession().selectOne("mypageMap.selectInfo", useri);
+		return info;
 	}
 }

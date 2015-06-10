@@ -24,7 +24,7 @@ label{
 	height: 500px;
 	margin: auto;	
 
-	border: 1px solid black;
+	border: 1px solid gray;
 }
 
 #view_btn{
@@ -32,7 +32,7 @@ label{
 	height: 70px;
 	margin: auto;
 	
-	margin-bottom:20px;
+	margin-bottom:70px;
 }
 
 select {
@@ -51,7 +51,7 @@ button#go_direction, button#go_board{
 }
 
 ul{	
-	margin-top: -16px;
+	margin-top: -10px;
 	margin-left:-40px;
 }
 
@@ -61,6 +61,14 @@ ul{
 }
 
 #view_btn img{
-	width:160px;
-	height:70px;
+	width:158px;
+	height:80px;	
+	
+	border-width:1px;
+	border-style: dotted;
+	border-color: gray;
+}
+
+#information img:HOVER {
+	background: url("mapIcons/information_clicked.png");
 }
