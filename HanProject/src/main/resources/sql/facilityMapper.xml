@@ -4,7 +4,7 @@
 <mapper namespace="facility">
     
     <select id="selectList" resultType="spring.command.FacilityCommand" parameterType="int">
-        select * from location where p_number = #{p_number}        
+        select * from location where p_number = #{p_number} or f_number = 5      
     </select>
     
 </mapper>

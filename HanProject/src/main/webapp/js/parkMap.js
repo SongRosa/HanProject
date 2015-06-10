@@ -11,7 +11,6 @@ var oMarker;
 
 $(document).ready(function() {
 	parkNum = $("#parkNum").attr("value");
-	
 	if(tempNum == 0){
 		$.loadDb();
 	}
@@ -24,80 +23,20 @@ $(document).ready(function() {
 	$.makeMarker(oPoint,0);	
 });
 
-
-$(function(){	
-	$("#information").click(function(){
-		buttonNum = $(this).val();	
-		oMap.clearOverlay();
-		$(".1").each(function(){		
-			lat = $(this).attr("value");
-			lon = $(this).attr("title");
-			oPoint = new nhn.api.map.LatLng(lat, lon);
-			$.makeMarker(oPoint);	
-			$.changeLocation(oPoint);	
-		});
-	});
-});
-
 $(function(){
-	$("#parking").click(function(){
+	$("li").click(function() {
 		buttonNum = $(this).val();
-
-		oMap.clearOverlay();
-		$(".2").each(function(){		
-			lat = $(this).attr("value");
-			lon = $(this).attr("title");
-			oPoint = new nhn.api.map.LatLng(lat, lon);
-			$.makeMarker(oPoint);	
-			$.changeLocation(oPoint);	
-		});
-	});
-});
-
-$(function(){
-	$("#lending").click(function(){
-		buttonNum = $(this).val();
-
-		oMap.clearOverlay();
-		$(".3").each(function(){		
-			lat = $(this).attr("value");
-			lon = $(this).attr("title");
-			oPoint = new nhn.api.map.LatLng(lat, lon);
-			$.makeMarker(oPoint);	
-			$.changeLocation(oPoint);	
-		});
-	});
-});
-
-$(function(){
-	$("#drinking").click(function(){
-		buttonNum = $(this).val();
-
-		oMap.clearOverlay();
-		$(".4").each(function(){		
-			lat = $(this).attr("value");
-			lon = $(this).attr("title");
-			oPoint = new nhn.api.map.LatLng(lat, lon);
-			$.makeMarker(oPoint);	
-			$.changeLocation(oPoint);	
-		});
-	});
-});
-
-$(function(){
-	$("#police").click(function(){	
-		buttonNum = $(this).val();
-
 		oMap.clearOverlay();
 		
-		lat = 37.5540732;
-		lon = 126.8964669;
-		oPoint = new nhn.api.map.LatLng(lat, lon);
-		$.makeMarker(oPoint);	
-		$.changeLocation(oPoint);	
+		$("."+buttonNum).each(function(){		
+			lat = $(this).attr("value");
+			lon = $(this).attr("title");
+			oPoint = new nhn.api.map.LatLng(lat, lon);
+			$.makeMarker(oPoint);	
+			$.changeLocation(oPoint);	
+		});
 	});
 });
-
 
 $.makeMap = function (oPoint) {
 	                    
@@ -194,9 +133,9 @@ $.loadInitLocation = function() {
 	}else if(parkNum == 8){
 		lat = 37.5263232;
 		lon = 126.9348268;
-	}else if(parkNum == 9){
-		lat = 37.5583388;
-		lon = 127.1245699;
+	}else if(parkNum == 9){// 37.519411, 126.963763
+		lat = 37.519400;
+		lon = 126.965000;
 	}else if(parkNum == 10){
 		lat = 37.5188864;
 		lon = 127.0900268;
