@@ -62,7 +62,7 @@
 
 
 <body>
-	<form:form commandName="loginform" method="post" action="join_memsub.do"	name="join">
+	<form:form commandName="loginform" method="post" action="join_memsub.do" name="join">
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
 				<td colspan="2" height="39" align="center"><font size="+1"><b>회원가입</b></font></td>
@@ -124,6 +124,7 @@
 				<td width="400">
 				<form:input path="tel1" size="3" maxlength="3" />
 				- <form:input path="tel2" size="4" maxlength="4" /> - <form:input path="tel3" size="4" maxlength="4" />
+				<form:errors path="tel" />
 			</tr>
 			<tr>
 				<td width="200">우편번호</td>

@@ -47,14 +47,23 @@ public class MypageController {
 		String seid = se.getId();
 		
 		int atidx=se.getEmail().indexOf('@');
+		
 		model.addAttribute("pwd",se.getPwd());
 		model.addAttribute("name",se.getName());
 		model.addAttribute("nick",se.getNick());
 		model.addAttribute("email1",se.getEmail().substring(0, atidx));
 		model.addAttribute("email2",se.getEmail().substring(atidx+1, se.getEmail().length()));
-		model.addAttribute("tel1",se.getTel().substring(0, 3));
-		model.addAttribute("tel2",se.getTel().substring(4, 8));
-		model.addAttribute("tel3",se.getTel().substring(9, se.getTel().length()));
+		if(se.getTel().length()==12){
+			model.addAttribute("tel1",se.getTel().substring(0, 3));
+			model.addAttribute("tel2",se.getTel().substring(4, 7));
+			model.addAttribute("tel3",se.getTel().substring(8, se.getTel().length()));
+		}
+		if(se.getTel().length()==13){
+			model.addAttribute("tel1",se.getTel().substring(0, 3));
+			model.addAttribute("tel2",se.getTel().substring(4, 8));
+			model.addAttribute("tel3",se.getTel().substring(9, se.getTel().length()));
+		}
+	
 		model.addAttribute("zipcode",se.getZipcode());
 		model.addAttribute("address",se.getAddress());
 		
@@ -79,9 +88,16 @@ public class MypageController {
 		model.addAttribute("nick",se.getNick());
 		model.addAttribute("email1",se.getEmail().substring(0, atidx));
 		model.addAttribute("email2",se.getEmail().substring(atidx+1, se.getEmail().length()));
-		model.addAttribute("tel1",se.getTel().substring(0, 3));
-		model.addAttribute("tel2",se.getTel().substring(4, 8));
-		model.addAttribute("tel3",se.getTel().substring(9, se.getTel().length()));
+		if(se.getTel().length()==12){
+			model.addAttribute("tel1",se.getTel().substring(0, 3));
+			model.addAttribute("tel2",se.getTel().substring(4, 7));
+			model.addAttribute("tel3",se.getTel().substring(8, se.getTel().length()));
+		}
+		if(se.getTel().length()==13){
+			model.addAttribute("tel1",se.getTel().substring(0, 3));
+			model.addAttribute("tel2",se.getTel().substring(4, 8));
+			model.addAttribute("tel3",se.getTel().substring(9, se.getTel().length()));
+		}
 		model.addAttribute("zipcode",se.getZipcode());
 		model.addAttribute("address",se.getAddress());
 		

@@ -49,8 +49,7 @@ public void validate(Object target, Errors errors) {
 			
 		}
 	}
-	
-	
+		
 	if(!(ui.getEmail1()==null || ui.getEmail1().trim().isEmpty()||ui.getEmail2()==null || ui.getEmail2().trim().isEmpty())){
 
 		if(ui.getEmail2().equals("naver.com")||ui.getEmail2().equals("daum.net")||ui.getEmail2().equals("gmail.com")||ui.getEmail2().equals("yahoo.com")||ui.getEmail2().equals("nate.com")){
@@ -61,7 +60,9 @@ public void validate(Object target, Errors errors) {
 	}
 
 	
-	
+	if(ui.getTel1().length() < 3 || ui.getTel2().length() < 3 || ui.getTel3().length() < 4){
+		errors.rejectValue("tel", "checkcheck");
+	}
 
 	}
 }

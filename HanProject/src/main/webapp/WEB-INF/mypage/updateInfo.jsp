@@ -227,7 +227,7 @@ $(function(){
 		
 		<div>
 		<form:form  commandName="loginform" method="post" name="btnform">
-		<table width="600">
+		<table width="600"cellspacing="0" cellpadding="3" align="center">
 		<td align="right">
 		<input type="button" value="취소" onclick="javascript:window.location='mypageForm.do'"></td>
 		</table>
