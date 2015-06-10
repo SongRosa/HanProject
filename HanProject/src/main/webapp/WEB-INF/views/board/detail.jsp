@@ -54,7 +54,7 @@ function checkBlank(){
 <td class="detail_table_btnGroup" colspan="6" align="right">
 <button class="detail_table_updateBtn" onclick="window.location='board_updateForm.do?b_number=${detail.b_number}'">&nbsp;</button>
 <button class="detail_table_deleteBtn" onclick="openDeleteForm(${detail.b_number })">&nbsp;</button>
-<button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=0'">&nbsp;</button>
+<button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}'">&nbsp;</button>
 </td></tr>
 </table>
 </div>

@@ -80,7 +80,7 @@ $(function(){
 				<tr class="list">
 					<td class="num">${one.b_number }</td>
 					<td class="name">&lt;${one.p_name }&gt;</td>
-					<td class="subject"><a href="board_detail.do?b_number=${one.b_number }">${one.b_subject }</a>&nbsp;
+					<td class="subject"><a href="board_detail.do?b_number=${one.b_number }&parkNum=${param.parkNum}">${one.b_subject }</a>&nbsp;
 						[${one.c_count }]</td>
 					<td class="name">${one.b_writer }</td>
 					<td class="date"><fmt:formatDate value="${one.b_regdate }" type="date" /></td>
@@ -89,7 +89,7 @@ $(function(){
 			</c:forEach>
 			<tr>
 			<td style="float: right;" colspan="6" align="right">
-			<button class="board_write_btn" onclick="window.location='board_insert.do'">&nbsp;</button>
+			<button class="board_write_btn" onclick="window.location='board_insert.do?parkNum=${param.parkNum}'">&nbsp;</button>
 			</td>
 			</tr>
 		</table>
