@@ -4,7 +4,7 @@
 <%@ page isELIgnored="false" %>
 <html lang="ko" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
-	<title>강서한강공원 편의시설 지도</title>
+	<title>이촌강공원 편의시설 지도</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="css/maps_style.css" rel="stylesheet" type="text/css">
 	<script src="http://code.jquery.com/jquery.js"></script>
@@ -35,7 +35,7 @@
 			<button id="go_direction" value=${parkNum}> 오시는길가기 </button><br>
 			<button id="go_board" value=${parkNum}> 자유게시판가기 </button><br>
 		</div>
-		<p id="direction_txt">공원 안내지도</p>	
+		<p id="direction_txt">공원 안내지도</p>
 	</div>
 	
 	<div id="view_content">

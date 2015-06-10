@@ -4,7 +4,7 @@
 <%@ page isELIgnored="false" %>
 <html lang="ko" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
-	<title>강서한강공원 편의시설 지도</title>
+	<title>잠원한강공원 편의시설 지도</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="css/maps_style.css" rel="stylesheet" type="text/css">
 	<script src="http://code.jquery.com/jquery.js"></script>
