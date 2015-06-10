@@ -37,15 +37,20 @@ public class LoginController {
 	@RequestMapping(value = "log_login.do")
 	public String login(@ModelAttribute("loginform") UserInfo useri,BindingResult result, HttpSession session,Model model) {
 		new LoginCommandValidator().validate(useri, result);
+		System.out.println("aa");
 		if (result.hasErrors()) {
 			return "log/loginForm";
 		}
 		int x = dao.isId(useri);
 		UserInfo ui=dao.selectInfo(useri);
 		if (x == 1) {
+			
 			session.setAttribute("user", ui);
 			return "mypage/mypageForm";
 		} else {
+			System.out.println("else");
+			int i = 1;
+			model.addAttribute("a", i);
 			return "log/loginForm";
 		}
 	}
@@ -63,6 +68,8 @@ public class LoginController {
 			//DB select¹® Ãß°¡
 			return "mypage/mypageForm";
 		} else {
+			int i = 1;
+			model.addAttribute("a", i);
 			return "log/loginForm";
 		}
 	}

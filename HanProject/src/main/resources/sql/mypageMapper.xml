@@ -17,6 +17,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	    update member set nick=#{nick} where id=#{id}
 	</update>
 	
+	<update id="updateTel" parameterType="spring.command.UserInfo"> 
+	    update member set tel=#{tel} where id=#{id}
+	</update>
+	
+	<update id="updateName" parameterType="spring.command.UserInfo"> 
+	    update member set name=#{name} where id=#{id}
+	</update>
+	
+	<update id="updateEmail" parameterType="spring.command.UserInfo"> 
+	    update member set email=#{email} where id=#{id}
+	</update>
+	
+	<update id="updateAddress" parameterType="spring.command.UserInfo"> 
+	    update member set zipcode=#{zipcode}, address=#{address} where id=#{id}
+	</update>
+	
+	<delete id="deleteMem" parameterType="spring.command.UserInfo">
+	    delete from member where id=#{id} and pwd=#{pwd}
+	</delete>
+	
+	<update id="updateAllInfo" parameterType="spring.command.UserInfo">
+		update member set pwd=#{pwd}, name=#{name}, nick=#{nick}, email=#{email}, tel=#{tel}, zipcode=#{zipcode},address=#{address} where id=#{id}		
+	</update>
+	
+		
  	<select id="selectInfo" resultType="spring.command.UserInfo" parameterType="spring.command.UserInfo">
 		select * from member where id=#{id}
 	</select>

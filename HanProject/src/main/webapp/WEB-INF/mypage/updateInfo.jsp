@@ -8,6 +8,9 @@
 <title>정보수정</title>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
+var pwdBtn = 0;
+var telBtn = 0;
+var nameBtn = 0;
 
 function nickCheck() {
 	if (updatenickform.nick.value == 0) {
@@ -40,24 +43,42 @@ function zipCheck() {
 }
 
 	
-	$(function(){ 
-		$("#updatePwdbtn").click(function(){
+$(function(){ 
+	$("#updatePwdbtn").click(function(){
+		if(pwdBtn == 0){
 			$("#updatePwddiv").css("display","block");	
-		});
-		
-		$("#updatenamebtn").click(function(){
-			$("#updatenamediv").css("display","block");	
-		});
-		
-		$("#updatetelbtn").click(function(){
-			$("#updateteldiv").css("display","block");	
-		});
-		
-		$("#sel").change(function() {
-			var d = $("#sel").val();
-			$("#email2").val(d);
-		});
+			pwdBtn = 1;
+		}else if(pwdBtn == 1){
+			$("#updatePwddiv").css("display","none");
+			pwdBtn = 0;
+		}
 	});
+	
+	$("#updatenamebtn").click(function(){
+		if(nameBtn == 0){
+			$("#updateNamediv").css("display","block");	
+			nameBtn = 1;
+		}else if(nameBtn == 1){
+			$("#updateNamediv").css("display","none");
+			nameBtn = 0;
+		}
+	});
+	
+	$("#updatetelbtn").click(function(){		
+		if(telBtn == 0){
+		$("#updateTeldiv").css("display","block");	
+		telBtn = 1;
+	}else if(telBtn == 1){
+		$("#updateTeldiv").css("display","none");
+		telBtn = 0;
+	}
+	});
+	
+	$("#sel").change(function() {
+		var d = $("#sel").val();
+		$("#email2").val(d);
+	});
+});
 
 </script>
 </head>
@@ -74,7 +95,7 @@ function zipCheck() {
 
 			
 		<div id="updatePwddiv" style="display: none;">
-		<form:form  commandName="confirmpwdform" method="post" action="updatePwd.do"	name="updatepwdform">
+		<form:form  commandName="loginform" method="post" action="updatePwd.do"	name="updatepwdform">
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
@@ -99,8 +120,8 @@ function zipCheck() {
 			
 			</table>
 		
-		<div id="updatenamediv" style="display: none;">
-		<form:form  commandName="confirmpwdform" method="post" action="updatename.do"	name="updatenameform">
+		<div id="updateNamediv" style="display: none;">
+		<form:form  commandName="loginform" method="post" action="updateName.do"	name="updatenameform">
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
@@ -114,7 +135,7 @@ function zipCheck() {
 				</form:form>
 			
 			
-		<form:form  commandName="confirmpwdform" method="post" action="updatenick.do"	name="updatenickform">
+		<form:form  commandName="loginform" method="post" action="updateNick.do"	name="updatenickform">
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">	
 				
 			<tr>
@@ -122,7 +143,7 @@ function zipCheck() {
 				<td width="400">
 				<form:input path="nick" size="15" maxlength="10" value="${nick }"/>
 				<input type="button" name="confirm_nick" value="중복확인" OnClick="nickCheck()" />
-				<form:input	path="checknick" size="10" maxlength="12" value="노확인" hidden="true" />
+				<form:input	path="checknick" size="10" maxlength="12" value="노확인" hidden="true"/>
 				<form:errors path="nick" />
 				<form:errors path="checknick" />
 				<input type="submit" name="confirm" value="등   록"></td>
@@ -140,8 +161,8 @@ function zipCheck() {
 			</table>
 			
 			
-		<div id="updateteldiv" style="display: none;">
-		<form:form  commandName="confirmpwdform" method="post" action="updatetel.do"	name="updateemailform">
+		<div id="updateTeldiv" style="display: none;">
+		<form:form  commandName="loginform" method="post" action="updateEmail.do"	name="updateemailform">
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 <tr>
@@ -156,7 +177,7 @@ function zipCheck() {
 						<option value="gmail.com">gmail.com</option>
 						<option value="yahoo.com">yahoo.com</option>
 				</select>
-				<form:input path="checkemail" size="10" maxlength="12" value="노확인"	hidden="true" />
+				<form:input path="checkemail" size="10" maxlength="12" value="노확인" hidden="true"/>
 				<input type="button" name="confirm_email" value="중복확인" OnClick="emailCheck()" />
 					<form:errors path="email2" />
 					<form:errors path="checkemail" />
@@ -164,7 +185,7 @@ function zipCheck() {
 			</tr>
 				</form:form>
 				
-				<form:form  commandName="confirmpwdform" method="post" action="updatetel.do"	name="updatetelform">
+				<form:form  commandName="loginform" method="post" action="updateTel.do"	name="updatetelform">
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
@@ -178,7 +199,7 @@ function zipCheck() {
 			</form:form>
 			
 			
-			<form:form  commandName="confirmpwdform" method="post" action="updatetel.do"	name="updateaddressform">
+			<form:form  commandName="loginform" method="post" action="updateAddress.do"	name="updateaddressform">
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
@@ -196,13 +217,19 @@ function zipCheck() {
 
 		</table>
 		</form:form>
-		
 		</div>
+				<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+				<tr>
+				<td colspan="2" height="39" >회원탈퇴
+				<input type="button" value="탈퇴" onclick="javascript:window.location='byePwd.do'"></td>
+			</tr>
+			</table>
+		
 		<div>
-		<form:form  commandName="confirmpwdform" method="post" name="btnform">
+		<form:form  commandName="loginform" method="post" name="btnform">
 		<table width="600">
 		<td align="right">
-		<input type="button" value="취소" onclick="javascript:window.location='confirmPwd.do'"></td>
+		<input type="button" value="취소" onclick="javascript:window.location='mypageForm.do'"></td>
 		</table>
 		</form:form>
 		</div>

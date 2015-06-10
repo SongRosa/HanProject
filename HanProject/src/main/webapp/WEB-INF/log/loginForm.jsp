@@ -4,6 +4,14 @@
 <html>
 <head>
 <title>로그인</title>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script>
+$(function (){
+	if(${!empty a}){
+		alert("입력정보를 확인하세요.");
+	}
+});
+</script>
 </head>
 <body>
 <form:form commandName="loginform" method="post" action="log_login.do"	name="loginform">

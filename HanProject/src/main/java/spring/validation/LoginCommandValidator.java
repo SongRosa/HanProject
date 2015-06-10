@@ -13,8 +13,20 @@ public class LoginCommandValidator implements Validator{
 	}
 
 	public void validate(Object target, Errors errors) {
+		UserInfo ui=(UserInfo)target;
+		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "id", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pwd", "required");	
+		
+		if(!(ui.getPwd()==null || ui.getPwd().trim().isEmpty())){
+			if(ui.getPwd().length()<8){
+				errors.rejectValue("pwd", "checkcheck");
+			}
+		}
+		
+		
 	}
+	
+	
 
 }

@@ -62,7 +62,7 @@
 
 
 <body>
-	<form:form commandName="join" method="post" action="join_memsub.do"	name="join">
+	<form:form commandName="loginform" method="post" action="join_memsub.do"	name="join">
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
 				<td colspan="2" height="39" align="center"><font size="+1"><b>회원가입</b></font></td>

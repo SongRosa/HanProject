@@ -31,7 +31,7 @@
 </table>
 </c:if>
 <!-- 다른닉네임을 검색할 수 있는 폼을 만들어 준다. -->
-<form name="emailcheckForm" method="post" action="join_emailCheck.do">
+<form name="emailcheckForm" method="post" action="update_emailCheck.do">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
 <tr>
 <td align="center">

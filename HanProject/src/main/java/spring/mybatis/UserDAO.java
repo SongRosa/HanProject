@@ -31,6 +31,13 @@ public class UserDAO  extends SqlSessionDaoSupport{
 		int x = getSqlSession().selectOne("JoinMap.isId", ui);
 		return x;
 	}
+	public int outisId(String id,String pwd) {
+		UserInfo d = new UserInfo();
+		d.setId(id);
+		d.setPwd(pwd);
+		int x = getSqlSession().selectOne("JoinMap.isId", d);
+		return x;
+	}
 	
 	public int isId2(UserInfo useri) {
 		int x = getSqlSession().selectOne("SearchMap.isId", useri);
@@ -84,4 +91,56 @@ public class UserDAO  extends SqlSessionDaoSupport{
 		UserInfo info = getSqlSession().selectOne("mypageMap.selectInfo", useri);
 		return info;
 	}
+	
+	public UserInfo updateTel(String id, String tel){
+		UserInfo d = new UserInfo();
+		d.setId(id);
+		d.setTel(tel);
+		UserInfo x = getSqlSession().selectOne("mypageMap.updateTel", d);
+		return x;
+	}
+	
+	
+	public UserInfo updateName(String id, String name){
+		UserInfo d = new UserInfo();
+		d.setId(id);
+		d.setName(name);
+		UserInfo x = getSqlSession().selectOne("mypageMap.updateName", d);
+		return x;
+	}
+	
+	
+	public UserInfo updateEmail(String id, String email){
+		UserInfo d = new UserInfo();
+		d.setId(id);
+		d.setEmail(email);
+		UserInfo x = getSqlSession().selectOne("mypageMap.updateEmail", d);
+		return x;
+	}
+	
+	
+	public UserInfo updateAddress(String id, String address,String zipcode){
+		UserInfo d = new UserInfo();
+		d.setId(id);
+		d.setZipcode(zipcode);
+		d.setAddress(address);
+		UserInfo x = getSqlSession().selectOne("mypageMap.updateAddress", d);
+		return x;
+	}
+	
+	
+	public UserInfo deleteMem(String id, String pwd){
+		UserInfo d = new UserInfo();
+		d.setId(id);
+		d.setPwd(pwd);
+		UserInfo x = getSqlSession().selectOne("mypageMap.deleteMem", d);
+		return x;
+	}
+	
+/*	public UserInfo updateAllInfo(String id,UserInfo useri){
+		useri.setId(id);
+		UserInfo x = getSqlSession().selectOne("mypageMap.updateAllInfo", useri);
+		return x;
+	}*/
+	
 }
