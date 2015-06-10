@@ -253,7 +253,7 @@ public class BoardController {
 		int i = dao.insertOne(bc);
 		if (i == 1) {
 
-			return "views/board/success/insert";
+			return "redirect:board_list.do?parkNum=0";
 		} else {
 
 			return "views/board/fail/insert";

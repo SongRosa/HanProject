@@ -50,7 +50,7 @@ $(function(){
 		<tr align="left" >
 			<td align="left">
 		<select id="p_number" name="p_number">
-			<option id="p_number0" selected="selected" value="0">글분류</option>
+			<option id="p_number0" selected="selected" value="0">전체글</option>
 			<option id="p_number1" value="1">강서</option>
 			<option id="p_number2" value="2">광나루</option>
 			<option id="p_number3" value="3">난지</option>
