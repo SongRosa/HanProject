@@ -121,7 +121,7 @@ $.makeMap = function (oPoint) {
 }
 
 $.changeLocation = function (oPoint){
-	oMap.setCenterAndLevel(oPoint,11);
+	oMap.setCenterAndLevel(oPoint,12);
 }
 
 $.makeMarker = function(oPoint){
