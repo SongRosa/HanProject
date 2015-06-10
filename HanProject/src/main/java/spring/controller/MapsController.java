@@ -44,6 +44,6 @@ public class MapsController {
 			model.addAttribute("parkNum", parkNum);
 			return "views/maps/maps_jamwon";
 		}
-		return "redirect:header.do";
+		return "redirect:test.do";
 	}
 }

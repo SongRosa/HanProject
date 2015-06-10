@@ -200,7 +200,7 @@ public class BoardController {
 
 		return "views/board/detail";
 	}
-	
+	/*코멘트가 입력되면 실행되는 메서드*/
 	@RequestMapping(value="board_detail.do" ,method= RequestMethod.POST)
 	public String insertComments(HttpServletRequest req){
 		System.out.println("post");
@@ -218,6 +218,7 @@ public class BoardController {
 		return "redirect:board_detail.do?b_number="+b_number;
 	}
 	
+	/*코멘트를 삭제하는 메서드*/
 	@RequestMapping("commentsDel.do")
 	public String commentsDel(HttpServletRequest req){
 		
@@ -233,7 +234,11 @@ public class BoardController {
 
 	/* 목록에서 글 쓰기를 불렀을 때 실행해주는 메서드 */
 	@RequestMapping(value = "board_insert.do", method = RequestMethod.GET)
-	public String insertForm() {
+	public String insertForm(@RequestParam(value="parkNum",defaultValue="0") String parkNum, Model model ) {
+		
+		int p_number = Integer.parseInt(parkNum);
+		model.addAttribute("p_number", p_number);
+		
 		return "views/board/insertForm";
 	}
 
@@ -253,7 +258,7 @@ public class BoardController {
 		int i = dao.insertOne(bc);
 		if (i == 1) {
 
-			return "views/board/success/insert";
+			return "redirect:board_list.do?parkNum="+p_number;
 		} else {
 
 			return "views/board/fail/insert";
@@ -321,7 +326,7 @@ public class BoardController {
 		System.out.println(command);
 		int i = dao.updateOne(command);
 		if (i == 1) {
-			return "views/board/success/insert";
+			return "redirect:board_list.do?parkNum=0";
 		} else {
 			return "views/board/fail/insert";
 		}

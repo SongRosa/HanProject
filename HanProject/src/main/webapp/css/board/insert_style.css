@@ -1,0 +1,44 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body{font-family: 'Nanum Gothic', sans-serif;}
+
+.p_number {
+	background: transparent url("../../board_img/btn_down.gif") no-repeat right center;
+	width: 70;
+	padding: 1px;
+	font-size: 13px;
+	line-height: 1;
+	border: 1; border-radius: 0;
+	-webkit-appearance: none;
+}
+.table_writer{
+	border-width: 0 0 0 0;
+	border-bottom: 1px #5a5a5a groove;
+}
+.table_subject{
+	border-width: 0 0 0 0;
+	border-bottom: 1px #5a5a5a groove;
+}
+
+.table_content{
+	resize: none; border: 1px black groove;
+}
+
+
+
+
+.submitBtn{
+	width: 74px; height: 25px; background: url("../../board_img/btn_write.gif") no-repeat center ;
+}
+.updateBtn{
+	width: 48px; height: 25px; background: url("../../board_img/btn_modify.gif") no-repeat center ;
+}
+.resetBtn{
+	width: 48px; height: 25px; background: url("../../board_img/btn_ser_reset.gif") no-repeat center ;
+}
+.goListBtn{
+	width: 48; height: 23; background: url("../../board_img/btn_list.gif") no-repeat center ; border-radius: 3px;
+}
+.cancelBtn{
+	width: 48; height: 23; background: url("../../board_img/cancel_btn.jpg") no-repeat center ; border-radius: 3px;
+}
