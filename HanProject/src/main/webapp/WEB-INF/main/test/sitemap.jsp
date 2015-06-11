@@ -5,11 +5,7 @@
 <head>
 <title>Insert title here</title>
 <link href="css/sitemap_style.css" rel="stylesheet" type="text/css">
-<script src="http://code.jquery.com/jquery.js"></script>
 </head>
-<script type="text/javascript">
-	
-</script>
 <body>
 	<div id="top">
 		<p id = "siteMap"> 사이트 전체보기 </p>

@@ -24,4 +24,10 @@ public class ManagerDAO extends SqlSessionDaoSupport{
 		
 		return list;
 	}
+	
+	public int manager_delete(String id){
+		int i = getSqlSession().delete("manager.delete", id);
+		
+		return i;
+	}
 }

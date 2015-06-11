@@ -35,4 +35,19 @@ public class ManagerController {
 		
 		return "main/test/managerMode";
 	}
+	
+	@RequestMapping("/managerDeleteMember.do")
+	public String managerDeleteMember(String id, Model model){
+		System.out.println(id);
+		int deleteCount = dao.manager_delete(id);
+		
+		System.out.println("삭제됬지롱!! 몇개가~~? " + deleteCount);
+		if(deleteCount == 1){
+			List<ManagerCommand> list = dao.manager_select();
+			model.addAttribute("manager", list);
+			return "main/test/managerMode";
+		}
+		
+		return "redirect:managerPage.do";
+	}
 }
