@@ -16,7 +16,7 @@
 		document.zipForm.submit();
 	}
 	function sendAddress(zipcode, sido, gugun, dong, ri,bunji,apt) {
-		var address = sido + "" + gugun + "" + dong + "" + ri+""+bunji + "" + apt;
+		var address = sido + " " + gugun + " " + dong + " " + ri+" "+bunji + " " + apt;
 		opener.document.join.zipcode.value = zipcode;
 		opener.document.join.address.value = address;
 		self.close();
