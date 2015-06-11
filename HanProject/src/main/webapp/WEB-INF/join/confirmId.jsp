@@ -6,6 +6,7 @@
 <head>
 <title>ID 중복확인</title>
 <link href="css/mem/join.css" rel="stylesheet" type="text/css">
+<link href="css/popup.css" rel="stylesheet" type="text/css">
 <% request.setCharacterEncoding("utf-8"); %>
 <script>
 

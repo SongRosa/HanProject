@@ -6,6 +6,7 @@
 <head>
 <title>우편번호 검색</title>
 <link href="css/mem/join.css" rel="stylesheet" type="text/css">
+<link href="css/popup.css" rel="stylesheet" type="text/css">
 <script>
 	function dongCheck() {
 		if (document.zipForm.dong.value == "") {
