@@ -4,7 +4,10 @@
 <html>
 <head>
 <title>메인 입니다.</title>
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 </head>
+<body>
+<div id ="view_top">
 <table width=500 cellpadding="0" cellspacing="0" align="center" border="1">
 <tr>
 <td width="300" height="20">하하하</td>
@@ -23,5 +26,6 @@ ${id }님이 <br>
 </tr>
 </table>
 <br>
+</div>
 </body>
 </html>
