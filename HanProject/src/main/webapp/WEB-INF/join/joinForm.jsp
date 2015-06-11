@@ -39,13 +39,13 @@
 		
 		if(join.email1.value != 0 && (join.email2.value =="naver.com"||join.email2.value =="daum.net"||join.email2.value =="gmail.com"||join.email2.value =="yahoo.com"||join.email2.value =="nate.com")){
 			url = "join_emailCheck.do?email1=" + join.email1.value + "&email2="+ join.email2.value;
-			window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+			window.open(url,"post","toolbar=no,width=500,height=150,directories=no,status=yes,scrollbars=yes,menubar=no");
 		}
 	}
 
 	function zipCheck() {
 		url = "join_zipCheck.do";
-		window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+		window.open(url,"post","toolbar=no,width=700,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
 	}
 
 	$(function() {
@@ -75,27 +75,27 @@
 			</fieldset>
 			</tr>
 				
-			<tr>
+			<tr height="50px">
 				<td id = "header" width="150"><strong>*</strong>사용자 ID</td>
-				<td width="500"><form:input path="id" size="10" maxlength="12" />
+				<td width="500"><form:input path="id" size="10" maxlength="12"  />
 					<input type="button" name="confirm_id" value="ID중복확인" OnClick="idCheck()" /> 
 					<form:errors path="id" /> 
 					<form:input	path="checkid" size="10" maxlength="12" value="${checkid}" hidden="true" />
 					<form:errors path="checkid" /></td>
 			</tr>
-			<tr>
+			<tr height="50px">
 				<td width="150"><strong>*</strong>비밀번호</td>
 				<td width="500">
 				<form:password path="pwd" size="15" maxlength="16" />
 				<form:errors path="pwd" /></td>
 			</tr>
 
-			<tr>
+			<tr height="50px">
 				<td width="150"><strong>*</strong>사용자 이름</td>
 				<td width="500">
 				<form:input path="name" size="15" maxlength="10" />
 			</tr>
-			<tr>
+			<tr height="50px">
 
 
 				<td width="150"><strong>*</strong>닉네임</td>
@@ -108,10 +108,10 @@
 			</tr>
 
 
-			<tr>
+			<tr height="50px">
 				<td width="150"><strong>*</strong>이메일</td>
-				<td width="500"><form:input path="email1" size="7"
-						maxlength="12" /> @ <form:input path="email2" size="7"
+				<td width="500"><form:input id="email" path="email1" size="7"
+						maxlength="12" /> @ <form:input id="email" path="email2" size="7"
 						maxlength="9" /> <select class="select" id="sel">
 						<option value="">직접입력</option>
 						<option value="naver.com">naver.com</option>
@@ -126,26 +126,26 @@
 					<form:errors path="checkemail" /></td>
 			</tr>
 
-			<tr>
+			<tr height="50px">
 				<td width="150"><strong>*</strong>전화번호</td>
 				<td width="500">
-				<form:input path="tel1" size="3" maxlength="3" />
-				- <form:input path="tel2" size="4" maxlength="4" /> - <form:input path="tel3" size="4" maxlength="4" />
+				<form:input id="tel" path="tel1" size="3" maxlength="3" />
+				- <form:input id="tel" path="tel2" size="4" maxlength="4" /> - <form:input id="tel" path="tel3" size="4" maxlength="4" />
 				<br><form:errors path="tel" />
 			</tr>
-			<tr>
+			<tr height="50px">
 				<td width="150">우편번호</td>
-				<td><form:input path="zipcode" size="7" readonly="true" />
+				<td><form:input id = "zip" path="zipcode" size="7" readonly="true" />
 				<input type="button" value="우편번호찾기" onClick="zipCheck()"></td>
 			</tr>
 
-			<tr>
+			<tr height="50px">
 				<td>주소</td>
-				<td><form:input path="address" size="70" />
+				<td><form:input id="addr" path="address" size="70" />
 				<form:errors path="address" /></td>
 			</tr>
 
-			<tr>
+			<tr height="50px">
 			
 				<td colspan="2" align="center"><input type="submit" name="confirm" value="등   록"> 
 					<input type="reset"	name="reset" value="다시입력"> 

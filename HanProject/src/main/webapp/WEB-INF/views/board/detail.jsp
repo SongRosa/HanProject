@@ -6,7 +6,7 @@
 <head>
 <script type="text/javascript">
 function openDeleteForm(b_number) {
-	window.open("board_deleteForm.do?b_number="+ b_number , "글 삭제", "width=400,height=300,left=400,right=400,top=200");
+	window.open("board_deleteForm.do?b_number="+ b_number , "글 삭제", "width=400,height=150,left=400,right=400,top=200");
 	
 }
 function confirmDelete(c_num,b_num){
