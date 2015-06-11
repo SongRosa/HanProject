@@ -1,0 +1,12 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+
+div#view_top{
+	width: 900px;
+	margin: auto;
+}
+
+div#view_top p{	
+	font-family: 'Nanum Brush Script', serif;
+	font-size: 50px;
+	color: black;
+}

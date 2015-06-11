@@ -4,6 +4,17 @@
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
+<head>
+<title>han</title>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#manager").click(function() {
+		window.location = "managerPage.do";
+	});
+});
+	
+</script>
 <style>
 	a:link, a:visited, a:active{
 		text-decoration:none;
@@ -26,13 +37,11 @@
 	}
 	
 </style>
-<head>
-<title>han</title>
 </head>
 	<decorator:head />
 	<div id="header" align="right" style="font-family: 'Nanum Gothic', sans-serif;">
 		<c:if test="${sessionScope.user.id=='manager'}">
-			<img alt="관리자" src="./board_img/btn_admin.gif">
+			<img id="manager" alt="관리자" src="./board_img/btn_admin.gif">
 		</c:if>
 		<c:if test="${empty sessionScope.user}">			
 			<a href="log_loginForm.do">로그인  </a> &nbsp;
