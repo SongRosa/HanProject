@@ -303,7 +303,7 @@
 									<a href="directionPage.do?parkNum=1"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=1"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=1"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=1"><img src="parkIcon/board.png"></a>
@@ -317,7 +317,7 @@
 									<a href="directionPage.do?parkNum=2"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=2"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=2"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=2"><img src="parkIcon/board.png"></a>
@@ -331,7 +331,7 @@
 									<a href="directionPage.do?parkNum=3"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=3"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=3"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=3"><img src="parkIcon/board.png"></a>
@@ -345,7 +345,7 @@
 									<a href="directionPage.do?parkNum=4"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=4"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=4"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=4"><img src="parkIcon/board.png"></a>
@@ -359,7 +359,7 @@
 									<a href="directionPage.do?parkNum=5"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=5"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=5"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=5"><img src="parkIcon/board.png"></a>
@@ -373,7 +373,7 @@
 									<a href="directionPage.do?parkNum=6"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=6"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=6"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=6"><img src="parkIcon/board.png"></a>
@@ -387,7 +387,7 @@
 									<a href="directionPage.do?parkNum=7"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=7"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=7"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=7"><img src="parkIcon/board.png"></a>
@@ -401,7 +401,7 @@
 									<a href="directionPage.do?parkNum=8"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=8"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=8"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=8"><img src="parkIcon/board.png"></a>
@@ -415,7 +415,7 @@
 									<a href="directionPage.do?parkNum=9"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=9"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=9"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=9"><img src="parkIcon/board.png"></a>
@@ -429,7 +429,7 @@
 									<a href="directionPage.do?parkNum=10"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=10"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=10"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=10"><img src="parkIcon/board.png"></a>
@@ -443,7 +443,7 @@
 									<a href="directionPage.do?parkNum=11"><img src="parkIcon/marker.png"></a>
 								</li>
 								<li value="2" id="map" style="float: left;">
-									<a href="mapPage.do?parkNum=11"><img src="parkIcon/parkmap.png"></a>
+									<a href="facility_search.do?parkNum=11"><img src="parkIcon/parkmap.png"></a>
 								</li>
 								<li value="3" id="bd" style="float: left;">
 									<a href="board_list.do?parkNum=11"><img src="parkIcon/board.png"></a>

@@ -5,10 +5,21 @@
 <html>
 <head>
 <title>ID 중복확인</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/popup.css" rel="stylesheet" type="text/css">
 <% request.setCharacterEncoding("utf-8"); %>
+<script>
+
+function setid()
+{
+	opener.document.join.id.value = "${id}";
+	opener.document.join.checkid.value="yes";
+	self.close();
+}
+
+</script>
 </head>
 <body>
+<div id ="view_top">
 <c:if test="${x=='1'}">
 <c:if test="${a=='1'}">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
@@ -56,15 +67,7 @@
 </table>
 </c:if>
 
-<script>
 
-function setid()
-{
-	opener.document.join.id.value = "${id}";
-	opener.document.join.checkid.value="yes";
-	self.close();
-}
-
-</script> 
+</div> 
 </body>
 </html>

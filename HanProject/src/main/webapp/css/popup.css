@@ -1,0 +1,30 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+*{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 17px;
+}
+table{
+	margin: auto;
+}
+
+div{
+	width : 300px;
+	margin:auto;
+	text-align: center;
+}
+
+div:input{
+	width: 300px;
+	margin: auto;
+}
+
+a{	
+	font-family: 'Nanum Gothic', sans-serif;
+	font-style: none;
+	font-size: 15px;
+}
+
+#zipCheck{
+	width: 500px;
+}

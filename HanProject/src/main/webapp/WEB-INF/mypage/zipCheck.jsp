@@ -5,7 +5,7 @@
 <html>
 <head>
 <title>우편번호 검색</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 <script>
 	function dongCheck() {
 		if (document.zipForm.dong.value == "") {
@@ -16,7 +16,7 @@
 		document.zipForm.submit();
 	}
 	function sendAddress(zipcode, sido, gugun, dong, ri,bunji,apt) {
-		var address = sido + "" + gugun + "" + dong + "" + ri+""+bunji + "" + apt;
+		var address = sido + " " + gugun + " " + dong + " " + ri + " " + bunji + " " + apt;
 		opener.document.updateaddressform.zipcode.value = zipcode;
 		opener.document.updateaddressform.address.value = address;
 		self.close();
@@ -24,6 +24,7 @@
 </script>
 </head>
 <body bgcolor="#FFFFCC">
+<div id ="view_top">
 	<center>
 		<b> 우편번호 찾기 </b>
 	</center>
@@ -49,5 +50,6 @@
 			</tr>
 
 	</table>
+</div>
 </body>
 </html>

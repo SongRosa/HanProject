@@ -11,9 +11,9 @@ var oMarker;
 
 $(document).ready(function() {
 	parkNum = $("#parkNum").attr("value");
-	if(tempNum == 0){
+/*	if(tempNum == 0){
 		$.loadDb();
-	}
+	}*/
 	$.loadInitLocation();
 	
 	oPoint = new nhn.api.map.LatLng(lat, lon);
@@ -73,9 +73,9 @@ $.makeMarker = function(oPoint){
 	oMap.addOverlay(oMarker); 
 }
 
-$.loadDb = function(){
+/*$.loadDb = function(){
 	window.location="facility_search.do?parkNum="+parkNum;	
-}
+}*/
 
 $(function(){	
 	$("#view_btn li").click(function() {

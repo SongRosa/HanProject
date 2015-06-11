@@ -4,7 +4,10 @@
 <html>
 <head>
 <title>비밀번호찾기 실패</title>
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 </head>
+<body>
+<div id ="view_top">
 <table width=500 cellpadding="0" cellspacing="0" align="center" border="1">
 <tr>
 <td rowspan="2" align="center" width="300" height="20">
@@ -17,6 +20,6 @@
 </tr>
 
 </table>
-<br>
+</div>
 </body>
 </html>

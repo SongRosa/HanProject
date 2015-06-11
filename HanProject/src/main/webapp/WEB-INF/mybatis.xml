@@ -31,4 +31,5 @@
 		<bean id = "userDao" class = "spring.mybatis.UserDAO" p:sqlSessionFactory-ref = "sqlSessionFactory"/>
 		<bean id = "zipDao" class = "spring.mybatis.ZipDAO" p:sqlSessionFactory-ref = "sqlSessionFactory"/>
 		<bean id = "facilityDao" class = "spring.mybatis.FacilityDAO" p:sqlSessionFactory-ref = "sqlSessionFactory"/>
+		<bean id = "managerDao" class = "spring.mybatis.ManagerDAO" p:sqlSessionFactory-ref = "sqlSessionFactory"/>
 </beans>

@@ -4,7 +4,10 @@
 <html>
 <head>
 <title>비밀번호찾기 성공</title>
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 </head>
+<body>
+<div id ="view_top">
 <table width=500 cellpadding="0" cellspacing="0" align="center" border="1">
 <tr>
 
@@ -21,6 +24,6 @@
 </td>
 </tr>
 </table>
-<br>
+</div>
 </body>
 </html>

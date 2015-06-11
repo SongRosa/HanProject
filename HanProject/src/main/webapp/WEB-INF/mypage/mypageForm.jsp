@@ -4,7 +4,10 @@
 <html>
 <head>
 <title>마이페이지</title>
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 </head>
+<body>
+<div id ="view_top">
 <table width=500 cellpadding="0" cellspacing="0" align="center" >
 
 <tr>
@@ -32,5 +35,6 @@ Email=${user.email}<br>
 
 </table>
 <br>
+<div id ="view_top">
 </body>
 </html>

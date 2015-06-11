@@ -5,7 +5,7 @@
 <html>
 <head>
 <title>우편번호 검색</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/popup.css" rel="stylesheet" type="text/css">
 <script>
 	function dongCheck() {
 		if (document.zipForm.dong.value == "") {
@@ -16,7 +16,7 @@
 		document.zipForm.submit();
 	}
 	function sendAddress(zipcode, sido, gugun, dong, ri,bunji,apt) {
-		var address = sido + "" + gugun + "" + dong + "" + ri+""+bunji + "" + apt;
+		var address = sido + " " + gugun + " " + dong + " " + ri+" "+bunji + " " + apt;
 		opener.document.join.zipcode.value = zipcode;
 		opener.document.join.address.value = address;
 		self.close();
@@ -24,16 +24,19 @@
 </script>
 </head>
 <body bgcolor="#FFFFCC">
+<div id ="view_top">
 	<center>
 		<b> 우편번호 찾기 </b>
 	</center>
-	<table>
+	<center>
+	<table id="zipCheck">
 		<form name="zipForm" method="post" action="join_dongseach.do">
 			<tr>
-				<td><br> 동이름 입력 : <input name="dong" type="text">
-					<input type="button" value="검색" onclick="dongCheck();"></td>
+				<td><br> 동이름 입력 : <input name="dong" type="text"><input type="button" value="검색" onclick="dongCheck();"></td>
+				<td>				
+					<input type="hidden" name="check" value="n">
+				</td>
 			</tr>
-			<input type="hidden" name="check" value="n">
 		</form>
 		<c:forEach var="zip" items="${zip}">
 			<tr>
@@ -49,5 +52,7 @@
 			</tr>
 
 	</table>
+	</center>
+</div>
 </body>
 </html>

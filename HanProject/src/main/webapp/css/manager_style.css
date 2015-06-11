@@ -1,0 +1,44 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+div#view_top, div#view_content{
+	width: 1000px;
+	margin: auto;
+}
+
+div#view_top p{	
+	font-family: 'Nanum Brush Script', serif;
+	font-size: 50px;
+	color: black;
+}
+
+
+table{
+	width: 950px;
+	margin-bottom: 30px;
+}
+
+tr{
+	height: 30px;
+}
+
+td{
+	text-align: center;
+	font-size: 13px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+th{	
+	background-color:#C8D7FF; 
+}
+
+tr#table_header{
+	height: 40px;
+	font-size: 17px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.deleteBtn img{
+	width: 10px;
+	height: 10px;
+}

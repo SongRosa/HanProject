@@ -5,10 +5,11 @@
 <html>
 <head>
 <title>닉네임 중복확인</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 <% request.setCharacterEncoding("utf-8"); %>
 </head>
 <body>
+<div id ="view_top">
 <c:if test="${x=='1'}">
 <c:if test="${a=='1'}">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
@@ -74,5 +75,6 @@ function setemail()
 }
 
 </script>
+</div>
 </body>
 </html>
