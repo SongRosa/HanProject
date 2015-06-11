@@ -19,13 +19,14 @@ div#empty{
   margin: 0 auto;
  }
  fieldset{
-  width: 120%;
+  width: 750px;
   border: none;
   padding: 1;
   margin: 0 auto;
   border-bottom: 2px solid #7AA3EB;
  }
  legend{
+  width:200px;
   font-weight: bold;
   font-size: 2em;
   color: #7AA3EB;
@@ -33,10 +34,11 @@ div#empty{
  }
  span.notice{
   position: absolute;
-  top: 2.2em;
-  right: 2.7em;
-  font-size: 0.75em;
+  top: 1.8em;
+  right: 0.1em;
+  font-size: 15px;
   font-weight: bold;
+  
   color: #CD1076;
  }
  strong{
@@ -47,16 +49,6 @@ div#empty{
   border-bottom: 1px solid #eee;
   padding: 7px 0;
   margin: 0;
- }
- .label{
-  font-size: 0.9em;
-  width: 20%;
-  float: left;
-  text-align: right;
-  padding-right: 10px;
- }
- label{
-  font-size: 0.9em;
  }
  .firstP{
   border-top: 2px solid #7AA3EB;
@@ -70,7 +62,7 @@ div#empty{
   color: #CD1076;
  }
  input[type=text], input[type=password]{
-  width: 30%;
+  padding:12px;
   height:1.5em;
   font-size: 1em;
   border: 1px solid #eee;
@@ -78,11 +70,5 @@ div#empty{
  }
  textarea{
   width: 70%;
-  border: 1px solid #eee;
-  
+  border: 1px solid #eee;  
  }
- 
- /* #header{
- 	text-align: left;
- } */
-

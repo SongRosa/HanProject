@@ -3,8 +3,18 @@
 *{
 	font-family: 'Nanum Gothic', sans-serif;
 	font-size: 17px;
-	vertical-align: center;
 }
 table{
+	margin: auto;
+}
+
+div{
+	width : 300px;
+	margin:auto;
+	text-align: center;
+}
+
+div:input{
+	width: 300px;
 	margin: auto;
 }
