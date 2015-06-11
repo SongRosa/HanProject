@@ -26,7 +26,7 @@ $(function() {
 	$("#go_maps").click(function (parkNum) {
 		var parkNum = $(":button").attr("value");
 		
-		window.location = "mapPage.do?parkNum="+parkNum;
+		window.location = "facility_search.do?parkNum="+parkNum;
 	});
 });
 

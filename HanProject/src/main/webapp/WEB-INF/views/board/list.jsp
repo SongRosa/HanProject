@@ -87,11 +87,13 @@ $(function(){
 					<td class="hit">${one.b_count }</td>
 				</tr>
 			</c:forEach>
+			<c:if test="${!empty sessionScope.user }">
 			<tr>
 			<td style="float: right;" colspan="6" align="right">
 			<button class="board_write_btn" onclick="window.location='board_insert.do?parkNum=${param.parkNum}'">&nbsp;</button>
 			</td>
 			</tr>
+			</c:if>
 		</table>
 	</div>
 	<br>

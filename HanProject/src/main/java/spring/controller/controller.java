@@ -10,4 +10,9 @@ public class controller {
 	public String site(){
 		return "main/test/main";
 	}
+	
+	@RequestMapping("/sitemap.do")
+	public String siteMap(){
+		return "main/test/sitemap";
+	}
 }

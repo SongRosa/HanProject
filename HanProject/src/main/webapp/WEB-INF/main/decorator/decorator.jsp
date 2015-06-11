@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=euc-kr" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <style>
 	a:link, a:visited, a:active{
@@ -31,11 +32,14 @@
 
 	<decorator:head />
 	<div id="header" align="right" style="font-family: 'Nanum Gothic', sans-serif;">
+		<c:if test="${sessionScope.user.id=='manager'}">
+			<img alt="관리자" src="./board_img/btn_admin.gif">
+		</c:if>
 		<a href="log_loginForm.do">로그인  </a> &nbsp;
 		<a href="join_input.do">회원가입  </a>&nbsp;
 		<a href="">공지사항  </a>&nbsp;
 		<a href="board_list.do?parkNum=0">자유게시판  </a>&nbsp;
-		<a href="">사이트맵  </a>&nbsp;&nbsp;&nbsp;
+		<a href="sitemap.do">사이트맵  </a>&nbsp;&nbsp;&nbsp;
 	</div>
 	<hr/>
 
