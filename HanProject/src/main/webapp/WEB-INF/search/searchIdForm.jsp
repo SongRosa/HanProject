@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>ID찾기</title>
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 $(function (){
@@ -14,6 +15,7 @@ $(function (){
 </script>
 </head>
 <body>
+<div id ="view_top">
 <form:form commandName="loginform" name="searchidform" action="searchId.do" method="post">
 
 	<table cellspacing=1 cellpadding=1 align="center">
@@ -48,6 +50,6 @@ $(function (){
 	</table>
 
 </form:form>
-
+</div>
 </body>
 </html>

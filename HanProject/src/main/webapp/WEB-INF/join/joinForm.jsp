@@ -6,6 +6,7 @@
 
 <head>
 <title>회원가입</title>
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 	function idCheck() {
@@ -62,37 +63,43 @@
 
 
 <body>
+<div id ="view_top">
+	<div id="empty"></div>
 	<form:form commandName="loginform" method="post" action="join_memsub.do" name="join">
-		<table width="600" cellspacing="0" cellpadding="3" align="center">
-			<tr>
-				<td colspan="2" height="39" align="center"><font size="+1"><b>회원가입</b></font></td>
+	
+		<table width="750" cellspacing="1" cellpadding="5" align="center">
+			<tr>	
+			<fieldset>
+				<legend>회원가입</legend>
+				<span class="notice">붉은색 강조 문항은 필수 입력사항입니다.</span>
+			</fieldset>
 			</tr>
-
+				
 			<tr>
-				<td width="200">사용자 ID</td>
-				<td width="400"><form:input path="id" size="10" maxlength="12" />
+				<td id = "header" width="150"><strong>사용자 ID</strong></td>
+				<td width="500"><form:input path="id" size="10" maxlength="12" />
 					<input type="button" name="confirm_id" value="ID중복확인" OnClick="idCheck()" /> 
 					<form:errors path="id" /> 
 					<form:input	path="checkid" size="10" maxlength="12" value="${checkid}" hidden="true" />
 					<form:errors path="checkid" /></td>
 			</tr>
 			<tr>
-				<td width="200">비밀번호</td>
-				<td width="400">
+				<td width="150"><strong>비밀번호</strong></td>
+				<td width="500">
 				<form:password path="pwd" size="15" maxlength="16" />
 				<form:errors path="pwd" /></td>
 			</tr>
 
 			<tr>
-				<td width="200">사용자 이름</td>
-				<td width="400">
+				<td width="150"><strong>사용자 이름</strong></td>
+				<td width="500">
 				<form:input path="name" size="15" maxlength="10" />
 			</tr>
 			<tr>
 
 
-				<td width="200">닉네임</td>
-				<td width="400">
+				<td width="150"><strong>닉네임</strong></td>
+				<td width="500">
 				<form:input path="nick" size="15" maxlength="10" />
 				<input type="button" name="confirm_nick" value="중복확인" OnClick="nickCheck()" />
 				<form:input	path="checknick" size="10" maxlength="12" value="${checknick}" hidden="true"/>
@@ -102,8 +109,8 @@
 
 
 			<tr>
-				<td width="200">이메일</td>
-				<td width="400"><form:input path="email1" size="7"
+				<td width="150"><strong>이메일</strong></td>
+				<td width="500"><form:input path="email1" size="7"
 						maxlength="12" /> @ <form:input path="email2" size="7"
 						maxlength="9" /> <select class="select" id="sel">
 						<option value="">직접입력</option>
@@ -115,19 +122,19 @@
 				</select>
 				<form:input path="checkemail" size="10" maxlength="12" value="${checkemail}"	hidden="true" />
 				<input type="button" name="confirm_email" value="중복확인" OnClick="emailCheck()" />
-					<form:errors path="email2" />
+					<br><form:errors path="email2" />
 					<form:errors path="checkemail" /></td>
 			</tr>
 
 			<tr>
-				<td width="200">전화번호</td>
-				<td width="400">
+				<td width="150"><strong>전화번호</strong></td>
+				<td width="500">
 				<form:input path="tel1" size="3" maxlength="3" />
 				- <form:input path="tel2" size="4" maxlength="4" /> - <form:input path="tel3" size="4" maxlength="4" />
-				<form:errors path="tel" />
+				<br><form:errors path="tel" />
 			</tr>
 			<tr>
-				<td width="200">우편번호</td>
+				<td width="150">우편번호</td>
 				<td><form:input path="zipcode" size="7" readonly="true" />
 				<input type="button" value="우편번호찾기" onClick="zipCheck()"></td>
 			</tr>
@@ -139,13 +146,17 @@
 			</tr>
 
 			<tr>
+			
 				<td colspan="2" align="center"><input type="submit" name="confirm" value="등   록"> 
 					<input type="reset"	name="reset" value="다시입력"> 
 					<input type="button" value="취소" 	onclick="javascript:window.location='log_loginForm.do'">
 				</td>
 			</tr>
 		</table>
+		<fieldset></fieldset>
 	</form:form>
+	<div id="empty"></div>
+	</div>
 </body>
 
 

@@ -6,6 +6,7 @@
 
 <head>
 <title>정보수정</title>
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 var pwdBtn = 0;
@@ -84,16 +85,14 @@ $(function(){
 </head>
 
 <body>
-
+<div id ="view_top">
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
-
 			<tr>
 				<td colspan="2" height="39" >비밀번호 수정
 				<input id="updatePwdbtn" type="button" value="수정"></td>
 			</tr>
 		</table>
 
-			
 		<div id="updatePwddiv" style="display: none;">
 		<form:form  commandName="loginform" method="post" action="updatePwd.do"	name="updatepwdform">
 		
@@ -102,8 +101,8 @@ $(function(){
 				<td width="200">비밀번호</td>
 				<td width="400">
   				<form:password path="pwd" size="15" maxlength="16" value="${user.pwd }" />
-				<form:errors path="pwd" />
 				<input type="submit" name="confirm" value="등   록"></td>
+				<form:errors path="pwd" />
 			</tr>
 
 		</table>
@@ -113,26 +112,26 @@ $(function(){
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 		
-		<tr>
+			<tr>
 				<td colspan="2" height="39" >프로필 수정(이름 / 닉네임)
 				<input id="updatenamebtn" type="button" value="수정"></td>
 			</tr>
 			
-			</table>
+		</table>
 		
 		<div id="updateNamediv" style="display: none;">
 		<form:form  commandName="loginform" method="post" action="updateName.do"	name="updatenameform">
 		
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
-			<tr>
+			<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+				<tr>
 				<td width="200">이름</td>
 				<td width="400">
   				<form:input path="name" size="15" maxlength="16" value="${user.name }" />
-				<form:errors path="name" />
 				<input type="submit" name="confirm" value="등   록"></td>
+				<form:errors path="name" />
 				</tr>
-				</table>
-				</form:form>
+			</table>
+		</form:form>
 			
 			
 		<form:form  commandName="loginform" method="post" action="updateNick.do"	name="updatenickform">
@@ -144,9 +143,9 @@ $(function(){
 				<form:input path="nick" size="15" maxlength="10" value="${user.nick }"/>
 				<input type="button" name="confirm_nick" value="중복확인" OnClick="nickCheck()" />
 				<form:input	path="checknick" size="10" maxlength="12" value="${checknick }" hidden="true"/>
+				<input type="submit" name="confirm" value="등   록"></td>
 				<form:errors path="nick" />
 				<form:errors path="checknick" />
-				<input type="submit" name="confirm" value="등   록"></td>
 			</tr>
 
 		</table>
@@ -154,18 +153,17 @@ $(function(){
 		</div>
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
-				<tr>
+			<tr>
 				<td colspan="2" height="39" >연락처 수정(Email / 전화번호/ 주소)
 				<input id="updatetelbtn" type="button" value="수정"></td>
 			</tr>
-			</table>
+		</table>
 			
 			
 		<div id="updateTeldiv" style="display: none;">
 		<form:form  commandName="loginform" method="post" action="updateEmail.do"	name="updateemailform">
-		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
-<tr>
+				<tr>
 				<td width="200">이메일</td>
 				<td width="400"><form:input path="email1" size="7" maxlength="12" value="${email1 }" /> @ 
 				<form:input path="email2" size="7" maxlength="9" value="${email2 }"/>
@@ -179,29 +177,30 @@ $(function(){
 				</select>
 				<form:input path="checkemail" size="10" maxlength="12" value="${checkemail }" hidden="true"/>
 				<input type="button" name="confirm_email" value="중복확인" OnClick="emailCheck()" />
+					<input type="submit" name="confirm" value="등   록"></td>
 					<form:errors path="email2" />
 					<form:errors path="checkemail" />
-<input type="submit" name="confirm" value="등   록"></td>
-			</tr>
-				</form:form>
+				</tr>
+			</table>
+			</form:form>
 				
-				<form:form  commandName="loginform" method="post" action="updateTel.do"	name="updatetelform">
+			<form:form  commandName="loginform" method="post" action="updateTel.do"	name="updatetelform">
 		
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+			<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
 				<td width="200">전화번호</td>
 				<td width="400">
 				<form:input path="tel1" size="3" maxlength="3" value="${tel1 }"/>
 				- <form:input path="tel2" size="4" maxlength="4" value="${tel2 }"/> - <form:input path="tel3" size="4" maxlength="4" value="${tel3 }"/>
-			<form:errors path="tel"/>
 			<input type="submit" name="confirm" value="등   록"></td>	</tr>
+			<form:errors path="tel"/>
 			</table>
 			</form:form>
 			
 			
 			<form:form  commandName="loginform" method="post" action="updateAddress.do"	name="updateaddressform">
 		
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+			<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
 				<td width="200">우편번호</td>
 				<td><form:input path="zipcode" size="7" readonly="true" value="${user.zipcode }"/>
@@ -213,26 +212,25 @@ $(function(){
 				<td><form:input path="address" size="70" value="${user.address }"/>
 				<form:errors path="address" />			
 			<input type="submit" name="confirm" value="등   록"></td></tr>
-			
-
-		</table>
-		</form:form>
-		</div>
-				<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
-				<tr>
-				<td colspan="2" height="39" >회원탈퇴
-				<input type="button" value="탈퇴" onclick="javascript:window.location='byePwd.do'"></td>
-			</tr>
 			</table>
+			</form:form>
+		</div>
+		
+		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+			<tr>
+			<td colspan="2" height="39" >회원탈퇴
+			<input type="button" value="탈퇴" onclick="javascript:window.location='byePwd.do'"></td>
+			</tr>
+		</table>
 		
 		<div>
-		<form:form  commandName="loginform" method="post" name="btnform">
-		<table width="600"cellspacing="0" cellpadding="3" align="center">
-		<td align="right">
-		<input type="button" value="완료" onclick="javascript:window.location='mypageForm.do'"></td>
-		</table>
-		</form:form>
+			<form:form  commandName="loginform" method="post" name="btnform">
+			<table width="600"cellspacing="0" cellpadding="3" align="center">
+			<td align="right">
+			<input type="button" value="완료" onclick="javascript:window.location='mypageForm.do'"></td>
+			</table>
+			</form:form>
 		</div>
-
+</div>
 </body>
 </html>

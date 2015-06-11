@@ -4,9 +4,11 @@
 <html>
 <head>
 <title>정보수정</title>
+<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
+<div id ="view_top">
 <form:form>
 
 	<table cellspacing=1 cellpadding=1 border=1 align="center">
@@ -30,6 +32,6 @@
 	</table>
 
 </form:form>
-
+</div>
 </body>
 </html>
