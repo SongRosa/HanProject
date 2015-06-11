@@ -63,7 +63,7 @@
 
 <body>
 	<form:form commandName="loginform" method="post" action="join_memsub.do" name="join">
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+		<table width="600" cellspacing="0" cellpadding="3" align="center">
 			<tr>
 				<td colspan="2" height="39" align="center"><font size="+1"><b>회원가입</b></font></td>
 			</tr>
@@ -73,13 +73,13 @@
 				<td width="400"><form:input path="id" size="10" maxlength="12" />
 					<input type="button" name="confirm_id" value="ID중복확인" OnClick="idCheck()" /> 
 					<form:errors path="id" /> 
-					<form:input	path="checkid" size="10" maxlength="12" value="노확인" hidden="true" />
+					<form:input	path="checkid" size="10" maxlength="12" value="${checkid}" hidden="true" />
 					<form:errors path="checkid" /></td>
 			</tr>
 			<tr>
 				<td width="200">비밀번호</td>
 				<td width="400">
-				<form:input path="pwd" size="15" maxlength="16" />
+				<form:password path="pwd" size="15" maxlength="16" />
 				<form:errors path="pwd" /></td>
 			</tr>
 
@@ -95,7 +95,7 @@
 				<td width="400">
 				<form:input path="nick" size="15" maxlength="10" />
 				<input type="button" name="confirm_nick" value="중복확인" OnClick="nickCheck()" />
-				<form:input	path="checknick" size="10" maxlength="12" value="노확인" hidden="true" />
+				<form:input	path="checknick" size="10" maxlength="12" value="${checknick}" hidden="true"/>
 				<form:errors path="nick" />
 				<form:errors path="checknick" /></td>
 			</tr>
@@ -113,7 +113,7 @@
 						<option value="gmail.com">gmail.com</option>
 						<option value="yahoo.com">yahoo.com</option>
 				</select>
-				<form:input path="checkemail" size="10" maxlength="12" value="노확인"	hidden="true" />
+				<form:input path="checkemail" size="10" maxlength="12" value="${checkemail}"	hidden="true" />
 				<input type="button" name="confirm_email" value="중복확인" OnClick="emailCheck()" />
 					<form:errors path="email2" />
 					<form:errors path="checkemail" /></td>

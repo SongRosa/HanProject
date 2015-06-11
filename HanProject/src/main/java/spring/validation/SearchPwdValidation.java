@@ -7,7 +7,7 @@ import org.springframework.validation.Validator;
 
 import spring.command.UserInfo;
 
-public class SearchValidation implements Validator{
+public class SearchPwdValidation implements Validator{
 		
 	public boolean supports(Class<?> clazz){
 		return UserInfo.class.isAssignableFrom(clazz);
