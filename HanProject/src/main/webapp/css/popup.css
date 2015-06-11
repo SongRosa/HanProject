@@ -1,0 +1,10 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+*{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 17px;
+	vertical-align: center;
+}
+table{
+	margin: auto;
+}

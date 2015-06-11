@@ -6,6 +6,7 @@
 <head>
 <title>닉네임 중복확인</title>
 <link href="style.css" rel="stylesheet" type="text/css">
+<link href="css/popup.css" rel="stylesheet" type="text/css">
 <% request.setCharacterEncoding("utf-8"); %>
 </head>
 <body>
