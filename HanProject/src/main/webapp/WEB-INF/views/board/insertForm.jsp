@@ -34,7 +34,8 @@ function checkBlank(){
 			<table class="insert_table" >
 				<tr>
 				<td>작성자</td>
-					<td><input class="table_writer" name="b_writer" size="10" maxlength="25"></td>
+					<td>${sessionScope.user.nick }
+					<input type="hidden" name="b_writer" value="${sessionScope.user.nick }"></td>
 					<td>제목</td>
 					<td>
 					<select class="p_number" name="p_number">
@@ -62,6 +63,7 @@ function checkBlank(){
 				<tr>
 				<td colspan="4">
 				<p class="btnGroup_p" align="right">
+				<input type="hidden" name="b_id" value="${sessionScope.user.id }">
 				<input class="submitBtn" type="submit" value="&nbsp;" />
 				<input class="resetBtn" type="reset" value="&nbsp;" />
 				<input class="goListBtn" type="button" value="&nbsp;" onclick="window.location='board_list.do?parkNum=${param.parkNum}'" />

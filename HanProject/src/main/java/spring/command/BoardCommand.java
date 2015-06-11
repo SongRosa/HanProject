@@ -13,7 +13,11 @@ public class BoardCommand {
 	private int p_number;
 	private String p_name;
 	private int c_count;
+	private String b_id;
 	
+	
+	
+
 	public BoardCommand(){}
 	public BoardCommand(int p_number, String b_subject, String b_writer, String b_content){
 		this.p_number=p_number;
@@ -23,7 +27,12 @@ public class BoardCommand {
 	}
 	
 	
-	
+	public String getB_id() {
+		return b_id;
+	}
+	public void setB_id(String b_id) {
+		this.b_id = b_id;
+	}
 	
 	public int getC_count() {
 		return c_count;
@@ -95,7 +104,7 @@ public class BoardCommand {
 	@Override
 	public String toString() {
 		String str = "글번호 ::" + b_number + "\n 글제목 :: " + b_subject
-				+ "\n 작성자 :: " + b_writer + "\n 작성일 ::" + b_regdate+"\n 공원번호 ::"+p_number;
+				+ "\n 작성자 :: " + b_writer + "\n 작성ID ::" + b_id+"\n 공원번호 ::"+p_number;
 		return str;
 	}
 

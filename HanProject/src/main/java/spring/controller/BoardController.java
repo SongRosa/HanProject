@@ -200,6 +200,7 @@ public class BoardController {
 
 		return "views/board/detail";
 	}
+	
 	/*코멘트가 입력되면 실행되는 메서드*/
 	@RequestMapping(value="board_detail.do" ,method= RequestMethod.POST)
 	public String insertComments(HttpServletRequest req){
@@ -244,18 +245,13 @@ public class BoardController {
 
 	/* 글쓰기를 서브밋했을 때 실행되는 메서드 */
 	@RequestMapping(value = "board_insert.do", method = RequestMethod.POST)
-	public String insert(HttpServletRequest req) {
+	public String insert(HttpServletRequest req, BoardCommand bcc) {
 
-		String b_subject = req.getParameter("b_subject");
-		String b_writer = req.getParameter("b_writer");
-		String b_content = req.getParameter("b_content");
 		int p_number = Integer.parseInt(req.getParameter("p_number"));
 
-		BoardCommand bc = new BoardCommand(p_number, b_subject, b_writer,
-				b_content);
-		System.out.println(bc);
+		System.out.println(bcc);
 
-		int i = dao.insertOne(bc);
+		int i = dao.insertOne(bcc);
 		if (i == 1) {
 
 			return "redirect:board_list.do?parkNum="+p_number;

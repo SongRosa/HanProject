@@ -58,7 +58,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="selectOne" parameterType="int" resultType="spring.command.BoardCommand">
 		select
-		b_number,b_subject,b_writer,b_regdate,b_count,p_number,b_content,p_number,
+		b_number,b_subject,b_writer,b_regdate,b_count,p_number,b_content,p_number,b_id,
 		(select count(*) from comments c where c.b_number=b.b_number) c_count,
 		(select p_name from park p where p.p_number = b.p_number) p_name
 		from board b where b_number=#{int}
@@ -69,9 +69,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 
 	<insert id="insertOne" parameterType="spring.command.BoardCommand">
-		insert into board (b_number,b_subject,b_writer,b_regdate,b_content,p_number)
+		insert into board (b_number,b_subject,b_writer,b_regdate,b_content,p_number,b_id)
 		values(seq_b_number.NEXTVAL, #{b_subject},
-		#{b_writer},sysdate,#{b_content},#{p_number})
+		#{b_writer},sysdate,#{b_content},#{p_number},#{b_id})
 	</insert>
 
 	<update id="updateOne" parameterType="spring.command.BoardCommand">

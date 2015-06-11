@@ -50,12 +50,20 @@ function checkBlank(){
 <tr>
 <td class="detail_table_content" colspan="6"> ${detail.b_content }</td>
 </tr>
+<c:if test="${sessionScope.user.id eq detail.b_id || sessionScope.user.id eq 'manager' }">
 <tr>
 <td class="detail_table_btnGroup" colspan="6" align="right">
 <button class="detail_table_updateBtn" onclick="window.location='board_updateForm.do?b_number=${detail.b_number}'">&nbsp;</button>
 <button class="detail_table_deleteBtn" onclick="openDeleteForm(${detail.b_number })">&nbsp;</button>
 <button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}'">&nbsp;</button>
 </td></tr>
+</c:if>
+<c:if test="${sessionScope.user.id!=detail.b_id || empty sessionScope.user }">
+<tr>
+<td class="detail_table_btnGroup" colspan="6" align="right">
+<button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}'">&nbsp;</button>
+</td></tr>
+</c:if>
 </table>
 </div>
 
@@ -87,17 +95,17 @@ function checkBlank(){
 </table>
 </div>
 <p></p>
+<c:if test="${!empty sessionScope.user }">
 <div id="input_div" align="center">
 <form name="CommentsCommand" method="post" onsubmit="return checkBlank();">
 <table class="input_table" ><tr>
-<td><input class="input_table_writer" size="5" name="c_writer"></td>
+<td><input class="input_table_writer" type="hidden" value="${sessionScope.user.nick }" name="c_writer">${sessionScope.user.nick }</td>
 <td><input class="input_table_content" size="100" name="c_content"></td>
 <td><input class="input_table_submitBtn" type="submit" value="&nbsp;"></td>
 </tr></table>
 <input type="hidden" name="b_number" value="${detail.b_number}">
-
 </form>
 </div>
-
+</c:if>
 </body>
 </html>
