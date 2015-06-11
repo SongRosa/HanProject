@@ -28,13 +28,15 @@
 	<center>
 		<b> 우편번호 찾기 </b>
 	</center>
-	<table>
+	<center>
+	<table id="zipCheck">
 		<form name="zipForm" method="post" action="join_dongseach.do">
 			<tr>
-				<td><br> 동이름 입력 : <input name="dong" type="text">
-					<input type="button" value="검색" onclick="dongCheck();"></td>
+				<td><br> 동이름 입력 : <input name="dong" type="text"><input type="button" value="검색" onclick="dongCheck();"></td>
+				<td>				
+					<input type="hidden" name="check" value="n">
+				</td>
 			</tr>
-			<input type="hidden" name="check" value="n">
 		</form>
 		<c:forEach var="zip" items="${zip}">
 			<tr>
@@ -50,6 +52,7 @@
 			</tr>
 
 	</table>
-	</div>
+	</center>
+</div>
 </body>
 </html>

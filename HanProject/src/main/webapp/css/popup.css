@@ -18,3 +18,13 @@ div:input{
 	width: 300px;
 	margin: auto;
 }
+
+a{	
+	font-family: 'Nanum Gothic', sans-serif;
+	font-style: none;
+	font-size: 15px;
+}
+
+#zipCheck{
+	width: 500px;
+}

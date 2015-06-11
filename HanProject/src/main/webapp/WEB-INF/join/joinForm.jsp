@@ -45,7 +45,7 @@
 
 	function zipCheck() {
 		url = "join_zipCheck.do";
-		window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+		window.open(url,"post","toolbar=no,width=700,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
 	}
 
 	$(function() {
@@ -77,7 +77,7 @@
 				
 			<tr height="50px">
 				<td id = "header" width="150"><strong>*</strong>사용자 ID</td>
-				<td width="500"><form:input path="id" size="10" maxlength="12" />
+				<td width="500"><form:input path="id" size="10" maxlength="12"  />
 					<input type="button" name="confirm_id" value="ID중복확인" OnClick="idCheck()" /> 
 					<form:errors path="id" /> 
 					<form:input	path="checkid" size="10" maxlength="12" value="${checkid}" hidden="true" />
@@ -110,8 +110,8 @@
 
 			<tr height="50px">
 				<td width="150"><strong>*</strong>이메일</td>
-				<td width="500"><form:input path="email1" size="7"
-						maxlength="12" /> @ <form:input path="email2" size="7"
+				<td width="500"><form:input id="email" path="email1" size="7"
+						maxlength="12" /> @ <form:input id="email" path="email2" size="7"
 						maxlength="9" /> <select class="select" id="sel">
 						<option value="">직접입력</option>
 						<option value="naver.com">naver.com</option>
@@ -129,19 +129,19 @@
 			<tr height="50px">
 				<td width="150"><strong>*</strong>전화번호</td>
 				<td width="500">
-				<form:input path="tel1" size="3" maxlength="3" />
-				- <form:input path="tel2" size="4" maxlength="4" /> - <form:input path="tel3" size="4" maxlength="4" />
+				<form:input id="tel" path="tel1" size="3" maxlength="3" />
+				- <form:input id="tel" path="tel2" size="4" maxlength="4" /> - <form:input id="tel" path="tel3" size="4" maxlength="4" />
 				<br><form:errors path="tel" />
 			</tr>
 			<tr height="50px">
 				<td width="150">우편번호</td>
-				<td><form:input path="zipcode" size="7" readonly="true" />
+				<td><form:input id = "zip" path="zipcode" size="7" readonly="true" />
 				<input type="button" value="우편번호찾기" onClick="zipCheck()"></td>
 			</tr>
 
 			<tr height="50px">
 				<td>주소</td>
-				<td><form:input path="address" size="70" />
+				<td><form:input id="addr" path="address" size="70" />
 				<form:errors path="address" /></td>
 			</tr>
 

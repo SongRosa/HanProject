@@ -62,6 +62,7 @@ div#empty{
   color: #CD1076;
  }
  input[type=text], input[type=password]{
+  width:150px;
   padding:12px;
   height:1.5em;
   font-size: 1em;
@@ -71,4 +72,12 @@ div#empty{
  textarea{
   width: 70%;
   border: 1px solid #eee;  
+ }
+ 
+ #email, #tel, #zip{
+ 	width: 120px;
+ } 
+ 
+ #addr{
+ 	width: 500px;
  }
