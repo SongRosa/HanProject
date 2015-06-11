@@ -20,6 +20,7 @@ import spring.validation.ConfirmPwdValidation;
 import spring.validation.MypageEmailValidation;
 import spring.validation.MypageNickValidation;
 import spring.validation.MypageNameValidation;
+import spring.validation.MypageTelValidation;
 
 
 @Controller
@@ -107,6 +108,19 @@ public class UpdateController {
 			System.out.println("1");
 			return "mypage/updateInfo";
 		}
+		if(se.getTel().length()==12){
+			session.setAttribute("tel1",se.getTel().substring(0, 3));
+			session.setAttribute("tel2",se.getTel().substring(4, 7));
+			session.setAttribute("tel3",se.getTel().substring(8, se.getTel().length()));
+
+			
+		}
+		if(se.getTel().length()==13){
+
+			session.setAttribute("tel1",se.getTel().substring(0, 3));
+			session.setAttribute("tel2",se.getTel().substring(4, 8));
+			session.setAttribute("tel3",se.getTel().substring(9, se.getTel().length()));
+		}
 		System.out.println(seid);
 		System.out.println(useri.getEmail());
 		dao.updateEmail(seid, useri.getEmail());
@@ -120,11 +134,17 @@ public class UpdateController {
 	@RequestMapping(value = "updateTel.do", method = RequestMethod.POST)
 	public String updateTel(@ModelAttribute("loginform") UserInfo useri,
 			BindingResult result, HttpSession session) {
-		
+		new MypageTelValidation().validate(useri, result);
 		UserInfo se = (UserInfo) session.getAttribute("user");
 		useri.setTel(useri.getTel1()+"-"+useri.getTel2()+"-"+useri.getTel3());
 		String seid = se.getId();
+		int atidx=se.getEmail().indexOf('@');
+		session.setAttribute("email1",se.getEmail().substring(0, atidx));
+		session.setAttribute("email2",se.getEmail().substring(atidx+1, se.getEmail().length()));
 
+		if (result.hasErrors()) {
+			return "mypage/updateInfo";
+		}
 		System.out.println(seid);
 		System.out.println(useri.getTel());
 		dao.updateTel(seid, useri.getTel());
@@ -132,6 +152,8 @@ public class UpdateController {
 		session.setAttribute("user", se);/*
 		return "mypage/mypageForm";*/
 		return "redirect:updatego.do";
+		
+		
 	}
 	
 
@@ -154,25 +176,22 @@ public class UpdateController {
 	@RequestMapping(value = "byebye.do", method = RequestMethod.POST)
 	public String out(@ModelAttribute("loginform") UserInfo useri,
 			BindingResult result, HttpSession session,Model model) {
-		System.out.println("1");
+		
 		new ConfirmPwdValidation().validate(useri, result);
-		System.out.println("2");
+		
 		UserInfo se = (UserInfo) session.getAttribute("user");
 		String seid = se.getId();
 		
 		if (result.hasErrors()) {
-			System.out.println("3");
 			return "mypage/byePwd";
 		}
-		System.out.println(useri.getPwd());
-		int x=dao.outisId(seid,useri.getPwd());
-		System.out.println(seid);
-
-		if(x==1){
-		dao.deleteMem(seid, useri.getPwd());
-		session.invalidate();
-		return "log/loginForm";
-		}else{
+		
+		int x = dao.outisId(seid, useri.getPwd());
+		if (x == 1) {
+			dao.deleteMem(seid, useri.getPwd());
+			session.invalidate();
+			return "redirect:log_loginForm.do";
+		} else {
 			int i = 1;
 			model.addAttribute("a", i);
 			return "mypage/byePwd";

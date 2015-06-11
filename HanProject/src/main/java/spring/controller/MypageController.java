@@ -48,20 +48,30 @@ public class MypageController {
 		
 		int atidx=se.getEmail().indexOf('@');
 		
-		model.addAttribute("pwd",se.getPwd());
+		/*model.addAttribute("pwd",se.getPwd());
 		model.addAttribute("name",se.getName());
 		model.addAttribute("nick",se.getNick());
 		model.addAttribute("email1",se.getEmail().substring(0, atidx));
-		model.addAttribute("email2",se.getEmail().substring(atidx+1, se.getEmail().length()));
+		model.addAttribute("email2",se.getEmail().substring(atidx+1, se.getEmail().length()));*/
+		session.setAttribute("email1",se.getEmail().substring(0, atidx));
+		session.setAttribute("email2",se.getEmail().substring(atidx+1, se.getEmail().length()));
 		if(se.getTel().length()==12){
-			model.addAttribute("tel1",se.getTel().substring(0, 3));
+/*			model.addAttribute("tel1",se.getTel().substring(0, 3));
 			model.addAttribute("tel2",se.getTel().substring(4, 7));
-			model.addAttribute("tel3",se.getTel().substring(8, se.getTel().length()));
+			model.addAttribute("tel3",se.getTel().substring(8, se.getTel().length()));*/
+			session.setAttribute("tel1",se.getTel().substring(0, 3));
+			session.setAttribute("tel2",se.getTel().substring(4, 7));
+			session.setAttribute("tel3",se.getTel().substring(8, se.getTel().length()));
+
+			
 		}
 		if(se.getTel().length()==13){
-			model.addAttribute("tel1",se.getTel().substring(0, 3));
+/*			model.addAttribute("tel1",se.getTel().substring(0, 3));
 			model.addAttribute("tel2",se.getTel().substring(4, 8));
-			model.addAttribute("tel3",se.getTel().substring(9, se.getTel().length()));
+			model.addAttribute("tel3",se.getTel().substring(9, se.getTel().length()));*/
+			session.setAttribute("tel1",se.getTel().substring(0, 3));
+			session.setAttribute("tel2",se.getTel().substring(4, 8));
+			session.setAttribute("tel3",se.getTel().substring(9, se.getTel().length()));
 		}
 	
 		model.addAttribute("zipcode",se.getZipcode());

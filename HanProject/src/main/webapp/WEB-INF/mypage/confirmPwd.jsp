@@ -16,7 +16,7 @@ $(function (){
 <body>
 <form:form commandName="loginform" name="confirmpwdform" action="updatego.do" method="post">
 
-	<table cellspacing=1 cellpadding=1 border=1 align="center">
+	<table cellspacing=1 cellpadding=1 align="center">
 		<tr height="30">
 			<td colspan="2" align="middle"><strong>비밀번호 확인</strong>	</td>
 		</tr>
@@ -26,7 +26,7 @@ $(function (){
 		<tr height="30">
 			<td width="110" align=center>비밀번호</td>
 			<td width="150" align=center>
-				<form:input path="pwd" size="10" maxlength="12" />
+				<form:password path="pwd" size="10" maxlength="16" />
 				<form:errors path="pwd" />
 			</td>
 		</tr>
@@ -34,7 +34,7 @@ $(function (){
 		<tr height="30">
 			<td colspan="3" align="right">
 				<input type="submit" value="입 력">
-				<input type="button" value="취 소" onclick="javascript:window.location='log_login.do'">
+				<input type="button" value="취 소" onclick="javascript:window.location='test.do'">
 			</td>
 	
 		</tr>

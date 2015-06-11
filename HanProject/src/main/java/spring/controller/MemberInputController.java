@@ -40,15 +40,20 @@ public class MemberInputController {
 	
 	@RequestMapping(value = "join_memsub.do", method = RequestMethod.POST)
 	public String memSub(@ModelAttribute("loginform") UserInfo useri,
-			BindingResult result) {
+			BindingResult result,Model model,String checkid,String checkemail,String checknick) {
 		useri.setEmail(useri.getEmail1()+"@"+useri.getEmail2());
 		useri.setTel(useri.getTel1()+"-"+useri.getTel2()+"-"+useri.getTel3());
+		model.addAttribute("checkid",checkid);
+		model.addAttribute("checknick",checknick);
+		model.addAttribute("checkemail",checkemail);
 		new JoinValidation().validate(useri, result);
+		
 		if (result.hasErrors()) {
+			
 			return "join/joinForm";
 		}
 		dao.insert(useri);
-		return "log/loginForm";
+		return "redirect:log_loginForm.do";
 	}
 
 	@RequestMapping(value = "join_zipCheck.do")

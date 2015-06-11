@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import spring.command.UserInfo;
 import spring.mybatis.UserDAO;
-import spring.validation.SearchValidation;
+import spring.validation.SearchIdValidation;
 
 @Controller
 public class SearchIdController {
@@ -23,8 +24,8 @@ public class SearchIdController {
 		this.dao = dao;
 	}
 
-	@ModelAttribute("searchidform")
-	UserInfo getSearchidform(){
+	@ModelAttribute("loginform")
+	UserInfo getLoginform(){
 		return new UserInfo();
 	}
 	
@@ -34,21 +35,29 @@ public class SearchIdController {
 	}
 
 	@RequestMapping(value = "searchId.do",method = RequestMethod.POST)
-	public String search(@ModelAttribute("searchidform") UserInfo useri,BindingResult result, HttpSession session) {
-		new SearchValidation().validate(useri, result);
+	public String search(@ModelAttribute("loginform") UserInfo useri,BindingResult result, HttpSession session, Model model,
+						 String name, String email) {
+		new SearchIdValidation().validate(useri, result);
 
 		if (result.hasErrors()) {
 
 			return "search/searchIdForm";
 		}
+		
+		System.out.println(name + " ::::::: " + email);
 		int x = dao.isId2(useri);
 		UserInfo id = dao.selectId(useri);
+
 		if (x == 1) {
-			String a=id.getId();
-			session.setAttribute("id", a);
+			id.setName(name);
+			id.setEmail(email);
+			model.addAttribute("model", id);
+			
 			return "search/searchIdSuccess";
 		} else {
-			return "search/searchIdFail";
+			int i = 1;
+			model.addAttribute("a", i);
+			return "search/searchIdForm";
 		}
 	}
 	
