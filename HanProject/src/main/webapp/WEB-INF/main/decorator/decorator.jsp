@@ -35,7 +35,7 @@
 		<a href="join_input.do">회원가입  </a>&nbsp;
 		<a href="">공지사항  </a>&nbsp;
 		<a href="board_list.do?parkNum=0">자유게시판  </a>&nbsp;
-		<a href="">사이트맵  </a>&nbsp;&nbsp;&nbsp;
+		<a href="sitemap.do">사이트맵  </a>&nbsp;&nbsp;&nbsp;
 	</div>
 	<hr/>
 
