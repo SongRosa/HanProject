@@ -32,7 +32,7 @@
 
 	<decorator:head />
 	<div id="header" align="right" style="font-family: 'Nanum Gothic', sans-serif;">
-		<c:if test="${sessionScope.user.id=='manager'}">
+		<c:if test="${session.user.id!='manager'}">
 			<img alt="관리자" src="./board_img/btn_admin.gif">
 		</c:if>
 		<a href="log_loginForm.do">로그인  </a> &nbsp;
