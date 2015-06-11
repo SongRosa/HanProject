@@ -71,12 +71,12 @@
 			<tr>	
 			<fieldset>
 				<legend>회원가입</legend>
-				<span class="notice">붉은색 강조 문항은 필수 입력사항입니다.</span>
+				<span class="notice">*문항은 필수 입력사항입니다.</span>
 			</fieldset>
 			</tr>
 				
 			<tr>
-				<td id = "header" width="150"><strong>사용자 ID</strong></td>
+				<td id = "header" width="150"><strong>*</strong>사용자 ID</td>
 				<td width="500"><form:input path="id" size="10" maxlength="12" />
 					<input type="button" name="confirm_id" value="ID중복확인" OnClick="idCheck()" /> 
 					<form:errors path="id" /> 
@@ -84,21 +84,21 @@
 					<form:errors path="checkid" /></td>
 			</tr>
 			<tr>
-				<td width="150"><strong>비밀번호</strong></td>
+				<td width="150"><strong>*</strong>비밀번호</td>
 				<td width="500">
 				<form:password path="pwd" size="15" maxlength="16" />
 				<form:errors path="pwd" /></td>
 			</tr>
 
 			<tr>
-				<td width="150"><strong>사용자 이름</strong></td>
+				<td width="150"><strong>*</strong>사용자 이름</td>
 				<td width="500">
 				<form:input path="name" size="15" maxlength="10" />
 			</tr>
 			<tr>
 
 
-				<td width="150"><strong>닉네임</strong></td>
+				<td width="150"><strong>*</strong>닉네임</td>
 				<td width="500">
 				<form:input path="nick" size="15" maxlength="10" />
 				<input type="button" name="confirm_nick" value="중복확인" OnClick="nickCheck()" />
@@ -109,7 +109,7 @@
 
 
 			<tr>
-				<td width="150"><strong>이메일</strong></td>
+				<td width="150"><strong>*</strong>이메일</td>
 				<td width="500"><form:input path="email1" size="7"
 						maxlength="12" /> @ <form:input path="email2" size="7"
 						maxlength="9" /> <select class="select" id="sel">
@@ -127,7 +127,7 @@
 			</tr>
 
 			<tr>
-				<td width="150"><strong>전화번호</strong></td>
+				<td width="150"><strong>*</strong>전화번호</td>
 				<td width="500">
 				<form:input path="tel1" size="3" maxlength="3" />
 				- <form:input path="tel2" size="4" maxlength="4" /> - <form:input path="tel3" size="4" maxlength="4" />

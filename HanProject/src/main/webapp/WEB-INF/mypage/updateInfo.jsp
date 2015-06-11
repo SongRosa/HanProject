@@ -6,7 +6,7 @@
 
 <head>
 <title>정보수정</title>
-<link href="css/mem/join.css" rel="stylesheet" type="text/css">
+<link href="css/mem/mypage.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 var pwdBtn = 0;
@@ -86,7 +86,13 @@ $(function(){
 
 <body>
 <div id ="view_top">
+<div id="empty"></div>
+				<fieldset>
+					<legend>마이페이지</legend>
+				</fieldset>
+				<div id="empty"></div>
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+
 			<tr>
 				<td colspan="2" height="39" >비밀번호 수정
 				<input id="updatePwdbtn" type="button" value="수정"></td>
@@ -231,6 +237,8 @@ $(function(){
 			</table>
 			</form:form>
 		</div>
+				<fieldset></fieldset>
+				<div id="empty"></div>
 </div>
 </body>
 </html>
