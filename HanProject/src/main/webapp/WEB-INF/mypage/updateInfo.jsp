@@ -91,7 +91,7 @@ $(function(){
 					<legend>마이페이지</legend>
 				</fieldset>
 				<div id="empty"></div>
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+		<table width="750" cellspacing="0" cellpadding="3" align="center" style= "border-top: 1px solid #7AA3EB ; border-bottom: 1px solid #7AA3EB">
 
 			<tr>
 				<td colspan="2" height="39" >비밀번호 수정
@@ -102,10 +102,10 @@ $(function(){
 		<div id="updatePwddiv" style="display: none;">
 		<form:form  commandName="loginform" method="post" action="updatePwd.do"	name="updatepwdform">
 		
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+		<table width="750"  cellspacing="0" cellpadding="3" align="center">
 			<tr>
-				<td width="200">비밀번호</td>
-				<td width="400">
+				<td width="129">비밀번호</td>
+				<td width="500">
   				<form:password path="pwd" size="15" maxlength="16" value="${user.pwd }" />
 				<input type="submit" name="confirm" value="등   록"></td>
 				<form:errors path="pwd" />
@@ -116,7 +116,7 @@ $(function(){
 		</form:form>
 		</div>
 		
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+		<table width="750"  cellspacing="0" cellpadding="3" align="center" style= "border-top: 1px solid #7AA3EB ; border-bottom: 1px solid #7AA3EB">
 		
 			<tr>
 				<td colspan="2" height="39" >프로필 수정(이름 / 닉네임)
@@ -128,10 +128,10 @@ $(function(){
 		<div id="updateNamediv" style="display: none;">
 		<form:form  commandName="loginform" method="post" action="updateName.do"	name="updatenameform">
 		
-			<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+			<table width="750"  cellspacing="0" cellpadding="3" align="center">
 				<tr>
-				<td width="200">이름</td>
-				<td width="400">
+				<td width="129">이름</td>
+				<td width="500">
   				<form:input path="name" size="15" maxlength="16" value="${user.name }" />
 				<input type="submit" name="confirm" value="등   록"></td>
 				<form:errors path="name" />
@@ -141,11 +141,11 @@ $(function(){
 			
 			
 		<form:form  commandName="loginform" method="post" action="updateNick.do"	name="updatenickform">
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">	
+		<table width="750"  cellspacing="0" cellpadding="3" align="center">	
 				
 			<tr>
-				<td width="200">닉네임</td>
-				<td width="400">
+				<td width="129">닉네임</td>
+				<td width="500">
 				<form:input path="nick" size="15" maxlength="10" value="${user.nick }"/>
 				<input type="button" name="confirm_nick" value="중복확인" OnClick="nickCheck()" />
 				<form:input	path="checknick" size="10" maxlength="12" value="${checknick }" hidden="true"/>
@@ -158,7 +158,7 @@ $(function(){
 		</form:form>
 		</div>
 		
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+		<table width="750"  cellspacing="0" cellpadding="3" align="center" style= "border-top: 1px solid #7AA3EB ; border-bottom: 1px solid #7AA3EB">
 			<tr>
 				<td colspan="2" height="39" >연락처 수정(Email / 전화번호/ 주소)
 				<input id="updatetelbtn" type="button" value="수정"></td>
@@ -168,10 +168,10 @@ $(function(){
 			
 		<div id="updateTeldiv" style="display: none;">
 		<form:form  commandName="loginform" method="post" action="updateEmail.do"	name="updateemailform">
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+		<table width="750"  cellspacing="0" cellpadding="3" align="center">
 				<tr>
-				<td width="200">이메일</td>
-				<td width="400"><form:input path="email1" size="7" maxlength="12" value="${email1 }" /> @ 
+				<td width="129">이메일</td>
+				<td width="500"><form:input path="email1" size="7" maxlength="12" value="${email1 }" /> @ 
 				<form:input path="email2" size="7" maxlength="9" value="${email2 }"/>
 						<select class="select" id="sel">
 						<option value="">직접입력</option>
@@ -192,10 +192,10 @@ $(function(){
 				
 			<form:form  commandName="loginform" method="post" action="updateTel.do"	name="updatetelform">
 		
-			<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+			<table width="750"  cellspacing="0" cellpadding="3" align="center">
 			<tr>
-				<td width="200">전화번호</td>
-				<td width="400">
+				<td width="129">전화번호</td>
+				<td width="500">
 				<form:input path="tel1" size="3" maxlength="3" value="${tel1 }"/>
 				- <form:input path="tel2" size="4" maxlength="4" value="${tel2 }"/> - <form:input path="tel3" size="4" maxlength="4" value="${tel3 }"/>
 			<input type="submit" name="confirm" value="등   록"></td>	</tr>
@@ -206,10 +206,10 @@ $(function(){
 			
 			<form:form  commandName="loginform" method="post" action="updateAddress.do"	name="updateaddressform">
 		
-			<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+			<table width="750"  cellspacing="0" cellpadding="3" align="center">
 			<tr>
-				<td width="200">우편번호</td>
-				<td><form:input path="zipcode" size="7" readonly="true" value="${user.zipcode }"/>
+				<td width="150">우편번호</td>
+				<td width="500"><form:input path="zipcode" size="7" readonly="true" value="${user.zipcode }"/>
 				<input type="button" value="우편번호찾기" onClick="zipCheck()"></td>
 			</tr>
 
@@ -222,7 +222,7 @@ $(function(){
 			</form:form>
 		</div>
 		
-		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
+		<table width="750"  cellspacing="0" cellpadding="3" align="center" style= "border-top: 1px solid #7AA3EB ; border-bottom: 1px solid #7AA3EB">
 			<tr>
 			<td colspan="2" height="39" >회원탈퇴
 			<input type="button" value="탈퇴" onclick="javascript:window.location='byePwd.do'"></td>
@@ -231,10 +231,11 @@ $(function(){
 		
 		<div>
 			<form:form  commandName="loginform" method="post" name="btnform">
-			<table width="600"cellspacing="0" cellpadding="3" align="center">
+			<table width="750"cellspacing="0" cellpadding="3" align="center">
 			<td align="right">
 			<input type="button" value="완료" onclick="javascript:window.location='mypageForm.do'"></td>
 			</table>
+			<div id="empty"></div>
 			</form:form>
 		</div>
 				<fieldset></fieldset>

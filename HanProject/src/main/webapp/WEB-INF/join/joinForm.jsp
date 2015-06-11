@@ -14,7 +14,7 @@
 			alert("ID를 입력하세요")
 		} else {
 			url = "join_idCheck.do?id=" + join.id.value;
-			window.open(url,"post","toolbar=no,width=500,height=150,directories=no,status=yes,scrollbars=no,menubar=no");
+			window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
 		}
 	}
 
@@ -23,7 +23,7 @@
 			alert("닉네임을 입력하세요")
 		} else {
 			url = "join_nickCheck.do?nick=" + join.nick.value;
-			window.open(url,"post","toolbar=no,width=500,height=150,directories=no,status=yes,scrollbars=no,menubar=no");
+			window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
 		}
 	}
 	
