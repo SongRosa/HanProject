@@ -74,7 +74,7 @@ div#empty{
   border: 1px solid #eee;  
  }
  
- #email, #tel, #zip{
+#tel, #zip{
  	width: 120px;
  } 
  

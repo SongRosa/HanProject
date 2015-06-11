@@ -49,7 +49,6 @@
 	}
 
 	$(function() {
-
 		$("#sel").change(function() {
 			var d = $("#sel").val();
 			$("#email2").val(d);
@@ -108,11 +107,10 @@
 			</tr>
 
 
-			<tr height="50px">
+			<tr>
 				<td width="150"><strong>*</strong>이메일</td>
-				<td width="500"><form:input id="email" path="email1" size="7"
-						maxlength="12" /> @ <form:input id="email" path="email2" size="7"
-						maxlength="9" /> <select class="select" id="sel">
+				<td width="500"><form:input path="email1" size="7" maxlength="12"/> @ <form:input path="email2" size="7" maxlength="9"/> 
+				<select class="select" id="sel">
 						<option value="">직접입력</option>
 						<option value="naver.com">naver.com</option>
 						<option value="daum.net">daum.net</option>
@@ -120,7 +118,7 @@
 						<option value="gmail.com">gmail.com</option>
 						<option value="yahoo.com">yahoo.com</option>
 				</select>
-				<form:input path="checkemail" size="10" maxlength="12" value="${checkemail}"	hidden="true" />
+				<form:input path="checkemail" size="10" maxlength="12" value="${checkemail}" hidden="true" />
 				<input type="button" name="confirm_email" value="중복확인" OnClick="emailCheck()" />
 					<br><form:errors path="email2" />
 					<form:errors path="checkemail" /></td>
