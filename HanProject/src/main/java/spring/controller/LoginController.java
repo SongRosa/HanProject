@@ -43,8 +43,8 @@ public class LoginController {
 		}
 		int x = dao.isId(useri);
 		UserInfo ui=dao.selectInfo(useri);
-		if (x == 1) {
-			
+		
+		if (x == 1) {			
 			session.setAttribute("user", ui);
 			return "mypage/mypageForm";
 		} else {

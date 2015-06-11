@@ -101,7 +101,7 @@ $(function(){
 			<tr>
 				<td width="200">비밀번호</td>
 				<td width="400">
-  				<form:input path="pwd" size="15" maxlength="16" value="${pwd }" />
+  				<form:password path="pwd" size="15" maxlength="16" value="${user.pwd }" />
 				<form:errors path="pwd" />
 				<input type="submit" name="confirm" value="등   록"></td>
 			</tr>
@@ -127,7 +127,7 @@ $(function(){
 			<tr>
 				<td width="200">이름</td>
 				<td width="400">
-  				<form:input path="name" size="15" maxlength="16" value="${name }" />
+  				<form:input path="name" size="15" maxlength="16" value="${user.name }" />
 				<form:errors path="name" />
 				<input type="submit" name="confirm" value="등   록"></td>
 				</tr>
@@ -141,9 +141,9 @@ $(function(){
 			<tr>
 				<td width="200">닉네임</td>
 				<td width="400">
-				<form:input path="nick" size="15" maxlength="10" value="${nick }"/>
+				<form:input path="nick" size="15" maxlength="10" value="${user.nick }"/>
 				<input type="button" name="confirm_nick" value="중복확인" OnClick="nickCheck()" />
-				<form:input	path="checknick" size="10" maxlength="12" value="노확인" hidden="true"/>
+				<form:input	path="checknick" size="10" maxlength="12" value="${checknick }" hidden="true"/>
 				<form:errors path="nick" />
 				<form:errors path="checknick" />
 				<input type="submit" name="confirm" value="등   록"></td>
@@ -177,7 +177,7 @@ $(function(){
 						<option value="gmail.com">gmail.com</option>
 						<option value="yahoo.com">yahoo.com</option>
 				</select>
-				<form:input path="checkemail" size="10" maxlength="12" value="노확인" hidden="true"/>
+				<form:input path="checkemail" size="10" maxlength="12" value="${checkemail }" hidden="true"/>
 				<input type="button" name="confirm_email" value="중복확인" OnClick="emailCheck()" />
 					<form:errors path="email2" />
 					<form:errors path="checkemail" />
@@ -193,7 +193,7 @@ $(function(){
 				<td width="400">
 				<form:input path="tel1" size="3" maxlength="3" value="${tel1 }"/>
 				- <form:input path="tel2" size="4" maxlength="4" value="${tel2 }"/> - <form:input path="tel3" size="4" maxlength="4" value="${tel3 }"/>
-		
+			<form:errors path="tel"/>
 			<input type="submit" name="confirm" value="등   록"></td>	</tr>
 			</table>
 			</form:form>
@@ -204,13 +204,13 @@ $(function(){
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
 				<td width="200">우편번호</td>
-				<td><form:input path="zipcode" size="7" readonly="true" value="${zipcode }"/>
+				<td><form:input path="zipcode" size="7" readonly="true" value="${user.zipcode }"/>
 				<input type="button" value="우편번호찾기" onClick="zipCheck()"></td>
 			</tr>
 
 			<tr>
 				<td>주소</td>
-				<td><form:input path="address" size="70" value="${address }"/>
+				<td><form:input path="address" size="70" value="${user.address }"/>
 				<form:errors path="address" />			
 			<input type="submit" name="confirm" value="등   록"></td></tr>
 			
@@ -229,7 +229,7 @@ $(function(){
 		<form:form  commandName="loginform" method="post" name="btnform">
 		<table width="600"cellspacing="0" cellpadding="3" align="center">
 		<td align="right">
-		<input type="button" value="취소" onclick="javascript:window.location='mypageForm.do'"></td>
+		<input type="button" value="완료" onclick="javascript:window.location='mypageForm.do'"></td>
 		</table>
 		</form:form>
 		</div>

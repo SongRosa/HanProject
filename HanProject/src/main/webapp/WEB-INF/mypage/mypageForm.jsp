@@ -5,10 +5,10 @@
 <head>
 <title>마이페이지</title>
 </head>
-<table width=300 cellpadding="0" cellspacing="0" align="center" border="1">
+<table width=500 cellpadding="0" cellspacing="0" align="center" >
 
 <tr>
-<td rowspan="2" width="300">
+<td rowspan="2" width="500">
 ID=${user.id }<br>
 pwd=${user.pwd}<br>
 이름 =${user.name}<br>
@@ -25,7 +25,7 @@ Email=${user.email}<br>
 <form method="post" action="log_logout.do">
 <input type="submit" value="로그아웃"><br><br>
 <input type="button" value="회원정보변경" onclick="javascript:window.location='confirmPwd.do'"><br><br>
-<input type="button" value="게시판으로 이동" onclick="javascript:window.location='board_list.do'">
+<input type="button" value="게시판으로 이동" onclick="javascript:window.location='board_list.do?parkNum=0'">
 </form>
 </td>
 </tr>

@@ -4,12 +4,19 @@
 <html>
 <head>
 <title>ID찾기</title>
-
+<script src="http://code.jquery.com/jquery.js"></script>
+<script>
+$(function (){
+	if(${!empty a}){
+		alert("일치하는 ID가 없습니다.");
+	}
+});
+</script>
 </head>
 <body>
 <form:form commandName="loginform" name="searchidform" action="searchId.do" method="post">
 
-	<table cellspacing=1 cellpadding=1 border=1 align="center">
+	<table cellspacing=1 cellpadding=1 align="center">
 		<tr height="30">
 			<td colspan="2" align="middle"><strong>ID찾기</strong>	</td>
 		</tr>
@@ -34,7 +41,7 @@
 		<tr height="30">
 			<td colspan="3" align="right">
 				<input type="submit" value="ID 찾기">
-				<input type="button" value="회원가입" onclick="javascript:window.location='log_loginForm.do'">
+				<input type="button" value="회원가입" onclick="javascript:window.location='join_input.do'">
 			</td>
 	
 		</tr>

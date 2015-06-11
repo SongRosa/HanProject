@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import spring.command.UserInfo;
 import spring.mybatis.UserDAO;
-import spring.validation.SearchValidation;
+import spring.validation.SearchPwdValidation;
 
 @Controller
 public class SearchPwdController {
@@ -24,8 +25,8 @@ public class SearchPwdController {
 		this.dao = dao;
 	}
 
-	@ModelAttribute("searchpwdform")
-	UserInfo getSearchpwdform(){
+	@ModelAttribute("loginform")
+	UserInfo getLoginform(){
 		return new UserInfo();
 	}
 	
@@ -34,9 +35,15 @@ public class SearchPwdController {
 		return "search/searchPwdForm";
 	}
 
+	@RequestMapping(value = "searchPwd.do")
+	public String searchPwd(@ModelAttribute("loginform") UserInfo useri,HttpSession session) {
+		
+		return "search/searchPwdForm";
+	}
+	
 	@RequestMapping(value = "searchPwd.do",method = RequestMethod.POST)
-	public String search(@ModelAttribute("searchpwdform") UserInfo useri,BindingResult result, HttpSession session) {
-		new SearchValidation().validate(useri, result);
+	public String searchPwd2(@ModelAttribute("loginform") UserInfo useri,BindingResult result, HttpSession session,Model model) {
+		new SearchPwdValidation().validate(useri, result);
 		
 
 		if (result.hasErrors()) {
@@ -53,7 +60,9 @@ public class SearchPwdController {
 			session.setAttribute("pwd", a);
 			return "search/searchPwdSuccess";
 		} else {
-			return "search/searchPwdFail";
+			int i = 1;
+			model.addAttribute("a", i);
+			return "search/searchPwdForm";
 		}
 	}
 	

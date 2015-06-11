@@ -15,7 +15,7 @@ $(function (){
 </head>
 <body>
 <form:form commandName="loginform" method="post" action="log_login.do"	name="loginform">
-	<table cellspacing=1 cellpadding=1 border=1 align="center">
+	<table cellspacing=1 cellpadding=1 align="center">
 		<tr height="30">
 			<td colspan="3" align="center"><strong>회원로그인</strong>	</td>
 		</tr>
@@ -23,7 +23,7 @@ $(function (){
 		<tr height="30">
 			<td width="110" align=center>아이디</td>
 			<td width="150" align=center>
-				<form:input path="id" size="10" maxlength="12" />
+				<form:input path="id" size="10" maxlength="12"/>
 				<form:errors path="id" />
 			</td>
 		
@@ -35,7 +35,7 @@ $(function (){
 		<tr height="30">
 			<td width="110" align=center>비밀번호</td>
 			<td width="150" align=center>
-				<form:input path="pwd" size="16" maxlength="16"/>
+				<form:password path="pwd" size="10" maxlength="16"/>
 				<form:errors path="pwd" />
 			</td>
 		</tr>

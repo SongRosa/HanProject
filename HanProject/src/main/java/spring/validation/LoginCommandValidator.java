@@ -17,14 +17,7 @@ public class LoginCommandValidator implements Validator{
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "id", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pwd", "required");	
-		
-		if(!(ui.getPwd()==null || ui.getPwd().trim().isEmpty())){
-			if(ui.getPwd().length()<8){
-				errors.rejectValue("pwd", "checkcheck");
-			}
-		}
-		
-		
+				
 	}
 	
 	
