@@ -12,10 +12,13 @@ div#view_top p{
 	color: black;
 }
 
+div#paging{
+	margin-bottom: 30px;
+}
 
 table{
 	width: 950px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 tr{
