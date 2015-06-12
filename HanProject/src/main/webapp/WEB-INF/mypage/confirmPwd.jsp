@@ -33,7 +33,7 @@ $(function (){
 			</td>
 		</tr>
 		
-		<tr height="30">
+		<tr height="70">
 			<td colspan="3" align="right">
 				<input type="submit" value="입 력">
 				<input type="button" value="취 소" onclick="javascript:window.location='test.do'">

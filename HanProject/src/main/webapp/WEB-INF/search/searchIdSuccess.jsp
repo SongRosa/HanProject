@@ -4,20 +4,25 @@
 <html>
 <head>
 <title>ID찾기 성공</title>
-<link href="css/mem/join.css" rel="stylesheet" type="text/css">
+<link href="css/mem/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id ="view_top">
-<table width=500 cellpadding="0" cellspacing="0" align="center" border="1">
-<tr>
+<div id="empty"></div>
+
+	<table cellspacing=1 cellpadding=1 align="center">
+	<tr>
+<td colspan="2" align="middle"><h2><span class="fontawesome-lock"></span>ID를 찾았습니다.</h2></td>
+	</tr>
+	<tr height="30">
 <td rowspan="2" width="300">귀하의 ID는 ${model.id}입니다. 
 <br>
 
 </td>
 </tr>
-<tr>
-
-<td rowspan="3" align="center">
+		
+		<tr height="70">
+		<td colspan="3" align="right">
 <form action="searchPwd.do">
 	<input name="id" type="hidden" value="${model.id }">
 	<input name="name" type="hidden" value="${model.name}">
@@ -29,6 +34,7 @@
 </td>
 </tr>
 </table>
+<div id="empty"></div>
 </div>
 </body>
 </html>

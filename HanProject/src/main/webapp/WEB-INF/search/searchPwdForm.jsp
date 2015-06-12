@@ -58,7 +58,8 @@ $(function (){
 		</tr>
 	</table>
 <div id="empty"></div>
-</form:form>
 </div>
+</form:form>
+
 </body>
 </html>
