@@ -1,5 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -481,9 +484,8 @@
 		</div>
 	</div>
 	
-	<div style="margin: auto; margin-top:20; margin-bottom:20; width: 1000; height: 300;">
-				<div class="swiper-container" id="weather"
-			style=" display: inline-block; width: 390; height: 300; border: 1px black solid; margin-right: 10;">
+	<div id="etc_container">
+		<div class="swiper-container" id="weather">
 			<div class="swiper-wrapper" id="weather_pagewrap">
 				<div class="swiper-slide" id="page0">
 				<p> 강서 한강공원<br></p>
@@ -787,18 +789,32 @@
        	 	 <div class="swiper-button-prev"></div>
 		</div>
 		
-		<div id="notify" style="display:inline-block; width: 590;height: 300; border: 1px black solid;">
-			공지사항
+		<div id="notice" align="center">
+			<div id="noticehead" align="left"><span>*</span>&nbsp;&nbsp;공 지 사 항</div>
+			<table>
+				<c:forEach var="li" items="${list}" begin="1" end="5" step="1">
+					<tr>
+						<td id="td1">${li.n_number}</td>
+						<td id="td2">&nbsp;${li.n_subject}</td>
+						<td id="td3">
+							<fmt:formatDate value="${li.n_regdate}" type="date"/>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
 		</div>
+		
 	</div>
+		
 		<script>
-	var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        spaceBetween: 30
-    });
-</script>
+			var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+    	    paginationClickable: '.swiper-pagination',
+        	nextButton: '.swiper-button-next',
+        	prevButton: '.swiper-button-prev',
+        	spaceBetween: 30
+    		});
+		</script>
+		
 </body>
 </html>

@@ -40,6 +40,7 @@ $(function() {
 </head>
 	<decorator:head />
 	<div id="header" align="right" style="font-family: 'Nanum Gothic', sans-serif;">
+		<a href="test.do">HOME </a>&nbsp;
 		<c:if test="${sessionScope.user.id=='manager'}">
 			<img id="manager" alt="°ü¸®ÀÚ" src="./board_img/btn_admin.gif">
 		</c:if>
