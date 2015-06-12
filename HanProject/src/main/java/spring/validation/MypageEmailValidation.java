@@ -27,17 +27,6 @@ public void validate(Object target, Errors errors) {
 			
 		}
 	}
-		
-	if(!(ui.getEmail1()==null || ui.getEmail1().trim().isEmpty()||ui.getEmail2()==null || ui.getEmail2().trim().isEmpty())){
-
-		if(ui.getEmail2().equals("naver.com")||ui.getEmail2().equals("daum.net")||ui.getEmail2().equals("gmail.com")||ui.getEmail2().equals("yahoo.com")||ui.getEmail2().equals("nate.com")){
-			if(!ui.getCheckemail().equals("yes")){
-				errors.rejectValue("checkemail", "checkcheck");
-			}
-		}
-	}
-
-	
 	
 
 	}
