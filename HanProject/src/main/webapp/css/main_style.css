@@ -165,7 +165,7 @@
 		font-family: 'Nanum Gothic', sans-serif;
 	} 
 	#notice table{
-		margin-left:50;
+		margin-left:40;
 		border-collapse:collapse;
 	}
 	#noticehead{
@@ -183,7 +183,7 @@
 		border-bottom:1px dashed #ddd;
 	}
 	#td1{
-		width: 70;
+		width: 50;
 		text-align: center;
 	}
 	#td2{
