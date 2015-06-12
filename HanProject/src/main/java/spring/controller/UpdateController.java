@@ -267,7 +267,10 @@ public class UpdateController {
 			BindingResult result,String email,String email1,String email2,Model model, HttpSession session) {
 		new MypageEmailValidation().validate(useri, result);
 		if (result.hasErrors()) {
-			System.out.println("1");
+			int x=1;
+			int a=1;
+			model.addAttribute("x",x);
+			model.addAttribute("a",a);
 			return "mypage/confirmEmail";
 		}
 		if(email1=="" || email2==""){

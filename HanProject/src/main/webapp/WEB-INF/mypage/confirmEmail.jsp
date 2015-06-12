@@ -12,16 +12,9 @@
 <script>
 	function emailCheck() {
 
-		if(join.email1.value != 0 && !(join.email2.value =="naver.com"||join.email2.value =="daum.net"||join.email2.value =="gmail.com"||join.email2.value =="yahoo.com"||join.email2.value =="nate.com")){
-			alert("이메일 형식을 확인하세요")
-		}
-
-		if(emailcheckForm.email1.value==0 || emailcheckForm.email2.value==0 ){
-			alert("이메일을 입력하세요")
-		}else{
-		url="update_emailCheck.do?email1="+emailcheckForm.email1.value+"&email2="+emailcheckForm.email2.value;
-		}
-	}
+			url="update_emailCheck.do?email1="+emailcheckForm.email1.value+"&email2="+emailcheckForm.email2.value;
+			javascript:window.location = url;
+	} 
 
 	$(function() {
 		$("#sel").change(function() {
@@ -36,6 +29,7 @@
 	{
 		opener.document.updateemailform.email1.value = "${email1}";
 		opener.document.updateemailform.email2.value = "${email2}";
+		opener.document.updateemailform.checkemail.value="yes";
 		self.close();
 	}
 
@@ -62,7 +56,7 @@
 </table>
 </c:if>
 <!-- 다른닉네임을 검색할 수 있는 폼을 만들어 준다. -->
-<form:form commandName="loginform" name="emailcheckForm" method="post" action="update_emailCheck.do">
+<form:form commandName="loginform" name="emailcheckForm" method="post">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
 <tr>
 <td align="center">
@@ -76,7 +70,7 @@
 						<option value="gmail.com">gmail.com</option>
 						<option value="yahoo.com">yahoo.com</option>
 				</select>
-<input type="submit" value="이메일 중복확인" onclick="emailCheck()">
+<input type="button" value="이메일 중복확인" onclick="emailCheck()">
 <form:errors path="email2" />
 </td>
 </tr>

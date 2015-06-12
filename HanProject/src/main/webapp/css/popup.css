@@ -9,7 +9,7 @@ table{
 }
 
 div{
-	width : 300px;
+	width : 400px;
 	margin:auto;
 	text-align: center;
 }
@@ -27,4 +27,8 @@ a{
 
 #zipCheck{
 	width: 500px;
+}
+
+#view_top{
+	margin-top: 50px;
 }

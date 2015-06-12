@@ -3,11 +3,21 @@
 <decorators defaultdir="/main/decorator">
     
 	<excludes>
+	    <pattern>/join_idCheck.do</pattern>
 	    <pattern>/join_idCheck.do?*</pattern>
+	    <pattern>/join_nickCheck.do</pattern>
 	    <pattern>/join_nickCheck.do?*</pattern>
+	    <pattern>/join_emailCheck.do</pattern>
 	    <pattern>/join_emailCheck.do?*</pattern>
 	    <pattern>/join_zipCheck.do</pattern>
 	    <pattern>/join_dongseach.do</pattern>
+	    <pattern>/update_nickCheck.do</pattern>
+	    <pattern>/update_nickCheck.do?*</pattern>
+	    <pattern>/update_emailCheck.do</pattern>
+	    <pattern>/update_emailCheck.do?*</pattern>
+	    <pattern>/update_zipCheck.do</pattern>
+	    <pattern>/update_dongseach.do</pattern>
+	    <pattern>/update_dongseach.do?*</pattern>
 	    <pattern>/board_deleteForm.do?*</pattern>
 	</excludes>
 	
