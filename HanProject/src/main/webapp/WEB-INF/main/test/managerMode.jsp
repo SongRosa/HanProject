@@ -58,6 +58,6 @@ $(function() {
 				</c:forEach>		
 		</table>
 	</div>
-	<div align="center">${paging}</div>
+	<div id ="paging" align="center">${paging}</div>
 </body>
 </html>
