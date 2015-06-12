@@ -36,7 +36,7 @@ $(function (){
 		<tr height="30">
 			<td colspan="3" align="right">
 				<input type="submit" value="입 력">
-				<input type="button" value="취 소" onclick="javascript:window.location='mypageForm.do'">
+				<input type="button" value="취 소" onclick="javascript:window.location='updatego.do'">
 			</td>
 	
 		</tr>

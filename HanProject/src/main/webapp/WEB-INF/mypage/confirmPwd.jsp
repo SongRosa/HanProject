@@ -4,7 +4,6 @@
 <html>
 <head>
 <title>정보수정</title>
-<link href="css/mem/join.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 $(function (){

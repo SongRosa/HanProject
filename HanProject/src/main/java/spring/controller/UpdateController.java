@@ -20,6 +20,7 @@ import spring.validation.ConfirmPwdValidation;
 import spring.validation.MypageEmailValidation;
 import spring.validation.MypageNickValidation;
 import spring.validation.MypageNameValidation;
+import spring.validation.MypagePwdValidation;
 import spring.validation.MypageTelValidation;
 
 
@@ -47,7 +48,7 @@ public class UpdateController {
 	@RequestMapping(value = "updatePwd.do", method = RequestMethod.POST)
 	public String updatePwd(@ModelAttribute("loginform") UserInfo useri,
 			BindingResult result, HttpSession session) {
-		new ConfirmPwdValidation().validate(useri, result);
+		new MypagePwdValidation().validate(useri, result);
 		UserInfo se = (UserInfo) session.getAttribute("user");
 		String seid = se.getId();
 		if (result.hasErrors()) {
@@ -262,7 +263,16 @@ public class UpdateController {
 	}
 	
 	@RequestMapping(value = "update_emailCheck.do")
-	public String EmailCheck(String email,String email1,String email2,Model model) {
+	public String EmailCheck(@ModelAttribute("loginform") UserInfo useri,
+			BindingResult result,String email,String email1,String email2,Model model, HttpSession session) {
+		new MypageEmailValidation().validate(useri, result);
+		if (result.hasErrors()) {
+			int x=1;
+			int a=1;
+			model.addAttribute("x",x);
+			model.addAttribute("a",a);
+			return "mypage/confirmEmail";
+		}
 		if(email1=="" || email2==""){
 			int x=1;
 			int a=1;

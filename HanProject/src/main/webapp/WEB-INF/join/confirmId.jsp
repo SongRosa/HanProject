@@ -54,8 +54,6 @@ function setid()
 </form>
 </c:if>
 
-
-
 <c:if test="${x=='0'}">
 <table width="270" border="0" cellspacing="0" cellpadding="5">
 <tr>
