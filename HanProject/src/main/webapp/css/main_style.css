@@ -1,10 +1,11 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
 #container{
 		width: 1000;
 		height: 460;
 		margin: auto;
-		border: 1px solid black;
+		border: 1px solid #ddd;
 	}
 	#home{
 		width: 1000;
@@ -113,4 +114,85 @@
 	#park_icon img{
 		margin:0;
 		padding:0;
+	}
+	
+	/*날씨, 공지사항 컨테이너*/
+	#etc_container{
+		margin: auto;
+		margin-top: 20;
+		margin-bottom: 20;
+		width: 1000;
+		height: 300;
+	}
+	/*날씨*/
+	#weather_pagewrap{
+	width: 5000;
+	}
+	#weather{
+		float:left;
+		width: 390;
+		height: 300;
+		margin-right: 30;
+	}
+	
+	.swiper-slide{
+		font-family: 'Hanna', sans-serif; padding: 25 0 0 0;
+	}
+	
+	#page0{
+	padding-left: 20;
+	}
+
+	
+	.swiper-slide p{
+		padding-left: 10;
+		font-family: 'Hanna', sans-serif ;
+		font-size: 22;
+	}
+
+	#weather #weather_pagewrap .swiper-slide table tr:nth-child(1){
+	font-size: 14; 
+	} 
+	
+	#weather #weather_pagewrap .swiper-slide table tr:nth-child(3){
+	font-size: 15;
+	} 
+	
+	/* 공지사항 */
+	#notice{
+		float:left;
+		height:300;
+		font-family: 'Nanum Gothic', sans-serif;
+	} 
+	#notice table{
+		margin-left:50;
+		border-collapse:collapse;
+	}
+	#noticehead{
+		margin-left:30;
+		margin-top:50;
+		margin-bottom:10;
+		font-size: 20;
+		font-weight: bold;
+	}
+	#notice span{
+		color: #ed4949;
+	}
+	#notice td{
+		padding: 5;
+		border-bottom:1px dashed #ddd;
+	}
+	#td1{
+		width: 70;
+		text-align: center;
+	}
+	#td2{
+		width: 300;
+		overflow:hidden;
+		font-weight:bold;
+		text-align: left;
+	}
+	#td3{
+		width: 130;
+		text-align: center;
 	}

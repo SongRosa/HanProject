@@ -36,7 +36,12 @@
 					</td>
 					<td></td>
 					<td>
-						<a href="log_loginForm.do">로그인</a>
+						<c:if test="${empty sessionScope.user}">
+							<a href="log_loginForm.do">로그인</a>
+						</c:if>
+						<c:if test="${!empty sessionScope.user}">
+							<a href="confirmPwd.do">마이페이지</a>
+						</c:if>
 					</td>
 				</tr>
 				<tr id = "item">
@@ -44,7 +49,11 @@
 					<td></td>
 					<td><a href="board_list.do?parkNum=0">자유게시판</a></td>
 					<td></td>
-					<td><a href="">마이페이지</a></td>
+					<td>
+						<c:if test="${empty sessionScope.user}">
+							<a href="join_input.do">회원가입</a>
+						</c:if>						
+					</td>
 				</tr>
 		</table>
 	</div>
