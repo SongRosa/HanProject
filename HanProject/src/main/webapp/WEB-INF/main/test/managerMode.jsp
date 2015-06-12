@@ -55,10 +55,9 @@ $(function() {
 						<td>${manager.address}</td>
 						<td class="deleteBtn"><img alt="삭제" src="parkIcon/x_button.png" title="${manager.id}"></td>
 					</tr>
-				</c:forEach>
-			
-		
+				</c:forEach>		
 		</table>
 	</div>
+	<div align="center">${paging}</div>
 </body>
 </html>
