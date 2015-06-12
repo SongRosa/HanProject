@@ -9,6 +9,11 @@ public class CommentsCommand {
 	private String c_writer;
 	private Date c_regdate;
 	private String c_content;
+	private String c_id;
+	
+	
+
+
 
 	public CommentsCommand() {
 	}
@@ -17,6 +22,12 @@ public class CommentsCommand {
 		this.c_writer = c_writer;
 		this.c_content = c_content;
 		this.b_number = b_number;
+	}
+	public CommentsCommand(String c_writer, String c_content, int b_number, String c_id) {
+		this.c_writer = c_writer;
+		this.c_content = c_content;
+		this.b_number = b_number;
+		this.c_id = c_id;
 	}
 
 	public CommentsCommand(int c_number, int b_number) {
@@ -62,6 +73,14 @@ public class CommentsCommand {
 
 	public void setC_content(String c_content) {
 		this.c_content = c_content;
+	}
+	
+	public String getC_id() {
+		return c_id;
+	}
+
+	public void setC_id(String c_id) {
+		this.c_id = c_id;
 	}
 
 	@Override

@@ -9,10 +9,10 @@ function openDeleteForm(b_number) {
 	window.open("board_deleteForm.do?b_number="+ b_number , "글 삭제", "width=400,height=150,left=400,right=400,top=200");
 	
 }
-function confirmDelete(c_num,b_num){
+function confirmDelete(c_num,b_num,parkNum){
 	var con = confirm("코멘트를 삭제 하시겠습니까?");
 	if(con){
-		window.location="commentsDel.do?c_number="+c_num+"&b_number="+b_num;
+		window.location="commentsDel.do?c_number="+c_num+"&b_number="+b_num+"&parkNum="+parkNum;
 		
 	}else{
 		;
@@ -50,20 +50,23 @@ function checkBlank(){
 <tr>
 <td class="detail_table_content" colspan="6"> ${detail.b_content }</td>
 </tr>
-<c:if test="${sessionScope.user.id eq detail.b_id || sessionScope.user.id eq 'manager' }">
+<c:choose>
+<c:when test="${sessionScope.user.id eq detail.b_id || sessionScope.user.id eq 'manager' }">
 <tr>
 <td class="detail_table_btnGroup" colspan="6" align="right">
 <button class="detail_table_updateBtn" onclick="window.location='board_updateForm.do?b_number=${detail.b_number}'">&nbsp;</button>
 <button class="detail_table_deleteBtn" onclick="openDeleteForm(${detail.b_number })">&nbsp;</button>
 <button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}'">&nbsp;</button>
 </td></tr>
-</c:if>
-<c:if test="${sessionScope.user.id!=detail.b_id || empty sessionScope.user }">
+</c:when>
+<c:otherwise>
 <tr>
 <td class="detail_table_btnGroup" colspan="6" align="right">
 <button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}'">&nbsp;</button>
 </td></tr>
-</c:if>
+</c:otherwise>
+
+</c:choose>
 </table>
 </div>
 
@@ -85,7 +88,15 @@ function checkBlank(){
 <td class="comments_table_writer" width="10%" align="center">${comment.c_writer }</td>
 <td class="comments_table_content" width="60%">${comment.c_content }</td>
 <td class="comments_table_date" width="25%"><fmt:formatDate value="${comment.c_regdate }" type="both"/></td>
-<td><button class="comments_table_deleteBtn" onclick="confirmDelete(${comment.c_number},${detail.b_number })">&nbsp;</button>
+
+<c:choose>
+<c:when test="${comment.c_id eq sessionScope.user.id || sessionScope.user.id eq 'manager' }">
+<td width="10"><button class="comments_table_deleteBtn" onclick="confirmDelete(${comment.c_number},${detail.b_number },${param.parkNum })">&nbsp;</button></td>
+</c:when>
+<c:otherwise>
+<td width="10">&nbsp;</td>
+</c:otherwise>
+</c:choose>
 </tr>
 </c:forEach>
 <tr>
@@ -103,7 +114,9 @@ function checkBlank(){
 <td><input class="input_table_content" size="100" name="c_content"></td>
 <td><input class="input_table_submitBtn" type="submit" value="&nbsp;"></td>
 </tr></table>
+<input type="hidden" name="c_id" value="${sessionScope.user.id }">
 <input type="hidden" name="b_number" value="${detail.b_number}">
+<input type="hidden" name="parkNum" value="${param.parkNum}">
 </form>
 </div>
 </c:if>
