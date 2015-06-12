@@ -23,10 +23,7 @@
 <tr>
 <td height="39">${email}은 이미 사용중인 이메일입니다.</td>
 <tr>
-<td align="center">
-다른 아이디를 선택하세요<p>
-</p>
-</td>
+
 <tr>
 </tr>
 </table>

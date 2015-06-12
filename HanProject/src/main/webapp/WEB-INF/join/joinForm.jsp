@@ -88,11 +88,19 @@
 				<form:password path="pwd" size="15" maxlength="16" />
 				<form:errors path="pwd" /></td>
 			</tr>
+			
+			<tr height="50px">
+				<td width="150"><strong>*</strong>비밀번호 확인</td>
+				<td width="500">
+				<form:password path="pwd2" size="15" maxlength="16" />
+				<form:errors path="pwd2" /></td>
+			</tr>
 
 			<tr height="50px">
 				<td width="150"><strong>*</strong>사용자 이름</td>
 				<td width="500">
 				<form:input path="name" size="15" maxlength="10" />
+				<form:errors path="name" />
 			</tr>
 			<tr height="50px">
 

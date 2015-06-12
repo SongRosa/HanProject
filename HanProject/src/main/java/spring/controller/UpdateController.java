@@ -20,6 +20,7 @@ import spring.validation.ConfirmPwdValidation;
 import spring.validation.MypageEmailValidation;
 import spring.validation.MypageNickValidation;
 import spring.validation.MypageNameValidation;
+import spring.validation.MypagePwdValidation;
 import spring.validation.MypageTelValidation;
 
 
@@ -47,7 +48,7 @@ public class UpdateController {
 	@RequestMapping(value = "updatePwd.do", method = RequestMethod.POST)
 	public String updatePwd(@ModelAttribute("loginform") UserInfo useri,
 			BindingResult result, HttpSession session) {
-		new ConfirmPwdValidation().validate(useri, result);
+		new MypagePwdValidation().validate(useri, result);
 		UserInfo se = (UserInfo) session.getAttribute("user");
 		String seid = se.getId();
 		if (result.hasErrors()) {

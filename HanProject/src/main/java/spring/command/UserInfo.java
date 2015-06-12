@@ -5,6 +5,7 @@ public class UserInfo {
 
 	private String id;
 	private String pwd;
+	private String pwd2;
 	private String name;
 	private String nick;
 	private String email1;
@@ -55,6 +56,14 @@ public class UserInfo {
 
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}
+
+	public String getPwd2() {
+		return pwd2;
+	}
+
+	public void setPwd2(String pwd2) {
+		this.pwd2 = pwd2;
 	}
 
 	public String getName() {

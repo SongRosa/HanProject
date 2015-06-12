@@ -17,6 +17,7 @@ public void validate(Object target, Errors errors) {
 	UserInfo ui=(UserInfo)target;
 
 	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "id", "required");
+	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "required");
 	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pwd", "required");
 	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nick", "required");
 
@@ -63,6 +64,15 @@ public void validate(Object target, Errors errors) {
 	if(ui.getTel1().length() < 3 || ui.getTel2().length() < 3 || ui.getTel3().length() < 4){
 		errors.rejectValue("tel", "checkcheck");
 	}
-
+	
+	
+	if(!(ui.getPwd().equals(ui.getPwd2()))){
+		errors.rejectValue("pwd2", "checkcheck");
 	}
+	
+	
+	
+	}
+
+
 }
