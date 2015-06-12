@@ -1,5 +1,8 @@
 <%@ page contentType="text/html; charset=euc-kr"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -473,13 +476,27 @@
 	</div>
 	
 	<div style="margin: auto; margin-top:20; margin-bottom:20; width: 1000; height: 300;">
+	
 		<div id="weather" style="display:inline-block; width: 390; height: 300; border: 1px black solid; margin-right: 10;">
 			날씨
 		</div>
 		
-		<div id="notify" style="display:inline-block; width: 590;height: 300; border: 1px black solid;">
-			공지사항
+		<div id="notice" style="display:inline-block; width: 590;height: 300;" align="center">
+			<div id="noticehead" align="left"><span>*</span>&nbsp;공 지 사 항</div>
+			
+			<table>
+			<c:forEach var="li" items="${list}" begin="1" end="5" step="1">
+				<tr>
+					<td id="td1">${li.n_number}</td>
+					<td id="td2">&nbsp;&nbsp;${li.n_subject}</td>
+					<td id="td3">
+						<fmt:formatDate value="${li.n_regdate}" type="date"/>
+					</td>
+				</tr>
+			</c:forEach>
+			</table>
 		</div>
+		
 	</div>
 </body>
 </html>

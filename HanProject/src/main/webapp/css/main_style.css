@@ -4,7 +4,7 @@
 		width: 1000;
 		height: 460;
 		margin: auto;
-		border: 1px solid black;
+		border: 1px solid #ddd;
 	}
 	#home{
 		width: 1000;
@@ -113,4 +113,47 @@
 	#park_icon img{
 		margin:0;
 		padding:0;
+	}
+	
+	/* ³¯¾¾ */
+	#notice{
+		font-family: 'Nanum Gothic', sans-serif;
+	} 
+	#notice table{
+		border-collapse:collapse;
+	}
+	#notice th{
+		text-align: left; 
+		/* background-repeat: repeat-x;
+		background : url("../board_img/title_bg.gif") repeat-x;
+		background-position:center;
+		border-bottom: 3px solid gray;  */
+	}
+	#noticehead{
+		margin-left:30;
+		margin-top:50;
+		margin-bottom:10;
+		font-size: 20;
+		font-weight: bold;
+	}
+	#notice span{
+		color: #ed4949;
+	}
+	#notice td{
+		padding: 5;
+		border-bottom:1px dashed #ddd;
+	}
+	#td1{
+		width: 70;
+		text-align: center;
+	}
+	#td2{
+		width: 300;
+		overflow:hidden;
+		font-weight:bold;
+		text-align: left;
+	}
+	#td3{
+		width: 100;
+		text-align: center;
 	}
