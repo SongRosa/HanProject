@@ -2,6 +2,8 @@ package spring.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,7 @@ import spring.command.ZipInfo;
 import spring.mybatis.UserDAO;
 import spring.mybatis.ZipDAO;
 import spring.validation.JoinValidation;
+import spring.validation.MypageEmailValidation;
 
 @Controller
 public class MemberInputController {
@@ -107,7 +110,16 @@ public class MemberInputController {
 	}
 	
 	@RequestMapping(value = "join_emailCheck.do")
-	public String EmailCheck(String email,String email1,String email2,Model model) {
+	public String EmailCheck(@ModelAttribute("loginform") UserInfo useri,
+			BindingResult result,String email,String email1,String email2,Model model, HttpSession session) {
+		new MypageEmailValidation().validate(useri, result);
+		if (result.hasErrors()) {
+			int x=1;
+			int a=1;
+			model.addAttribute("x",x);
+			model.addAttribute("a",a);
+			return "join/confirmEmail";
+		}
 		if(email1=="" || email2==""){
 			int x=1;
 			int a=1;

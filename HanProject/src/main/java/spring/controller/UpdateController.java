@@ -263,7 +263,16 @@ public class UpdateController {
 	}
 	
 	@RequestMapping(value = "update_emailCheck.do")
-	public String EmailCheck(String email,String email1,String email2,Model model) {
+	public String EmailCheck(@ModelAttribute("loginform") UserInfo useri,
+			BindingResult result,String email,String email1,String email2,Model model, HttpSession session) {
+		new MypageEmailValidation().validate(useri, result);
+		if (result.hasErrors()) {
+			int x=1;
+			int a=1;
+			model.addAttribute("x",x);
+			model.addAttribute("a",a);
+			return "mypage/confirmEmail";
+		}
 		if(email1=="" || email2==""){
 			int x=1;
 			int a=1;
