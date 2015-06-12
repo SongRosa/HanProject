@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
 #container{
 		width: 1000;
@@ -114,3 +115,29 @@
 		margin:0;
 		padding:0;
 	}
+	#weather_pagewrap{
+	width: 5000;
+	}
+	
+	.swiper-slide{
+		font-family: 'Hanna', sans-serif; padding: 25 0 0 0;
+	}
+	
+	#page0{
+	padding-left: 20;
+	}
+
+	
+	.swiper-slide p{
+		padding-left: 10;
+		font-family: 'Hanna', sans-serif ;
+		font-size: 22;
+	}
+
+	#weather #weather_pagewrap .swiper-slide table tr:nth-child(1){
+	font-size: 14; 
+	} 
+	
+	#weather #weather_pagewrap .swiper-slide table tr:nth-child(3){
+	font-size: 15;
+	} 
