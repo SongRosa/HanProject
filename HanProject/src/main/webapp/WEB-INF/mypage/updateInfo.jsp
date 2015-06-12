@@ -13,12 +13,16 @@ var pwdBtn = 0;
 var telBtn = 0;
 var nameBtn = 0;
 
+var option = "toolbar=no,width=500,height=250,directories=no,status=no,scrollbars=no,menubar=no,resizable=no,top=500,left=500";
+var option1 = "toolbar=no,width=700,height=500,directories=no,status=no,scrollbars=no,menubar=no,resizable=no,top=500,left=500";
+var option2 = "toolbar=no,width=600,height=250,directories=no,status=no,scrollbars=no,menubar=no,resizable=no,top=500,left=500";
+
 function nickCheck() {
 	if (updatenickform.nick.value == 0) {
 		alert("닉네임을 입력하세요")
 	} else {
 		url = "update_nickCheck.do?nick=" + updatenickform.nick.value;
-		window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+		window.open(url,"post",option);
 	}
 }
 
@@ -34,13 +38,13 @@ function emailCheck() {
 	
 	if(updateemailform.email1.value != 0 && (updateemailform.email2.value =="naver.com"||updateemailform.email2.value =="daum.net"||updateemailform.email2.value =="gmail.com"||updateemailform.email2.value =="yahoo.com"||updateemailform.email2.value =="nate.com")){
 		url = "update_emailCheck.do?email1=" + updateemailform.email1.value + "&email2="+ updateemailform.email2.value;
-		window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+		window.open(url,"post",option2);
 	}
 }
 
 function zipCheck() {
 	url = "update_zipCheck.do";
-	window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+	window.open(url,"post",option1);
 }
 
 	
@@ -106,14 +110,14 @@ $(function(){
 			<tr>
 				<td width="129">비밀번호</td>
 				<td width="500">
-  				<form:password path="pwd" size="15" maxlength="16" value="${user.pwd }" />
+  				<form:password path="pwd" size="20" maxlength="16" value="${user.pwd }" />
 				<form:errors path="pwd" />
 			</tr>
 			
 			<tr>
 				<td width="129">비밀번호 확인</td>
 				<td width="500">
-  				<form:password path="pwd2" size="15" maxlength="16"/>
+  				<form:password path="pwd2" size="20" maxlength="16"/>
 				<input type="submit" name="confirm" value="등   록">
 				<form:errors path="pwd2" /></td>
 			</tr>
@@ -139,7 +143,7 @@ $(function(){
 				<tr>
 				<td width="129">이름</td>
 				<td width="500">
-  				<form:input path="name" size="15" maxlength="16" value="${user.name }" />
+  				<form:input path="name" size="20" maxlength="10" value="${user.name }" />
 				<input type="submit" name="confirm" value="등   록"></td>
 				<form:errors path="name" />
 				</tr>
@@ -153,7 +157,7 @@ $(function(){
 			<tr>
 				<td width="129">닉네임</td>
 				<td width="500">
-				<form:input path="nick" size="15" maxlength="10" value="${user.nick }"/>
+				<form:input path="nick" size="20" maxlength="10" value="${user.nick }"/>
 				<input type="button" name="confirm_nick" value="중복확인" OnClick="nickCheck()" />
 				<form:input	path="checknick" size="10" maxlength="12" value="${checknick }" hidden="true"/>
 				<input type="submit" name="confirm" value="등   록"></td>
@@ -178,8 +182,8 @@ $(function(){
 		<table width="750"  cellspacing="0" cellpadding="3" align="center">
 				<tr>
 				<td width="129">이메일</td>
-				<td width="500"><form:input path="email1" size="7" maxlength="12" value="${email1 }" /> @ 
-				<form:input path="email2" size="7" maxlength="9" value="${email2 }"/>
+				<td width="500"><form:input path="email1" size="15" maxlength="12" value="${email1 }" /> @ 
+				<form:input path="email2" size="15" maxlength="9" value="${email2 }"/>
 						<select class="select" id="sel">
 						<option value="">직접입력</option>
 						<option value="naver.com">naver.com</option>
@@ -188,7 +192,7 @@ $(function(){
 						<option value="gmail.com">gmail.com</option>
 						<option value="yahoo.com">yahoo.com</option>
 				</select>
-				<form:input path="checkemail" size="10" maxlength="12" value="${checkemail }" hidden="true"/>
+				<form:input path="checkemail" size="5" maxlength="12" value="${checkemail }" hidden="true"/>
 				<input type="button" name="confirm_email" value="중복확인" OnClick="emailCheck()" />
 					<input type="submit" name="confirm" value="등   록"></td>
 					<form:errors path="email2" />
@@ -203,8 +207,8 @@ $(function(){
 			<tr>
 				<td width="129">전화번호</td>
 				<td width="500">
-				<form:input path="tel1" size="3" maxlength="3" value="${tel1 }"/>
-				- <form:input path="tel2" size="4" maxlength="4" value="${tel2 }"/> - <form:input path="tel3" size="4" maxlength="4" value="${tel3 }"/>
+				<form:input path="tel1" size="4" maxlength="3" value="${tel1 }"/>
+				- <form:input path="tel2" size="5" maxlength="4" value="${tel2 }"/> - <form:input path="tel3" size="5" maxlength="4" value="${tel3 }"/>
 			<input type="submit" name="confirm" value="등   록"></td>	</tr>
 			<form:errors path="tel"/>
 			</table>
@@ -216,7 +220,7 @@ $(function(){
 			<table width="750"  cellspacing="0" cellpadding="3" align="center">
 			<tr>
 				<td width="150">우편번호</td>
-				<td width="500"><form:input path="zipcode" size="7" readonly="true" value="${user.zipcode }"/>
+				<td width="500"><form:input path="zipcode" size="10" readonly="true" value="${user.zipcode }"/>
 				<input type="button" value="우편번호찾기" onClick="zipCheck()"></td>
 			</tr>
 

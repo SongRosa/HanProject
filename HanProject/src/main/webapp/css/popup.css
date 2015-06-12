@@ -4,6 +4,7 @@
 	font-family: 'Nanum Gothic', sans-serif;
 	font-size: 17px;
 }
+
 table{
 	margin: auto;
 }
@@ -19,16 +20,37 @@ div:input{
 	margin: auto;
 }
 
-a{	
+div#zipCheck_content, #selectAddress{
+	width: 650px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+div#view_top{
+	margin-top: 50px;
+	height: 30px;
+}
+
+a, a:link, a:visited, a:active{
+	text-decoration:none;
+	text-align:left;
+	color:black;
+	
 	font-family: 'Nanum Gothic', sans-serif;
 	font-style: none;
-	font-size: 15px;
+	font-size: 17px;	
 }
 
-#zipCheck{
-	width: 500px;
+#popupHeader{
+	font-size: 21px;
+	font-weight: bold;
 }
 
-#view_top{
-	margin-top: 50px;
+.emailInput, .select{
+	width: 130px;
+	padding: 3px 3px;
+	margin-bottom: 15px;
+}
+#close{
+	margin-left: 600px;
 }

@@ -14,6 +14,7 @@ div#empty{
   font-family: ¸¼Àº°íµñ, µ¸À½;
   color:#666;
  }
+ 
  form{
   position: relative;
   width: 750px;
@@ -47,16 +48,9 @@ div#empty{
  input[type=text], input[type=password]{
   height:1.5em;
   font-size: 1em;
-  border: 1px solid #eee;
-  
- }
- textarea{
-  width: 70%;
-  border: 1px solid #eee;
-  
+  border: 1px solid #eee;  
  }
  
- /* #header{
- 	text-align: left;
- } */
-
+.addr:input[type=text]{
+ 	width:400px;
+ }

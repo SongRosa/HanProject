@@ -81,3 +81,9 @@ div#empty{
  #addr{
  	width: 500px;
  }
+ 
+ input[type=button]{
+ 	background-image: url("../../icon/button.png");
+ 	width: 100px;
+ 	height: 25px;
+ }

@@ -9,12 +9,16 @@
 <link href="css/mem/join.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
+	var option = "toolbar=no,width=500,height=250,directories=no,status=no,scrollbars=no,menubar=no,resizable=no,top=500,left=500";
+	var option1 = "toolbar=no,width=700,height=500,directories=no,status=no,scrollbars=no,menubar=no,resizable=no,top=500,left=500";
+	var option2 = "toolbar=no,width=600,height=250,directories=no,status=no,scrollbars=no,menubar=no,resizable=no,top=500,left=500";
+	
 	function idCheck() {
 		if (join.id.value == 0) {
 			alert("ID를 입력하세요")
 		} else {
 			url = "join_idCheck.do?id=" + join.id.value;
-			window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+			window.open(url,"post",option);
 		}
 	}
 
@@ -23,7 +27,7 @@
 			alert("닉네임을 입력하세요")
 		} else {
 			url = "join_nickCheck.do?nick=" + join.nick.value;
-			window.open(url,"post","toolbar=no,width=500,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+			window.open(url,"post",option);
 		}
 	}
 	
@@ -39,13 +43,13 @@
 		
 		if(join.email1.value != 0 && (join.email2.value =="naver.com"||join.email2.value =="daum.net"||join.email2.value =="gmail.com"||join.email2.value =="yahoo.com"||join.email2.value =="nate.com")){
 			url = "join_emailCheck.do?email1=" + join.email1.value + "&email2="+ join.email2.value;
-			window.open(url,"post","toolbar=no,width=500,height=150,directories=no,status=yes,scrollbars=yes,menubar=no");
+			window.open(url,"post",option2);
 		}
 	}
 
 	function zipCheck() {
 		url = "join_zipCheck.do";
-		window.open(url,"post","toolbar=no,width=700,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+		window.open(url,"post",option1);
 	}
 
 	$(function() {
@@ -85,14 +89,14 @@
 			<tr height="50px">
 				<td width="150"><strong>*</strong>비밀번호</td>
 				<td width="500">
-				<form:password path="pwd" size="15" maxlength="16" />
+				<form:password path="pwd" size="20" maxlength="16" />
 				<form:errors path="pwd" /></td>
 			</tr>
 			
 			<tr height="50px">
 				<td width="150"><strong>*</strong>비밀번호 확인</td>
 				<td width="500">
-				<form:password path="pwd2" size="15" maxlength="16" />
+				<form:password path="pwd2" size="20" maxlength="16" />
 				<form:errors path="pwd2" /></td>
 			</tr>
 
@@ -147,7 +151,7 @@
 
 			<tr height="50px">
 				<td>주소</td>
-				<td><form:input id="addr" path="address" size="70" />
+				<td><form:input class="addr" path="address" size="70" />
 				<form:errors path="address" /></td>
 			</tr>
 

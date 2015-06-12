@@ -19,7 +19,7 @@
 </table>
 </c:if>
 <c:if test="${a=='2' }">
-<table width="270" border="0" cellspacing="0" cellpadding="5">
+<table width="400" border="0" cellspacing="0" cellpadding="5">
 <tr>
 <td height="39">${nick}은 이미 사용중인 닉네임입니다.</td>
 <tr>
@@ -31,7 +31,7 @@
 </c:if>
 <!-- 다른닉네임을 검색할 수 있는 폼을 만들어 준다. -->
 <form name="nickcheckForm" method="post" action="update_nickCheck.do">
-<table width="270" border="0" cellspacing="0" cellpadding="5">
+<table width="400" border="0" cellspacing="0" cellpadding="5">
 <tr>
 <td align="center">
 다른 닉네임을 선택하세요<p>
@@ -43,7 +43,7 @@
 </form>
 </c:if>
 <c:if test="${x=='0'}">
-<table width="270" border="0" cellspacing="0" cellpadding="5">
+<table width="400" border="0" cellspacing="0" cellpadding="5">
 <tr>
 <td align="center">
 <p>입력하신 ${nick}는 사용하실 수 있는 nick입니다. </p>

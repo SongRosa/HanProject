@@ -20,12 +20,19 @@
 		opener.document.updateaddressform.zipcode.value = zipcode;
 		opener.document.updateaddressform.address.value = address;
 		self.close();
+	}	
+	
+	function closeButton(){
+
+		javascript:this.close();
 	}
 </script>
 </head>
-<body bgcolor="#FFFFCC">
+<body>
 <div id ="view_top" >
-	<b> 우편번호 찾기 </b>
+	<p id="popupHeader"> 우편번호 찾기 </p>
+</div>
+<div id="zipCheck_content">
 	<table>
 		<form name="zipForm" method="post" action="update_dongseach.do">
 			<tr>
@@ -34,20 +41,20 @@
 			</tr>
 			<input type="hidden" name="check" value="n">
 		</form>
-		<c:forEach var="zip" items="${zip}">
-			<tr>
-				<td><a
-					href="javascript:sendAddress('${zip.zipcode }','${zip.sido }','${zip.gugun }','${zip.dong }','${zip.ri }','${zip.bunji }','${zip.apt }')">
-						${zip.zipcode }&nbsp;${zip.sido }&nbsp;${zip.gugun }&nbsp;
-						${zip.dong }&nbsp;${zip.ri }&nbsp;${zip.bunji }&nbsp;${zip.apt }</a><br></td>
-			</tr>
-						</c:forEach>
-			<tr>
-				<td align="center"><br>
-				<a href="javascript:this.close();">닫기</a>
-			</tr>
-
 	</table>
 </div>
+
+<div id="selectAddress">	
+	<c:forEach var="zip" items="${zip}">
+		<tr>
+			<td colspan="2" class="address">
+			<a href="javascript:sendAddress('${zip.zipcode }','${zip.sido }','${zip.gugun }','${zip.dong }','${zip.ri }','${zip.bunji }','${zip.apt }')">
+					${zip.zipcode }&nbsp;${zip.sido }&nbsp;${zip.gugun }&nbsp;
+					${zip.dong }&nbsp;${zip.ri }&nbsp;${zip.bunji }&nbsp;${zip.apt }</a><br></td>
+		</tr>
+	</c:forEach>
+</div>
+
+<input id = "close" type="button" onclick="closeButton()" value = "닫기" >
 </body>
 </html>
