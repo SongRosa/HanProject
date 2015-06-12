@@ -107,8 +107,15 @@ $(function(){
 				<td width="129">비밀번호</td>
 				<td width="500">
   				<form:password path="pwd" size="15" maxlength="16" value="${user.pwd }" />
-				<input type="submit" name="confirm" value="등   록"></td>
 				<form:errors path="pwd" />
+			</tr>
+			
+			<tr>
+				<td width="129">비밀번호 확인</td>
+				<td width="500">
+  				<form:password path="pwd2" size="15" maxlength="16"/>
+				<input type="submit" name="confirm" value="등   록">
+				<form:errors path="pwd2" /></td>
 			</tr>
 
 		</table>
@@ -233,7 +240,7 @@ $(function(){
 			<form:form  commandName="loginform" method="post" name="btnform">
 			<table width="750"cellspacing="0" cellpadding="3" align="center">
 			<td align="right">
-			<input type="button" value="완료" onclick="javascript:window.location='mypageForm.do'"></td>
+			<input type="button" value="완료" onclick="javascript:window.location='test.do'"></td>
 			</table>
 			<div id="empty"></div>
 			</form:form>
