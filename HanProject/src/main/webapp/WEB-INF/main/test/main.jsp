@@ -790,12 +790,12 @@
 		</div>
 		
 		<div id="notice" align="center">
-			<div id="noticehead" align="left"><span>*</span>&nbsp;공 지 사 항</div>
+			<div id="noticehead" align="left"><span>*</span>&nbsp;&nbsp;공 지 사 항</div>
 			<table>
 				<c:forEach var="li" items="${list}" begin="1" end="5" step="1">
 					<tr>
 						<td id="td1">${li.n_number}</td>
-						<td id="td2">&nbsp;&nbsp;${li.n_subject}</td>
+						<td id="td2">&nbsp;${li.n_subject}</td>
 						<td id="td3">
 							<fmt:formatDate value="${li.n_regdate}" type="date"/>
 						</td>
