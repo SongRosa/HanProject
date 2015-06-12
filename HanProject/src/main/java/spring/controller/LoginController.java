@@ -46,7 +46,7 @@ public class LoginController {
 		
 		if (x == 1) {			
 			session.setAttribute("user", ui);
-			return "main/test/main";
+			return "redirect:test.do";
 		} else {
 			System.out.println("else");
 			int i = 1;
@@ -66,7 +66,7 @@ public class LoginController {
 		if (x == 1) {
 			session.setAttribute("user", ui);
 			//DB select¹® Ãß°¡
-			return "main/test/main";
+			return "redirect:test.do";
 		} else {
 			int i = 1;
 			model.addAttribute("a", i);

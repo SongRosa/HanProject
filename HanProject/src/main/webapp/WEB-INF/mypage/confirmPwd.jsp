@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>정보수정</title>
+<link href="css/mem/login.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 $(function (){
@@ -16,10 +17,10 @@ $(function (){
 <body>
 <div id ="view_top">
 <form:form commandName="loginform" name="confirmpwdform" action="updatego.do" method="post">
-
+<div id="empty"></div>
 	<table cellspacing=1 cellpadding=1 align="center">
 		<tr height="30">
-			<td colspan="2" align="middle"><strong>비밀번호 확인</strong>	</td>
+			<td colspan="2" align="middle"><h2><span class="fontawesome-lock"></span>비밀번호 확인</h2></td>
 		</tr>
 		
 
@@ -40,7 +41,7 @@ $(function (){
 	
 		</tr>
 	</table>
-
+<div id="empty"></div>
 </form:form>
 </div>
 </body>

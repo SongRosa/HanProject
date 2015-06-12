@@ -204,19 +204,16 @@ public class BoardController {
 	/*코멘트가 입력되면 실행되는 메서드*/
 	@RequestMapping(value="board_detail.do" ,method= RequestMethod.POST)
 	public String insertComments(HttpServletRequest req){
-		System.out.println("post");
+		
 		String c_writer = req.getParameter("c_writer");
 		String c_content = req.getParameter("c_content");
 		int b_number = Integer.parseInt(req.getParameter("b_number"));
-		CommentsCommand cc = new CommentsCommand();
-		cc.setB_number(b_number);
-		cc.setC_content(c_content);
-		cc.setC_writer(c_writer);
-		
+		String c_id = req.getParameter("c_id");
+		int parkNum = Integer.parseInt(req.getParameter("parkNum"));
+		CommentsCommand cc = new CommentsCommand(c_writer, c_content, b_number,c_id);
 		dao.insertComments(cc);
-		System.out.println("cc");
 		
-		return "redirect:board_detail.do?b_number="+b_number;
+		return "redirect:board_detail.do?b_number="+b_number+"&parkNum="+parkNum;
 	}
 	
 	/*코멘트를 삭제하는 메서드*/
@@ -225,11 +222,12 @@ public class BoardController {
 		
 		int c_number = Integer.parseInt(req.getParameter("c_number"));
 		int b_number = Integer.parseInt(req.getParameter("b_number"));
+		int parkNum = Integer.parseInt(req.getParameter("parkNum"));
 		
 		CommentsCommand cc = new CommentsCommand(c_number, b_number);
 		dao.deleteComments(cc);
 		
-		return"redirect:board_detail.do?b_number="+b_number;
+		return"redirect:board_detail.do?b_number="+b_number+"&parkNum="+parkNum;
 	}
 
 

@@ -111,7 +111,7 @@ $(function(){
 				<td width="129">비밀번호</td>
 				<td width="500">
   				<form:password path="pwd" size="20" maxlength="16" value="${user.pwd }" />
-				<form:errors path="pwd" />
+				<form:errors path="pwd" /></td>
 			</tr>
 			
 			<tr>
@@ -144,8 +144,8 @@ $(function(){
 				<td width="129">이름</td>
 				<td width="500">
   				<form:input path="name" size="20" maxlength="10" value="${user.name }" />
-				<input type="submit" name="confirm" value="등   록"></td>
-				<form:errors path="name" />
+				<input type="submit" name="confirm" value="등   록">
+				<form:errors path="name" /></td>
 				</tr>
 			</table>
 		</form:form>
@@ -160,9 +160,9 @@ $(function(){
 				<form:input path="nick" size="20" maxlength="10" value="${user.nick }"/>
 				<input type="button" name="confirm_nick" value="중복확인" OnClick="nickCheck()" />
 				<form:input	path="checknick" size="10" maxlength="12" value="${checknick }" hidden="true"/>
-				<input type="submit" name="confirm" value="등   록"></td>
+				<input type="submit" name="confirm" value="등   록">
 				<form:errors path="nick" />
-				<form:errors path="checknick" />
+				<form:errors path="checknick" /></td>
 			</tr>
 
 		</table>
@@ -194,9 +194,9 @@ $(function(){
 				</select>
 				<form:input path="checkemail" size="5" maxlength="12" value="${checkemail }" hidden="true"/>
 				<input type="button" name="confirm_email" value="중복확인" OnClick="emailCheck()" />
-					<input type="submit" name="confirm" value="등   록"></td>
+					<input type="submit" name="confirm" value="등   록"><br>
 					<form:errors path="email2" />
-					<form:errors path="checkemail" />
+					<form:errors path="checkemail" /></td>
 				</tr>
 			</table>
 			</form:form>
@@ -209,8 +209,9 @@ $(function(){
 				<td width="500">
 				<form:input path="tel1" size="4" maxlength="3" value="${tel1 }"/>
 				- <form:input path="tel2" size="5" maxlength="4" value="${tel2 }"/> - <form:input path="tel3" size="5" maxlength="4" value="${tel3 }"/>
-			<input type="submit" name="confirm" value="등   록"></td>	</tr>
-			<form:errors path="tel"/>
+			<input type="submit" name="confirm" value="등   록">	
+			<form:errors path="tel"/></td>
+			</tr>
 			</table>
 			</form:form>
 			
@@ -227,8 +228,10 @@ $(function(){
 			<tr>
 				<td>주소</td>
 				<td><form:input path="address" size="70" value="${user.address }"/>
-				<form:errors path="address" />			
-			<input type="submit" name="confirm" value="등   록"></td></tr>
+						
+			<input type="submit" name="confirm" value="등   록">
+			<form:errors path="address" />
+			</td></tr>
 			</table>
 			</form:form>
 		</div>

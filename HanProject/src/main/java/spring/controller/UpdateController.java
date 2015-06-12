@@ -106,17 +106,24 @@ public class UpdateController {
 		useri.setEmail(useri.getEmail1()+"@"+useri.getEmail2());
 		String seid = se.getId();
 		if (result.hasErrors()) {
-			System.out.println("1");
+			if(se.getTel().length()==12){
+				session.setAttribute("tel1",se.getTel().substring(0, 3));
+				session.setAttribute("tel2",se.getTel().substring(4, 7));
+				session.setAttribute("tel3",se.getTel().substring(8, se.getTel().length()));
+			}else if(se.getTel().length()==13){
+
+				session.setAttribute("tel1",se.getTel().substring(0, 3));
+				session.setAttribute("tel2",se.getTel().substring(4, 8));
+				session.setAttribute("tel3",se.getTel().substring(9, se.getTel().length()));
+			}
 			return "mypage/updateInfo";
-		}
-		if(se.getTel().length()==12){
+		}else if(se.getTel().length()==12){
 			session.setAttribute("tel1",se.getTel().substring(0, 3));
 			session.setAttribute("tel2",se.getTel().substring(4, 7));
 			session.setAttribute("tel3",se.getTel().substring(8, se.getTel().length()));
 
 			
-		}
-		if(se.getTel().length()==13){
+		}else if(se.getTel().length()==13){
 
 			session.setAttribute("tel1",se.getTel().substring(0, 3));
 			session.setAttribute("tel2",se.getTel().substring(4, 8));

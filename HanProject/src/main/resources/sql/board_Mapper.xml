@@ -86,12 +86,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	<select id="selectCommentsList" parameterType="int" resultType="spring.command.CommentsCommand">
-	    select c_number, c_writer, c_content, c_regdate from comments where b_number=#{int} order by c_number
+	    select c_number, c_writer, c_content, c_regdate,c_id from comments where b_number=#{int} order by c_number
 	</select>
 	
 	<insert id="insertComments" parameterType="spring.command.CommentsCommand">
-	    insert into comments (c_number, b_number, c_writer, c_regdate, c_content) 
-	    values(seq_c_number.NEXTVAL,#{b_number}, #{c_writer}, sysdate, #{c_content})
+	    insert into comments (c_number, b_number, c_writer, c_regdate, c_content,c_id) 
+	    values(seq_c_number.NEXTVAL,#{b_number}, #{c_writer}, sysdate, #{c_content},#{c_id})
 	</insert>
 	
 	<delete id="deleteComments" parameterType="spring.command.CommentsCommand">
