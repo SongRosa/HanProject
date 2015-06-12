@@ -1,14 +1,23 @@
-<%@ page contentType="text/html; charset=euc-kr"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
 <html>
 <head>
 <link href="css/main_style.css" rel="stylesheet" type="text/css">
+<link href="css/swiper.min.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="js/jquery.xdomainajax.js"></script>
+<script src="js/cast.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
 <script type="text/javascript">
 
 	$(function(){
+		
+		for(var i=0;i<11;i++){
+			xmlLoader(i);
+		}
+		
 		var a=0;
 		var b=0;
 		
@@ -152,11 +161,11 @@
 					<div class="1">
 				 		<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� ������ ��õ��27�� <br/>279-23 (��ȭ�� 47)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 강서구 양천로27길 <br/>279-23 (방화동 47)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0621~3</td>
 							</tr>
 						</table>
@@ -165,11 +174,11 @@
 					<div class="2">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� ������ ����� <br/>83-66 (�ϻ絿 637-6)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 강동구 선사로 <br/>83-66 (암사동 637-6)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0501~4</td>
 							</tr>
 						</table>
@@ -178,11 +187,11 @@
 					<div class="3">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� ������ �Ѱ������� <br/>162 (��ϵ� 487-116)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 마포구 한강난지로 <br/>162 (상암동 487-116)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0611~3</td>
 							</tr>
 						</table>
@@ -191,11 +200,11 @@
 					<div class="4">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� ������ �����Ϸ� <br/>139 (�ھ絿 704-1)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 광진구 강변북로 <br/>139 (자양동 704-1)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0521~4</td>
 							</tr>
 						</table>
@@ -204,11 +213,11 @@
 					<div class="5">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� ������ ��������� <br/>467 (������ 205-4)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 마포구 마포나루길 <br/>467 (망원동 205-4)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0601~4</td>
 							</tr>
 						</table>
@@ -217,11 +226,11 @@
 					<div class="6">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� ���ʱ� �Ź�����11�� <br/>40 (������ 115-5)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 서초구 신반포로11길 <br/>40 (반포동 115-5)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0541</td>
 							</tr>
 						</table>
@@ -230,11 +239,11 @@
 					<div class="7">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� �������� ���� <br/>221(��굿 98-1)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 영등포구 노들로 <br/>221(당산동 98-1)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0581~3</td>
 							</tr>
 						</table>
@@ -243,11 +252,11 @@
 					<div class="8">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� �������� ���ǵ��� <br/>330 (���ǵ��� 8)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 영등포구 여의동로 <br/>330 (여의도동 8)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0561~5</td>
 							</tr>
 						</table>
@@ -256,11 +265,11 @@
 					<div class="9">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� ��걸 ���̷�72�� <br/>62 (���̵� 302-17)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 용산구 이촌로72길 <br/>62 (이촌동 302-17)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0551~4</td>
 							</tr>
 						</table>
@@ -269,11 +278,11 @@
 					<div class="10">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� ���ı� �Ѱ����� <br/>65 (��ǵ�1-1)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 송파구 한가람로 <br/>65 (잠실동1-1)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0511~4</td>
 							</tr>
 						</table>
@@ -282,11 +291,11 @@
 					<div class="11">
 						<table>
 							<tr>
-								<td width="120">�ּ�</td>
-								<td width="320">����� ���ʱ� ����� <br/>221-124 (����� 121)</td>
+								<td width="120">주소</td>
+								<td width="320">서울시 서초구 잠원로 <br/>221-124 (잠원동 121)</td>
 							</tr>
 							<tr>
-								<td>��ȭ��ȣ</td>
+								<td>전화번호</td>
 								<td>3780 - 0531~3, 534 - 3263</td>
 							</tr>
 						</table>
@@ -473,13 +482,323 @@
 	</div>
 	
 	<div style="margin: auto; margin-top:20; margin-bottom:20; width: 1000; height: 300;">
-		<div id="weather" style="display:inline-block; width: 390; height: 300; border: 1px black solid; margin-right: 10;">
-			����
+				<div class="swiper-container" id="weather"
+			style=" display: inline-block; width: 390; height: 300; border: 1px black solid; margin-right: 10;">
+			<div class="swiper-wrapper" id="weather_pagewrap">
+				<div class="swiper-slide" id="page0">
+				<p> 강서 한강공원<br></p>
+					<table>
+					
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+							
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+							
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+						</tr>
+					</table>
+
+				</div>
+				<div class="swiper-slide" id="page1">
+				<p>광나루 한강공원<br></p>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+				
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+						
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+					
+						</tr>
+					</table>
+				</div>
+				<div class="swiper-slide" id="page2">
+				<p>난지 한강공원<br></p>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+	
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+
+						</tr>
+					</table>
+					
+				</div>
+				<div class="swiper-slide" id="page3">
+				<p>뚝섬 한강공원<br></p>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+
+						</tr>
+					</table>
+	
+				</div>
+				<div class="swiper-slide" id="page4">
+				<p>망원 한강공원<br></p>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+
+						</tr>
+					</table>
+					
+				</div>
+				<div class="swiper-slide" id="page5">
+				<P>반포 한강공원<br></P>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+
+						</tr>
+					</table>
+					
+				</div>
+				<div class="swiper-slide" id="page6">
+				<p>양화 한강공원<br></p>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+
+						</tr>
+					</table>
+					
+				</div>
+				<div class="swiper-slide" id="page7">
+				<p>여의도 한강공원<br></p>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+						</tr>
+					</table>
+					
+				</div>
+				<div class="swiper-slide" id="page8">
+				<p>이촌 한강공원<br></p>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+
+						</tr>
+					</table>
+
+				</div>
+				<div class="swiper-slide" id="page9">
+				<p>잠실 한강공원<br></p>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+
+						</tr>
+					</table>
+					
+				</div>
+				<div class="swiper-slide" id="page10">
+				<p>잠원 한강공원<br></p>
+					<table>
+						<tr>
+							<td class="td0_0"></td>
+							<td class="td0_1"></td>
+							<td class="td0_2"></td>
+							<td class="td0_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td1_0"></td>
+							<td class="td1_1"></td>
+							<td class="td1_2"></td>
+							<td class="td1_3"></td>
+
+						</tr>
+						<tr>
+							<td class="td2_0"></td>
+							<td class="td2_1"></td>
+							<td class="td2_2"></td>
+							<td class="td2_3"></td>
+						</tr>
+					</table>
+		
+		
+				</div>
+
+			</div>
+			<div class="swiper-pagination"></div>
+       		 <!-- Add Arrows -->
+       		 <div class="swiper-button-next"></div>
+       	 	 <div class="swiper-button-prev"></div>
 		</div>
 		
 		<div id="notify" style="display:inline-block; width: 590;height: 300; border: 1px black solid;">
-			��������
+			공지사항
 		</div>
 	</div>
+		<script>
+	var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30
+    });
+</script>
 </body>
 </html>
