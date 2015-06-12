@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>로그인</title>
-<link href="css/mem/join.css" rel="stylesheet" type="text/css">
+<link href="css/mem/login.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script>
 $(function (){
@@ -17,9 +17,11 @@ $(function (){
 <body>
 <div id ="view_top">
 <form:form commandName="loginform" method="post" action="log_login.do"	name="loginform">
+	
+	<div id="empty"></div>
 	<table cellspacing=1 cellpadding=1 align="center">
 		<tr height="30">
-			<td colspan="3" align="center">회원로그인</td>
+			<td colspan="3" align="center"><h2><span class="fontawesome-lock"></span>회원로그인 </h2></td>
 		</tr>
 		
 		<tr height="30">
@@ -42,7 +44,7 @@ $(function (){
 			</td>
 		</tr>
 		
-		<tr height="30">
+		<tr height="70">
 			<td colspan="3" align="center">
 				<input type="button" value="ID 찾기" onclick="javascript:window.location='searchIdForm.do'">
 				<input type="button" value="비밀번호 찾기" onclick="javascript:window.location='searchPwdForm.do'">
@@ -54,5 +56,6 @@ $(function (){
 
 </form:form>
 </div>
+<div id="empty"></div>
 </body>
 </html>
