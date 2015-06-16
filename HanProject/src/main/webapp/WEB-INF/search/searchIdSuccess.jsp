@@ -12,10 +12,10 @@
 
 	<table cellspacing=1 cellpadding=1 align="center">
 	<tr>
-<td colspan="2" align="middle"><h2><span class="fontawesome-lock"></span>ID를 찾았습니다.</h2></td>
+<td colspan="2" align="center"><h2><span class="fontawesome-lock"></span>ID를 찾았습니다.</h2></td>
 	</tr>
 	<tr height="30">
-<td rowspan="2" width="300">귀하의 ID는 ${model.id}입니다. 
+<td rowspan="2" width="300" align="center">귀하의 ID는 <h3><strong>${model.id}</strong></h3> 입니다. 
 <br>
 
 </td>
