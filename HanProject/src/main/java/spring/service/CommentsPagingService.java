@@ -13,18 +13,21 @@ public class CommentsPagingService {
 	private int startPage;	 // 시작 페이지
 	private int endPage;	 // 마지막 페이지
 	private int b_number;	// 게시물 번호
+	private String p; //게시판 리스트의 페이지 번호
 	
+
 	private StringBuffer pagingHtml;
 
 	// 페이징 생성자
 	public CommentsPagingService(int currentPage, int totalCount, int blockCount,
-			int blockPage, int b_number) {
+			int blockPage, int b_number, String p) {
 
 		this.blockCount = blockCount;
 		this.blockPage = blockPage;
 		this.currentPage = currentPage;
 		this.totalCount = totalCount;
 		this.b_number = b_number;
+		this.p = p;
 
 		// 전체 페이지 수
 		totalPage = (int) Math.ceil((double) totalCount / blockCount);
@@ -53,7 +56,7 @@ public class CommentsPagingService {
 		// 이전 block 페이지
 		pagingHtml = new StringBuffer();
 		if (currentPage > blockPage) {
-			pagingHtml.append("<a href=board_detail.do?b_number="+b_number+"&p="
+			pagingHtml.append("<a href=board_detail.do?p="+p+"b_number="+b_number+"&c_p="
 					+ (startPage - 1) + ">");
 			pagingHtml.append("이전");
 			pagingHtml.append("</a>");
@@ -72,7 +75,7 @@ public class CommentsPagingService {
 				pagingHtml.append("</font></b>");
 			} else {
 				pagingHtml
-						.append("&nbsp;<a href='board_detail.do?b_number="+b_number+"&p=");
+						.append("&nbsp;<a href='board_detail.do?p="+p+"b_number="+b_number+"&c_p=");
 				pagingHtml.append(i);
 				pagingHtml.append("'>");
 				pagingHtml.append(i);
@@ -86,7 +89,7 @@ public class CommentsPagingService {
 
 		// 다음 block 페이지
 		if (totalPage - startPage >= blockPage) {
-			pagingHtml.append("<a href=board_detail.do?b_number="+b_number+"&p="
+			pagingHtml.append("<a href=board_detail.do?p="+p+"b_number="+b_number+"&c_p="
 					+ (endPage + 1) + ">");
 			pagingHtml.append("다음");
 			pagingHtml.append("</a>");
@@ -180,5 +183,15 @@ public class CommentsPagingService {
 	public void setPagingHtml(StringBuffer pagingHtml) {
 		this.pagingHtml = pagingHtml;
 	}
+	
+	public String getP() {
+		return p;
+	}
+
+	public void setP(String p) {
+		this.p = p;
+	}
+
+	
 	
 }

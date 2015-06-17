@@ -24,7 +24,7 @@ $(function(){
 
 	$("#p_number").change(function(){
 		var g_num =  $(":selected").attr("value");
-		window.location="board_list.do?parkNum="+g_num;
+		window.location="board_list.do?parkNum="+g_num+"&p=1";
 	});
 	
 	
@@ -75,12 +75,20 @@ $(function(){
 				<th class="col5">작성일</th>
 				<th class="col6">조회수</th>
 			</tr>
+			
 
 			<c:forEach var="one" items="${list }" >
 				<tr class="list">
 					<td class="num">${one.b_number }</td>
 					<td class="name">&lt;${one.p_name }&gt;</td>
-					<td class="subject"><a href="board_detail.do?b_number=${one.b_number }&parkNum=${param.parkNum}">${one.b_subject }</a>&nbsp;
+					<td class="subject">
+					<c:if test="${empty param.p }" >
+					<a href="board_detail.do?b_number=${one.b_number }&parkNum=${param.parkNum}&p=1">
+					${one.b_subject }</a>&nbsp;</c:if>
+					<c:if test="${!empty param.p }" >
+					<a href="board_detail.do?b_number=${one.b_number }&parkNum=${param.parkNum}&p=${param.p}">
+					${one.b_subject }</a>&nbsp;</c:if>
+			
 						[${one.c_count }]</td>
 					<td class="name">${one.b_writer }</td>
 					<td class="date"><fmt:formatDate value="${one.b_regdate }" type="date" /></td>

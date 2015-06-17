@@ -9,10 +9,10 @@ function openDeleteForm(b_number) {
 	window.open("board_deleteForm.do?b_number="+ b_number , "글 삭제", "width=400,height=150,left=400,right=400,top=200");
 	
 }
-function confirmDelete(c_num,b_num,parkNum){
+function confirmDelete(c_num,b_num,parkNum,p){
 	var con = confirm("코멘트를 삭제 하시겠습니까?");
 	if(con){
-		window.location="commentsDel.do?c_number="+c_num+"&b_number="+b_num+"&parkNum="+parkNum;
+		window.location="commentsDel.do?c_number="+c_num+"&b_number="+b_num+"&parkNum="+parkNum+"&p="+p;
 		
 	}else{
 		;
@@ -51,18 +51,25 @@ function checkBlank(){
 <td class="detail_table_content" colspan="6"> ${detail.b_content }</td>
 </tr>
 <c:choose>
-<c:when test="${sessionScope.user.id eq detail.b_id || sessionScope.user.id eq 'manager' }">
+<c:when test="${sessionScope.user.id eq detail.b_id }">
 <tr>
 <td class="detail_table_btnGroup" colspan="6" align="right">
 <button class="detail_table_updateBtn" onclick="window.location='board_updateForm.do?b_number=${detail.b_number}'">&nbsp;</button>
 <button class="detail_table_deleteBtn" onclick="openDeleteForm(${detail.b_number })">&nbsp;</button>
-<button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}'">&nbsp;</button>
+<button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}&p=${listPage }'">&nbsp;</button>
+</td></tr>
+</c:when>
+<c:when test="${sessionScope.user.id eq 'manager' }">
+<tr>
+<td class="detail_table_btnGroup" colspan="6" align="right">
+<button class="detail_table_deleteBtn" onclick="openDeleteForm(${detail.b_number })">&nbsp;</button>
+<button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}&p=${listPage }'">&nbsp;</button>
 </td></tr>
 </c:when>
 <c:otherwise>
 <tr>
 <td class="detail_table_btnGroup" colspan="6" align="right">
-<button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}'">&nbsp;</button>
+<button class="detail_table_goListBtn" onclick="window.location='board_list.do?parkNum=${param.parkNum}&p=${listPage }'">&nbsp;</button>
 </td></tr>
 </c:otherwise>
 
@@ -91,7 +98,7 @@ function checkBlank(){
 
 <c:choose>
 <c:when test="${comment.c_id eq sessionScope.user.id || sessionScope.user.id eq 'manager' }">
-<td width="10"><button class="comments_table_deleteBtn" onclick="confirmDelete(${comment.c_number},${detail.b_number },${param.parkNum })">&nbsp;</button></td>
+<td width="10"><button class="comments_table_deleteBtn" onclick="confirmDelete(${comment.c_number},${detail.b_number },${param.parkNum },${listPage })">&nbsp;</button></td>
 </c:when>
 <c:otherwise>
 <td width="10">&nbsp;</td>
@@ -117,6 +124,7 @@ function checkBlank(){
 <input type="hidden" name="c_id" value="${sessionScope.user.id }">
 <input type="hidden" name="b_number" value="${detail.b_number}">
 <input type="hidden" name="parkNum" value="${param.parkNum}">
+<input type="hidden" name="p" value="${listPage}">
 </form>
 </div>
 </c:if>

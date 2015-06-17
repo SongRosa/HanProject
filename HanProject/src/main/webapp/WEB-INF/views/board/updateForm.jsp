@@ -38,7 +38,7 @@ function checkBlank(){
 			<table class="update_table" >
 				<tr>
 				<td>작성자</td>
-					<td><input class="table_writer" name="b_writer" size="5" maxlength="25" value="${detail.b_writer }"></td>
+					<td><input class="table_writer" name="b_writer" type="hidden" size="5" maxlength="25" value="${detail.b_writer }">${detail.b_writer }</td>
 					<td>제목</td>
 					<td>
 					<select class="p_number" name="p_number">
@@ -55,7 +55,7 @@ function checkBlank(){
 					<option value="11">잠원</option>
 					<option selected="selected" value="12">자유글</option>
 					</select>
-					<input class="table_subject" name="b_subject" size="20" maxlength="100" value="${detail.b_subject }"/></td>
+					<input class="table_subject" name="b_subject" size="40" maxlength="100" value="${detail.b_subject }"/></td>
 				
 				<tr>
 					<td colspan="4"><textarea class="update_table_content" name="b_content" rows="15" cols="100" >${detail.b_content }</textarea>

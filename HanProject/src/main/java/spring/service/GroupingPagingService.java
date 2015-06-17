@@ -12,20 +12,23 @@ public class GroupingPagingService {
 		private int endCount;	 // 한 페이지에서 보여줄 게시글의 끝 번호
 		private int startPage;	 // 시작 페이지
 		private int endPage;	 // 마지막 페이지
-
+		private String p; // 게시판 리스트 페이지
+		
+	
 		private StringBuffer pagingHtml;
 		
 		private String g;
 
 		// 페이징 생성자
 		public GroupingPagingService(int currentPage, int totalCount, int blockCount,
-				int blockPage, String g) {
+				int blockPage, String g, String p) {
 
 			this.blockCount = blockCount;
 			this.blockPage = blockPage;
 			this.currentPage = currentPage;
 			this.totalCount = totalCount;
 			this.g = g;
+			this.p = p;
 
 			// 전체 페이지 수
 			totalPage = (int) Math.ceil((double) totalCount / blockCount);
@@ -93,6 +96,18 @@ public class GroupingPagingService {
 				pagingHtml.append("</a>");
 			}
 		}
+		
+		
+		
+
+		public String getP() {
+			return p;
+		}
+
+		public void setP(String p) {
+			this.p = p;
+		}
+
 
 		public int getCurrentPage() {
 			return currentPage;

@@ -68,7 +68,7 @@ public class BoardController {
 			int totalCount = list.size();
 			int currentPage = Integer.parseInt(p);
 			GroupingPagingService gps = new GroupingPagingService(currentPage, totalCount,
-					blockCount, blockPage, parkNum);
+					blockCount, blockPage, parkNum, p);
 
 			page = gps.getPagingHtml().toString();
 
@@ -148,7 +148,7 @@ public class BoardController {
 			int totalCount = list.size();
 			int currentPage = Integer.parseInt(p);
 			GroupingPagingService gps = new GroupingPagingService(currentPage, totalCount,
-					blockCount, blockPage, parkNum);
+					blockCount, blockPage, parkNum, p);
 
 			page = gps.getPagingHtml().toString();
 
@@ -169,7 +169,7 @@ public class BoardController {
 
 	/* 글의 내용을 보게 해주는 메서드 */
 	@RequestMapping(value="board_detail.do" ,method= RequestMethod.GET)
-	public String viewDetail(@RequestParam(value = "p", defaultValue = "1") String p, @RequestParam int b_number, Model model) {
+	public String viewDetail(@RequestParam(value = "c_p", defaultValue = "1") String c_p, @RequestParam String p, @RequestParam int b_number, Model model) {
 
 		BoardCommand bc = dao.selectOne(b_number);
 		model.addAttribute("detail", bc);
@@ -181,9 +181,9 @@ public class BoardController {
 		List<CommentsCommand> list = dao.selectCommentsList(b_number);
 		
 		int totalCount = list.size();
-		int currentPage = Integer.parseInt(p);
+		int currentPage = Integer.parseInt(c_p);
 		
-		CommentsPagingService cps = new CommentsPagingService(currentPage, totalCount, c_block_count, c_block_page, b_number);
+		CommentsPagingService cps = new CommentsPagingService(currentPage, totalCount, c_block_count, c_block_page, b_number, p);
 
 		String page = cps.getPagingHtml().toString();
 
@@ -196,6 +196,7 @@ public class BoardController {
 		list = list.subList(cps.getStartCount(), lastCount);
 
 		model.addAttribute("commentsList", list);
+		model.addAttribute("listPage", p);
 		model.addAttribute("paging", page);
 
 		return "views/board/detail";
@@ -207,13 +208,14 @@ public class BoardController {
 		
 		String c_writer = req.getParameter("c_writer");
 		String c_content = req.getParameter("c_content");
+		String p = req.getParameter("p");
 		int b_number = Integer.parseInt(req.getParameter("b_number"));
 		String c_id = req.getParameter("c_id");
 		int parkNum = Integer.parseInt(req.getParameter("parkNum"));
 		CommentsCommand cc = new CommentsCommand(c_writer, c_content, b_number,c_id);
 		dao.insertComments(cc);
 		
-		return "redirect:board_detail.do?b_number="+b_number+"&parkNum="+parkNum;
+		return "redirect:board_detail.do?b_number="+b_number+"&parkNum="+parkNum+"&p="+p;
 	}
 	
 	/*코멘트를 삭제하는 메서드*/
@@ -223,11 +225,11 @@ public class BoardController {
 		int c_number = Integer.parseInt(req.getParameter("c_number"));
 		int b_number = Integer.parseInt(req.getParameter("b_number"));
 		int parkNum = Integer.parseInt(req.getParameter("parkNum"));
-		
+		String p = req.getParameter("p");
 		CommentsCommand cc = new CommentsCommand(c_number, b_number);
 		dao.deleteComments(cc);
 		
-		return"redirect:board_detail.do?b_number="+b_number+"&parkNum="+parkNum;
+		return"redirect:board_detail.do?b_number="+b_number+"&parkNum="+parkNum+"&p="+p;
 	}
 
 
