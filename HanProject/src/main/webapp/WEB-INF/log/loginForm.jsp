@@ -84,10 +84,10 @@ $(function (){
 	
 	<div id="empty"></div>
 <div id="around" align="center">
-<div id="header"> <h2  style="width: 50%"><span class="fontawesome-lock"></span>회원로그인 </h2></div>		
+<div id="header"> <h2  style="width: 40%"><span class="fontawesome-lock"></span>회원로그인 </h2></div>		
 			
 			<div id=left style="float: left; padding-left: 390px">
-				<label id="label_id">아이디 </label><form:input  path="id" size="10" maxlength="12"/>
+				<label id="label_id">아이디 </label>&nbsp;&nbsp;&nbsp;<form:input  path="id" size="10" maxlength="12"/>
 				<div style="padding: 7px;"><form:errors path="id" /></div>
 				<label id="label_pw" >비밀번호 </label><form:password path="pwd" size="10" maxlength="16"/>
 				<div style="padding: 7px"><form:errors path="pwd" /></div>

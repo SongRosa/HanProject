@@ -40,10 +40,10 @@ $(function() {
 </head>
 	<decorator:head />
 	<div id="header" align="right" style="font-family: 'Nanum Gothic', sans-serif;">
-		<a href="test.do">HOME </a>&nbsp;
 		<c:if test="${sessionScope.user.id=='manager'}">
 			<img id="manager" alt="관리자" src="./board_img/btn_admin.gif">
 		</c:if>
+		<a href="test.do">HOME </a>&nbsp;
 		<c:if test="${empty sessionScope.user}">			
 			<a href="log_loginForm.do">로그인  </a> &nbsp;
 			<a href="join_input.do">회원가입  </a>&nbsp;
@@ -60,7 +60,7 @@ $(function() {
 
 <body>
 	<div id = "logo" align = "center">	
-		<a href="test.do"><img width="150px" height = "80px" alt="로고 위치" src="photo/templogo.png"></a>
+		<a href="test.do"><img width="270px" height = "90px" alt="로고 위치" src="photo/logo.png"></a>
 	</div>
 	<hr/>
 	<decorator:body />
