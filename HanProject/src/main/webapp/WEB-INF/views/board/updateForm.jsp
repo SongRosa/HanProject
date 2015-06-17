@@ -11,7 +11,7 @@ $(function(){
 	var p_num = ${detail.p_number};
 	
 		$("option:last").removeAttr("selected");
-		$("option:nth-child(${detail.p_number+1})").attr("selected","selected");
+		$("option:nth-child(${detail.p_number})").attr("selected","selected");
 		
 });
 

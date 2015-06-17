@@ -44,7 +44,7 @@ $(function (){
 		<tr height="30">
 			<td width="110" align=center>이메일</td>
 			<td width="150" align=center>
-				<form:input path="email" size="15" maxlength="12" />
+				<form:input path="email" size="15" maxlength="22" />
 				<form:errors path="email" />
 			</td>
 		</tr>
