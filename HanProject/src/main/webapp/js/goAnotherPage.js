@@ -10,12 +10,12 @@ $(function(){
 	$("#map_pageName").change(function(){
 		var parkNum = $(":selected").attr("value");
 		
-		window.location = "mapPage.do?parkNum="+parkNum;
+		window.location = "facility_search.do?parkNum="+parkNum;
 	});
 });
 
 $(function() {
-	$("#go_direction").click(function (parkNum) {
+	$("#go_direction").click(function () {
 		var parkNum = $(":button").attr("value");
 		
 		window.location = "directionPage.do?parkNum="+parkNum;
@@ -23,7 +23,7 @@ $(function() {
 });
 
 $(function() {
-	$("#go_maps").click(function (parkNum) {
+	$("#go_maps").click(function () {
 		var parkNum = $(":button").attr("value");
 		
 		window.location = "facility_search.do?parkNum="+parkNum;

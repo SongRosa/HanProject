@@ -13,8 +13,8 @@
 </head>
 <body>
 <div id ="view_top">
-		<input id="parkNum" type="hidden" value = ${parkNum}> 
-		<input id="tempNum" type="hidden" value = ${tempNum}>
+		<input id="parkNum" type="hidden" value = ${parkNum}> <!-- 
+		<input id="tempNum" type="hidden" value = ${tempNum}> -->
 		<div align="right">
 			<label> 다른 공원 가기</label>			
 			<select id="map_pageName" name="pageName">
