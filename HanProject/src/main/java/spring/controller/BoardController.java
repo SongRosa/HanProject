@@ -67,8 +67,8 @@ public class BoardController {
 
 			int totalCount = list.size();
 			int currentPage = Integer.parseInt(p);
-			GroupingPagingService gps = new GroupingPagingService(currentPage,
-					totalCount, totalCount, currentPage, parkNum);
+			GroupingPagingService gps = new GroupingPagingService(currentPage, totalCount,
+					blockCount, blockPage, parkNum);
 
 			page = gps.getPagingHtml().toString();
 
@@ -147,8 +147,8 @@ public class BoardController {
 			}
 			int totalCount = list.size();
 			int currentPage = Integer.parseInt(p);
-			GroupingPagingService gps = new GroupingPagingService(currentPage,
-					totalCount, totalCount, currentPage, parkNum);
+			GroupingPagingService gps = new GroupingPagingService(currentPage, totalCount,
+					blockCount, blockPage, parkNum);
 
 			page = gps.getPagingHtml().toString();
 
