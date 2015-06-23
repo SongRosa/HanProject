@@ -19,6 +19,7 @@
 	    <pattern>/update_dongseach.do</pattern>
 	    <pattern>/update_dongseach.do?*</pattern>
 	    <pattern>/board_deleteForm.do?*</pattern>
+	    <pattern>/notice_deleteForm.do?*</pattern>
 	</excludes>
 	
 	<decorator name="main" page="/WEB-INF/main/decorator/decorator.jsp">

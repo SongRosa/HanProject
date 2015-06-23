@@ -52,7 +52,7 @@ $(function() {
 			<a href="log_logout.do">로그아웃  </a> &nbsp;
 			<a href="confirmPwd.do">마이페이지  </a>&nbsp;
 		</c:if>
-		<a href="">공지사항  </a>&nbsp;
+		<a href="notice_list.do">공지사항  </a>&nbsp;
 		<a href="board_list.do?parkNum=0">자유게시판  </a>&nbsp;
 		<a href="sitemap.do">사이트맵  </a>&nbsp;&nbsp;&nbsp;
 	</div>
