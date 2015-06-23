@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+    <select id="selectAll" resultType="spring.command.NoticeCommand">
+        select * from notice order by n_number desc
+    </select>
+    
+    <select id="selectOne" parameterType="int" resultType="spring.command.NoticeCommand">
+        select * from notice where n_number=#{int}
+    </select>
+    
+    <update id="update_n_count" parameterType="int">
+		update notice set n_count=n_count+1 where n_number=#{int}
+	</update>
+    
+    <insert id="insertOne" parameterType="spring.command.NoticeCommand" >
+        insert into notice values(seq_n_number.NEXTVAL, #{n_subject},#{n_writer},sysdate,#{n_content}, 0)
+    </insert>
+    
+    <delete id="deleteOne" parameterType="int">
+		delete from notice where n_number = #{n_number}        
+    </delete>
+    
+    <update id="updateOne" parameterType="spring.command.NoticeCommand">
+        update notice set n_subject=#{n_subject}, n_writer=#{n_writer},n_content=#{n_content} where n_number=#{n_number} 
+    </update>
+</mapper>    
