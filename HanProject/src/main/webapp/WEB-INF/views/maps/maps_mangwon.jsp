@@ -9,7 +9,7 @@
 	<link href="css/maps_style.css" rel="stylesheet" type="text/css">
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script type="text/javascript" src="js/goAnotherPage.js"></script>
-	<script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=74eaecd03f436f5fb05d2a980537b8ee"></script>
+	<script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=fdd0d443a0b9440e2ac92cffa0fcf77b"></script>
 </head>
 <body>
 <div id ="view_top">
